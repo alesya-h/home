@@ -1,0 +1,3 @@
+[submodule "p/my/make-sch-rb"]
+	path = p/my/make-sch-rb
+	url = git@github.com:alesguzik/make-sch-rb.git

@@ -1,0 +1,11 @@
+[user]
+	name = Ales Guzik
+	email = ales.guzik@gmail.com
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 958x1059+0+19
+	file-view-vpane-position = 555
+	main-window-view = HistoryView
+	history-view-vpane-position = 541
+[gui]
+	spellingdictionary = none

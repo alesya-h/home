@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'sinatra'
+ ARGV[0]
+public_dir = ARGV[0] || '.'
+puts public_dir
+set :public, File.dirname(public_dir)
+get '/' do
+  "index"
+end
