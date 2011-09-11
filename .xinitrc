@@ -33,6 +33,6 @@ emacs --daemon &
 #wmname LG3D # for GUI java programs under lightweight window managers
 
 #exec stumpwm
-exec dswm
+exec ~/bin/dwm
 #exec awesome
 #exec xterm
