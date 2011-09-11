@@ -23,4 +23,4 @@ alias f='find | grep'
 alias gg='git grep'
 
 export PATH="$PATH:$HOME/p/my/scripts:$HOME/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function

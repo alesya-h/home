@@ -25,7 +25,7 @@ autoload -U colors && colors
 # command L equivalent to command |less
 alias -g L='|less' 
 
-source $HOME/p/my/configs/shell_general.sh
+source $HOME/shell_general.sh
 
 #hg_branch() {
 #    hg branch 2> /dev/null | awk '{ print "[hg:" $1 }'
