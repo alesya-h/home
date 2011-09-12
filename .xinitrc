@@ -7,6 +7,8 @@ fi &
 
 setxkbmap -layout us,ru -variant -option grp:caps_toggle,grp_led:caps,terminate:ctrl_alt_bksp &
 
+source ~/shell_general.sh
+
 N=$((15 * 60))
 X=-2
 CMD="awsetbg -u hsetroot -F -R $HOME/wallpapers/"

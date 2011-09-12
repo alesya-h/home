@@ -1,3 +1,6 @@
+[[ -n $SHELL_GENERAL_LOADED ]] && return
+export SHELL_GENERAL_LOADED=true
+
 export EDITOR="emacsclient"
 export ALTERNATE_EDITOR="emacs"
 export BROWSER=firefox

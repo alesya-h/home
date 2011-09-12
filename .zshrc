@@ -25,8 +25,6 @@ autoload -U colors && colors
 # command L equivalent to command |less
 alias -g L='|less' 
 
-source $HOME/shell_general.sh
-
 #hg_branch() {
 #    hg branch 2> /dev/null | awk '{ print "[hg:" $1 }'
 #}
@@ -59,3 +57,5 @@ function prompt_char {
 
 export PS1='%T %B%F{cyan}%~%F{green}${vcs_info_msg_0_}%f %(!.#.$)%b '
 export RPS1='%{$fg_bold[black]%} $BAT %D{%a %d.%m} %n@%m%f%b'
+
+source $HOME/shell_general.sh
