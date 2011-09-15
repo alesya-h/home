@@ -11,3 +11,17 @@ XTerm*saveLines: 1000
 XTerm*multiClickTime: 250
 XTerm*faceName: DejaVu Sans Mono
 XTerm*faceSize: 10
+
+UXTerm*background: black
+UXTerm*foreground: white
+UXTerm*pointerColor: red
+UXTerm*pointerColorBackground: black
+UXTerm*cursorColor: yellow
+UXTerm*internalBorder: 0
+UXTerm*loginShell: true
+UXTerm*scrollBar: false
+UXTerm*scrollKey: true
+UXTerm*saveLines: 1000
+UXTerm*multiClickTime: 250
+UXTerm*faceName: DejaVu Sans Mono
+UXTerm*faceSize: 10

@@ -7,6 +7,7 @@ fi &
 
 setxkbmap -layout us,ru -variant -option grp:caps_toggle,grp_led:caps,terminate:ctrl_alt_bksp &
 
+source ~/login_general.sh
 source ~/shell_general.sh
 
 N=$((15 * 60))
@@ -23,6 +24,7 @@ while true; do
         rm $changefile
     fi
     X=$((($X + 1) % $N))
+    xsetroot -name "`acpi` | `date`"
     sleep 1 #1m
 done &
 
