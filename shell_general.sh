@@ -18,4 +18,4 @@ alias du3='du -d 3 -h'
 alias f='find | grep'
 alias gg='git grep'
 
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
