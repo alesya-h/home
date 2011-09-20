@@ -1,0 +1,109 @@
+        CLFSWM[0] - A(nother) Common Lisp FullScreen Window Manager
+
+ CLFSWM is a 100% Common Lisp X11 window manager (based on [1]Tinywm
+ and [2]Stumpwm. Many thanks to them).
+ It can be driven only with the keyboard or with the mouse.
+
+ A display contains a root frame and its children. A child can be a
+ window or another frame. The root frame or its children can be the
+ current root. The current root is fullscreen maximized (no
+ decorations, no buttons, no menus: nothing, just the application
+ fullscreen!).
+
+ CLFSWM is highly dynamic. By default there is only one frame. Other
+ frames are created/deleted on the fly. A window can be in more than
+ one frame, so it can have multiple views of the same windows.
+
+ Using CLFSWM is like walking through a tree of frames and windows.
+ Enter in a child to make it the current root and make it fullscreen
+ maximized. Leave it to make its parent the current root.
+
+ Here is the default key binding to navigate through this tree:
+
+  * Alt-Tab: circulate through children of the current child.
+  * Alt-Left/Right: circulate through brother children (ie: this is like
+      workspaces for a more conventional window manager)
+  * Alt-Up: select the first child of the current frame.
+  * Alt-Down: select the parent of the current child.
+  * Alt-Enter: Make the current selected child the current root (ie
+      maximize it)
+  * Alt+Shift-Enter: Make the parent of the current root the current
+      root (ie unmaximize the current root).
+
+ There is no more need for a pager: you are in the pager!
+
+ For its binding, CLFSWM has two modes:
+ A main mode with minimal keys and mouse grabbing to avoid conflicts
+ with others applications.
+ And a second mode with more keys and mouse actions.
+ For details of its usage, have a look at the files doc/keys.txt or
+ doc/keys.html
+ A lot of functions to manage CLFSWM can be found in the second mode
+ menu. See the file menu-def.lisp for an overview.
+
+ A frame can be placed anywhere in its parent frame. And can have
+ different layouts to automatically manage its children (tile, tile
+ to left, to bottom, no layout...).
+
+
+* Installation
+
+Boot up a common lisp implementation. I develop it with sbcl, I test
+it with cmucl regularly and I use it with clisp (you need the clx/xlib
+package).
+
+To use CLFSWM, load the load.lisp file. It loads the ASDF package,
+build the system and start the main loop.
+
+Another way is to do something like this:
+$ cd /in/the/directory/of/clfswm/
+$ clisp/cmucl/sbcl/...                  # start a lisp
+  > (load "asdf.lisp")                  ; asdf for clisp or cmucl
+or> (require :asdf)                     ; asdf for sbcl
+  > (require :clx)                      ; clx for cmucl
+  > (asdf:oos 'asdf:load-op :clfswm)    ; compile and load the system
+  > (in-package :clfswm)                ; go in the clfswm package
+  > (clfswm:main)                       ; start the main loop
+
+
+* Tweaking
+
+To change the default keybinding, have a look at the bindings*.lisp
+files and at the config.lisp file for global variables.
+
+All variables can be overwritten in a user configuration file:
+$XDG_CONFIG_HOME/clfswm/clfswmrc or $HOME/.clfswmrc or /etc/clfswmrc.
+It's a standard lisp file loaded at start up. There is an example in
+the clfswm source (see dot-clfswmrc).
+
+There is a lot of hooks in CLFSWM to tweak its behaviour. For example,
+if you want to add some frames at start up you can write your own
+init-hook (see dot-clfswmrc).
+
+
+* Lisp implementation note
+
+If you are using clisp/new-clx, be sure to use the last version (at
+least 2.43). Older versions are a little bit bogus.
+If you are using clisp/mit-clx or an other clx than clisp/new-clx, you
+may find a speed up with the compress notify event. See the variable
+*have-to-compress-notify* in the configuration file.
+
+
+
+* License
+
+ CLFSWM is under the GNU General Public License - GPL license.
+ You can find more information in the files COPYING. or on the
+ [3]Free Software Foundation site.
+
+
+Philippe Brochard <pbrochard [at] common-lisp [dot] net>.
+
+Références
+
+      http://common-lisp.net/project/clfswm/
+      http://trac.common-lisp.net/clfswm/
+   1. http://incise.org/index.cgi/TinyWM
+   2. http://www.nongnu.org/stumpwm/
+   3. http://www.gnu.org/

@@ -1,0 +1,2218 @@
+2011-06-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (add-frame-in-parent-frame): New function
+	and binding.
+
+2011-06-04  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main-unprotected): Destroy all frames windows
+	before closing the display (not really needed).
+
+2011-06-02  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-layout.lisp (inc-tile-layout-size)
+	(dec-tile-layout-size, inc-slow-tile-layout-size)
+	(dec-slow-tile-layout-size): New functions and bindings.
+
+2011-06-01  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-expose-mode.lisp (define-expose-letter-keys): Add
+	0..1 and A..Z keys to select a child in exposé mode.
+
+	* src/clfswm-internal.lisp (display-frame-info): Remove hidden
+	infos in frames windows.
+
+	* src/clfswm-util.lisp (ask-close/kill-current-window): Menu
+	update.
+
+2011-05-30  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (get-parent-layout): Minor fullscreen
+	size tweaking.
+
+2011-05-29  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp
+	(delete-child-and-children-in-all-frames): Show all children
+	before deleting/destroying a windows, so prevent a flickering.
+	(get-parent-layout): Return the fullscreen size when the current
+	root is a window.
+
+2011-05-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (get-parent-layout): Handle correctly
+	unmanaged windows.
+
+	* src/clfswm-util.lisp (delete-focus-window-generic): Do not hide
+	child before removing, so prevent a flickering.
+
+	* src/clfswm-internal.lisp (show-all-children): Rectangular
+	optimization to display only needed children.
+	(show-all-children): Remove flickering on
+	select-next/previous-brother.
+
+2011-05-17  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (copy-focus-window, cut-focus-window): New
+	functions and ask-close/kill-current-window menu and bindings
+	entry.
+
+2011-05-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (ask-close/kill-current-window): Add an
+	*ask-close/kill-placement* placement window variable.
+
+2011-05-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/osd.lisp (funcall-button-from-code): Display osd
+	documention for buttons and fix some redefining warnings.
+
+2011-05-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-nw-hooks.lisp (make-permanent-nw-hook-frame): New
+	function. Prevent to add or delete a new window hook for this
+	frame.
+
+	* src/clfswm-layout.lisp (update-layout-managed-children-position):
+	New function.
+
+2011-05-06  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/bindings-second-mode.lisp (set-default-second-keys):
+	select-brother-spatial-move-* binding update.
+
+	* src/clfswm-layout.lisp (tile-left|right|top|bottom-layout): Ask
+	to keep children positions or not.
+
+	* src/clfswm-internal.lisp (fixe-real-size): Takes care of border
+	size.
+
+	* src/clfswm-layout.lisp (update-layout-managed-children): Fix a
+	bug by using the parent frame instead of the current child.
+
+	* src/clfswm-circulate-mode.lisp
+	(select-brother-generic-spatial-move+right/left/up/down): New
+	function to select a brother from another in a spatial move.
+
+2011-04-19  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-pack.lisp (move-frame-constrained)
+	(resize-frame-constrained): Use pixels instead of floating
+	measure.
+
+2011-04-18  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-pack.lisp (resize-frame-constrained): Takes care of
+	border size.
+	(implode-frame, implode-current-frame): New functions. Absorb all
+	frames subchildren in frame. Explode frame opposite.
+
+2011-04-17  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-pack.lisp (move-frame-constrained)
+	(resize-frame-constrained): New function. Move and resize frame
+	with the mouse constrained by other frame brothers.
+
+2011-04-14  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (with-movement-select-next-brother)
+	(with-movement-select-previous-brother)
+	(with-movement-select-next-child): Use a simple method (do not
+	enter in the circulate mode) to allow to circulate in all children
+	or brothers.
+
+	* src/clfswm-menu.lisp (open-menu): Save info hash table keys
+	instead of deleting newly created keys.
+
+2011-03-21  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (x-px->fl, y-px->fl): Takes care of
+	border size.
+
+2011-03-20  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-info.lisp (show-config-variable): call
+	produce-conf-var-doc.
+
+2011-03-18  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-autodoc.lisp (produce-conf-var-doc-html): Produce a
+	documentation for all configurable variables in CLFSWM -
+	HTML version.
+
+	* src/clfswm-internal.lisp (leave-frame): Hide all children except
+	the current window.
+
+2011-03-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-autodoc.lisp (produce-all-docs): Produce a
+	documentation for all configurable variables in CLFSWM.
+
+	* src/clfswm-layout.lisp (set-gimp-layout): Display a notify
+	window with the help on the GIMP layout.
+
+2011-03-12  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/menu-def.lisp: Menu update to prevent cursor keys clash.
+
+	* clfswm.asd: Change compilation order to prevent undefined
+	variables.
+
+	* src/clfswm-internal.lisp (show-child(frame)): Handle properly
+	the show-root-frame-p parameter.
+
+2011-03-11  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (move-frame, resize-frame): Do not move or
+	resize a frame when it's the current root.
+
+2011-03-10  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (show-all-children): Handle properly
+	duplicated child in multipe frames.
+
+2011-03-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/volume-mode.lisp (set-default-volume-keys): Add more
+	keybindings (up/down, right/left) to raise/lower the volume.
+
+	* src/clfswm-layout.lisp: Add a variable border size for frames
+	and windows.
+
+2011-03-08  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (cut-current-child, remove-current-child)
+	(delete-current-child): Hide the current child before doing the
+	action.
+
+	* src/clfswm-internal.lisp (show-all-children): Hide windows not
+	in the current root before displaying those in current root.
+	Remove all hide-all unnecessary calls.
+
+	* src/clfswm-configuration.lisp (save-variables-in-conf-file):
+	Save only variables with a different value than there original
+	value.
+
+2011-03-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-info.lisp (show-config-variable): Use the new
+	defconfig method.
+
+	* src/clfswm-autodoc.lisp (produce-configuration-variables): Use
+	the new defconfig method.
+
+	* src/clfswm-configuration.lisp (create-configuration-menu):
+	Change the config system with a more lispy one and a less string
+	based one: (defconfig name value group doc).
+
+
+2011-03-06  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (show-all-children): Simplify the
+	selection method.
+	(show-child): Display an unmanaged window whe  it's the current
+	child.
+	(show-all-children): add the ability to display all child from
+	*root-frame* and hide all those who are not in *current-root*.
+	-> remove hide-all-children when needed.
+
+	* src/xlib-util.lisp (move-window,resize-window): Add a
+	*color-move-window* border when moving or resizing a window.
+
+2011-03-04  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (show-all-children): Perform only one
+	recusion on the clfswm tree: calculate geometry and place child in
+	one pass.
+
+2011-03-03  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (show-all-children): Rethink of display
+	child order to prevent very annoying flickering.
+
+2011-02-27  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (query-yes-or-no): New function.
+
+	* src/clfswm-configuration.lisp (reset-all-config-variables): New
+	function and menu entry.
+	(query-conf-value): Add the ability to leave the field blank to
+	reset the variable to its default value.
+
+2011-02-26  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-configuration.lisp
+	(add-all-configuration-default-value): Add a default value to
+	configurable variables.
+
+2011-02-23  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main-unprotected): Create the configuration
+	menu only once at startup.
+
+2011-02-22  Desmond O. Chang <dochang@gmail.com>
+
+	* contrib/amixer.lisp: Add a volume mode inspired by the emms
+	volume package. Alsa mixer interface.
+
+	* contrib/volume-mode.lisp: Add a volume mode inspired by the emms
+	volume package.
+
+2011-02-22 Desmond O. Chang <dochang@gmail.com>
+
+	* src/clfswm.lisp (main): Use ASDF:SYSTEM-SOURCE-DIRECTORY instead
+	of *LOAD-TRUENAME*. *LOAD-TRUENAME* is only bound during a call to
+	LOAD. If one eval CLFSWM:MAIN in repl, BASE-DIR will be an empty
+	string. Use ASDF:SYSTEM-SOURCE-DIRECTORY to fix it.
+
+2011-02-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main-unprotected): Add a close hook. And close
+	the notify window, the virtual keyboard and the clfswm terminal by
+	default.
+
+2011-02-15  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main-unprotected): Destroy the notify window
+	before closing the display. This fix a bug when resetting/reloading
+	clfswm.
+
+2011-02-12  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp (equal-wm-class-fun, equal-wm-name-fun)
+	(raise-window-fun, raise-and-focus-window-fun): New functions.
+
+	* src/config.lisp (*clfswm-terminal-cmd*): Switch from xterm to
+	urxvt.
+	(*never-managed-window-list*): Structure change to be more
+	flexible. Let the choice to focus, raise and do nothing on never
+	managed windows.
+
+2011-02-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (mouse-focus-move/resize-generic): Take
+	care of never managed windows to move or resize them if the raise
+	parameter is true.
+
+	* src/clfswm-internal.lisp (in-frame, in-window, in-child): New
+	functions.
+
+2011-02-08  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main-mode): Raise or not unmanaged windows
+	following request in *never-managed-window-list*.
+
+2011-02-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* *: **** Release 1102 ****
+
+2011-02-05  Desmond O. Chang <dochang@gmail.com>
+
+	* src/keysyms.lisp: Add extended keysyms from stumpwm.
+
+2011-02-01  Desmond O. Chang <dochang@gmail.com>
+
+	* src/clfswm-util.lisp (run-or-raise): New function (thanks to
+	Desmond O. Chang).
+
+	* src/clfswm-internal.lisp (with-all-*): add a nil block.
+
+2011-01-28  Desmond O. Chang <dochang@gmail.com>
+
+	* src/clfswm-util.lisp (xdg-config-home): XDG_CONFIG_HOME should
+	be $HOME/.config by default.
+
+2010-12-29  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/osd.lisp (display-doc): Add another method where a
+	CLFSWM native window is used to display the key documentation.
+
+2010-12-27  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp (with-xlib-protect): Force to revert to the
+	main mode state.
+
+2010-12-25  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-second-mode.lisp (second-key-mode): Call the second
+	mode leave function only when the generic mode was ended.
+
+2010-12-08  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-second-mode.lisp (sm-leave-function): Do not use
+	*second-mode-program* anymore.
+
+2010-12-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-second-mode.lisp (*second-mode-leave-function*): New
+	variable bound to a function executed (when not null) on second
+	mode leaving.
+
+2010-11-14  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (find-child-under-mouse): Do not find
+	hidden windows.
+
+2010-11-13  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-expose-mode.lisp (expose-mode-display-accel-windows):
+	Do not display the accel window for unmanaged windows.
+
+2010-11-11  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (set-current-root): Handle
+	window-parent in set-current-root.
+
+	* src/clfswm-util.lisp (mouse-click-to-focus-generic): Do not
+	focus the parent child when the current root is a window.
+
+2010-11-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-expose-mode.lisp (expose-windows-current-child-mode):
+	New function an bindings.
+
+	* src/clfswm-layout.lisp (tile-layout, set-tile-layout): Fill
+	blanks if needed.
+
+2010-11-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-layout.lisp (tile-layout-ask-keep-position): New
+	function to let the user choose to keep child position with
+	tile layout.
+
+	* src/clfswm-internal.lisp (remove-frame-data-slot): New
+	function.
+
+2010-11-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (frame-select-next-child)
+	(frame-select-previous-child): New functions and bindings. Select
+	the next/previous child in the current frame.
+
+2010-10-31  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-query.lisp (query-mode-complet): New function: Handle
+	completion in query-mode.
+
+2010-10-30  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-query.lisp (query-print-string): Handle long lines
+	correctly.
+
+2010-10-27  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-expose-mode.lisp (expose-create-window): Ensure that
+	all characters are printable.
+
+2010-10-25  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/server/server.lisp: Load clfswm client code in the main
+	program and let the user start it with a --client command line
+	option.
+
+	* src/package.lisp (*main-entrance-hook*): New hook executed after
+	loading configuration file and before opening the display.
+
+2010-10-23  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp: Remove unnecessary xlib:display-finish-output.
+
+	* src/clfswm-internal.lisp (show-child): Show window only if not
+	hidden.
+
+	* src/clfswm-keys.lisp (binding-substitute-modifier): Utility to
+	change modifiers after binding definition.
+
+2010-10-21  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/osd.lisp: New file: OSD (On Screen Display) for
+	presentations.
+
+	* src/clfswm-menu.lisp (open-menu): Modularise function.
+
+2010-10-13  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-info.lisp (show-first-aid-kit): Display the essential
+	key binding in main and second mode.
+
+2010-10-10  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (open-notify-window): Convert hello-window
+	functions to a more generic Notify-window system.
+
+	* src/tools.lisp (add-timer): Add an id to identify the timer.
+
+2010-10-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/tools.lisp (erase-timer): New function.
+
+	* src/clfswm-util.lisp (display-hello-window): Add a timer to hide
+	the hello window. Add Configuration variables.
+
+2010-10-08  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (): Add an Hello window at startup.
+
+	* src/tools.lisp (process-timers): Add a timer system.
+
+2010-10-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-query.lisp (add-in-query-string): Handle correctly
+	the mod-5 modifier.
+
+2010-10-06  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-query.lisp (query-print-string): Change cursor color
+	and show parenthesis matching with colors (on match and on
+	errors).
+
+2010-10-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (show-all-children): Do not raise a
+	child when its parent is hidden.
+
+2010-10-02  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-circulate-mode.lisp (select-next-subchild): Add the
+	possibility to circulate over subchild of the current child.
+
+	* src/clfswm-expose-mode.lisp (expose-all-windows-mode)
+	(expose-windows-generic): Add an escape-body function to return to
+	the original state on escape key.
+
+	* src/clfswm-util.lisp (bind-on-slot): Add an optional parameter
+	to bind the current child from the configuration file.
+
+2010-10-01  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-nw-hooks.lisp (absorb-window-nw-hook): Absorb new
+	window hook: the frame absorb all new windows that match
+	nw-absorb-test frame data slot.
+
+2010-09-30  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-expose-mode.lisp (expose-create-window): Show window
+	title in accel window.
+
+2010-09-29  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* configure: Use the Xavier Maillard clfswm script in contrib to
+	build an executable in the standard way.
+
+2010-09-26  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-expose-mode.lisp (expose-mode-display-accel-windows):
+	New functions. Add a window on each child in the expose mode to
+	quickly select them.
+
+	* src/clfswm-internal.lisp (child-x, child-y, child-width)
+	(child-height): New methods to get real child coordinates.
+
+2010-09-25  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-layout.lisp (*-layout): Use child-position.
+
+	* src/clfswm-internal.lisp (child-position): New function.
+
+	* src/clfswm-expose-mode.lisp (expose-windows-mode)
+	(expose-all-windows-mode): Use a generic mode.
+
+	* src/xlib-util.lisp (with-handle-event-symbol): Use a filled list
+	with handle-event-fun symbols instead of inspecting clfswm
+	internals symbols on each mode change.
+
+	* src/clfswm-expose-mode.lisp: Move and rename present*-windows in
+	a separate clfswm-expose-mode.lisp file.
+
+	* src/clfswm-util.lisp (speed-mouse-right, speed-mouse-down): Use
+	screen size instead of hardcoded test coordinates.
+
+2010-09-24  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (speed-mouse-reset, speed-mouse-left)
+	(speed-mouse-right, speed-mouse-up, speed-mouse-down)
+	(speed-mouse-undo, speed-mouse-first-history): New functions to
+	quickly move the mouse. Implemented for the second mode.
+
+2010-09-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/clfswm: Move clfswm sources to $tmp_dir if there is no
+	write permission on $clfswm_asd_path. So anybody can start clfswm
+	even if there is no write permission on the source directory.
+
+2010-09-12  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/clfswm: Add support to cmucl, ccl and ecl.
+
+2010-09-11  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (set-hide-unmanaged-window)
+	(set-show-unmanaged-window, set-default-hide-unmanaged-window):
+	New functions and menu entry.
+	(set-globally-hide-unmanaged-window)
+	(set-globally-show-unmanaged-window): New functions and menu
+	entry.
+
+	* src/clfswm-internal.lisp (hide-unmanager-window-p): New
+	function.
+	(show-child): Add a data slot on frame to hide or not unmanaged
+	windows.
+
+	* src/clfswm-corner.lisp (present-clfswm-terminal)
+	(present-virtual-keyboard): Use a function (generic-present-body)
+	instead of a macro (generate-present-body).
+
+	* src/clfswm-util.lisp (update-menus): List all directories and
+	subdirectories in $XDG_DATA_DIRS/applications.
+
+2010-09-10  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-corner.lisp (generate-present-body): New macro.
+	(present-clfswm-terminal, present-virtual-keyboard): Use
+	generate-present-body.
+
+2010-09-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (update-menus): Follow XDG specifications
+	instead of the non-portable Debian update-menu.
+
+2010-09-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (error-handler): New function do handle
+	asynchronous errors and ignore them.
+	(open-display): Install the new error-handler on display.
+
+2010-09-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp (with-xlib-protect): Add a
+	with-simple-restart on top of body execution.
+
+2010-09-04  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main-loop): Protect all xlib functions with an
+	with-xlib-protect.
+
+	* src/xlib-util.lisp (handle-event): use with-xlib-protect only in
+	handle-event. Add a with-simple-restart to prevent a
+	clisp/new-lisp infinite loop.
+
+2010-08-30  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-corner.lisp (present-clfswm-terminal): Make the
+	clfswm terminal working even on xterm title changes.
+
+2010-08-29  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (run-other-window-manager): Update for
+	clisp compatibility.
+
+	* src/tools.lisp (do-execute): New parameter io to change the
+	input/output method.
+
+	* src/clfswm-util.lisp (hide-current-child): Prevent from removing
+	the current root.
+
+	* src/clfswm-internal.lisp (child-member): New predicate.
+	(child-remove): New function.
+
+	* src/*.lisp: Use child-member and child-remove everywhere it's
+	needed.
+
+2010-08-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main-loop): Ensure that all events have been
+	processed after a process-event.
+
+	* src/clfswm-internal.lisp (is-in-current-child-p): New function.
+
+2010-08-27  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main-mode:configure-request): Raise the window
+	only when present on the current child and focus it accordingly.
+
+2010-08-26  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-circulate-mode.lisp (circulate-loop-function):
+	Use is-a-key-pressed-p.
+
+	* src/xlib-util.lisp (is-a-key-pressed-p): New predicate.
+
+	* src/clfswm-keys.lisp (define-ungrab/grab): Use all values
+	returned by xlib:keysym->keycodes.
+
+	* src/*.lisp: Use the new child-equal-p to compare children. This
+	prevent a bug with sbcl/cmucl when the standard equal function
+	does not work with xlib:window.
+
+	* src/clfswm-internal.lisp (child-equal-p): New predicate.
+
+2010-08-25  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-generic-mode.lisp (generic-mode): Use an
+	xlib:event-listen before processing event with
+	xlib:process-event. This prevent a bug with CLX threaded
+	implementation like sbcl.
+
+	* src/clfswm.lisp (main-loop): Use an xlib:event-listen before
+	processing event with xlib:process-event. This prevent a bug with
+	CLX threaded implementation like sbcl.
+
+2010-08-17  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/server/key.lisp (ushell-sh): Add ccl and ecl support.
+
+	* src/xlib-util.lisp (compress-motion-notify): Use a loop instead
+	of an event-case.
+
+	* src/clfswm-internal.lisp (with-find-in-all-frames): New macro.
+	(find-parent-frame, find-frame-window, find-frame-by-name)
+	(find-frame-by-number): Use with-find-in-all-frames to search in
+	frames in the right order.
+
+	* src/clfswm-util.lisp (mouse-click-to-focus-generic): Fix an
+	unwanted flickering with unmanaged windows.
+
+2010-08-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/package.lisp: Remove event handler hooks as they're not
+	needed anymore (To replace them: use closure and define-handler).
+
+	* src/xlib-util.lisp (move-window, resize-window)
+	(wait-mouse-button-release): Use a generic mode.
+
+	* src/*.lisp: Replace the case to handle event with a more (tricky)
+	lispy  method which bind a function to each keywords associated
+	to graphics events.
+
+2010-07-23  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (delete-current-child): Invert bindings and
+	menu entry between delete-current-child and remove-current-child.
+	ie: Delete a child and its children in all frames by default.
+
+2010-07-21  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/package.lisp: Add a placement configuration group.
+
+	* src/binding*.lisp: Bind control+g to escape the current action
+	like emacs.
+
+	* src/clfswm-internal.lisp
+	(delete-child-and-children-in-all-frames): New function and
+	binding: Second mode - Control+Delete delete the current child and
+	its children in all frames (ie: close the current child and its
+	children).
+
+2010-07-20  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (remove-child-in-frame): Do not destroy
+	the frame window and the frame gc. Close a very annoying bug when
+	cuting/pasting a frame or moving a child over frames with the
+	mouse.
+
+	* src/clfswm-util.lisp (mouse-click-to-focus-generic): Redisplay
+	all children in *current-root* after moving/resizing a frame.
+
+2010-07-18  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (delete-focus-window)
+	(destroy-focus-window): Remove child in parent frame before
+	stopping it.
+
+2010-07-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (identify-key): Add a timeout in
+	xlib:process-event.
+	(mouse-click-to-focus-generic): Use find-child-under-mouse instead
+	of the window passed by xlib:process-event.
+
+	* src/xlib-util.lisp (move-window, resize-window)
+	(wait-mouse-button-release): Add a timeout in xlib:process-event.
+
+2010-04-11  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (run-other-window-manager): Add the ability
+	to launch an other window manager and to return to clfswm.
+
+2010-03-18  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-layout.lisp (set-tile-space-layout): Set default
+	to 1%.
+
+2009-12-15  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main-loop): Add a *loop-hook* parameter and a
+	loop timeout.
+
+	* src/clfswm-generic-mode.lisp (generic-mode): Add a loop-hook
+	parameter and a loop timeout.
+
+2009-12-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main): Add an alternate configuration filename
+	parameter.
+
+	* load.lisp: Add a debuging code example.
+
+2009-11-14  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-configuration.lisp (create-configuration-menu): New
+	menu to configure all clfswm variables while clfswm is running.
+
+2009-11-12  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (save-configuration-variables): New
+	function to save all configuration variables in clfswmrc.
+
+2009-11-11  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-info.lisp (info-mode): Begining of mouse support in
+	info mode.
+	(set-default-info-keys): Add cursor key support in info mode.
+
+2009-11-08  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/reboot-halt.lisp: Add a Suspend/Reboot/Halt menu in
+	contrib.
+
+	* src/clfswm.lisp (main): Add a read-conf-file-p parameter to
+	prevent reading the configuration file (this may be useful to
+	produce the original documentation without user modifications
+	with the rc configuration file).
+
+2009-11-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/bindings-second-mode.lisp (set-default-second-keys):
+	Simplification of Escape key to close/kill/remove the focus window
+	and unhide all windows.
+
+	* src/bindings.lisp (set-default-main-keys): Simplification of
+	Escape key to close/kill/remove the focus window and unhide all
+	windows.
+
+	* src/clfswm-util.lisp (ask-close/kill-current-window): Add remove
+	focus and unhide all windows capabilities.
+
+2009-10-10  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/mpd.lisp (start-gmpc): Add gmpc in the mpd menu.
+
+2009-07-29  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-layout.lisp (tile-layout, tile-horizontal-layout):
+	Keep child order and don't make unnecessary child movement.
+	(one-column-layout, one-line-layout): New layouts.
+
+2009-06-29  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* *: **** Release 0906 ****
+
+	* contrib/cd-player.lisp: New file to handle the CD player.
+
+	* contrib/xmms.lisp: New file to handle the xmms player.
+
+2009-06-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-layout.lisp (set-no-layout-remember-size): New layout:
+	Maximize windows in there frame - Leave frames to there	actual
+	size.
+
+	* src/bindings-second-mode.lisp (set-default-second-keys): Bind
+	"o" on set-open-in-new-frame-in-parent-frame-nw-hook.
+
+2009-06-27  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/keyb_fr.lisp: New file to handle an azerty keyboard.
+
+2009-06-24  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/mpd.lisp: Use a standard menu.
+
+	* src/clfswm-info.lisp: Use a standard menu for the help-menu.
+
+2009-06-22  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* contrib/mpd.lisp: New file to handle the Music Player Daemon (MPD)
+
+2009-06-19  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-autodoc.lisp (produce-doc, produce-doc-html): Minor
+	number key cleanup.
+
+2009-06-18  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/config.lisp (get-fullscreen-size):  One pixel adjustment
+ 	(again).
+
+	* src/clfswm-placement.lisp (*-child-placement): One pixel
+	adjustment (again).
+
+2009-06-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-circulate-mode.lisp (draw-circulate-mode-window):
+	Ensure that all characters are printable.
+
+	* src/config.lisp (get-fullscreen-size): Adjust default fullscreen
+	sizes.
+
+	* src/clfswm-placement.lisp (*-child-placement): Adjust
+	coordinates to one pixel in the current child.
+
+2009-06-04  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-query.lisp (query-enter-function): Assign font before
+	width and height calculation.
+
+2009-06-03  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp (banish-pointer): Use with-placement macro to
+	bannish the pointer in an arbitrary place.
+
+	* src/clfswm-info.lisp (info-mode): Use with-placement macro to
+	place the info window in an arbitrary place.
+
+	* src/clfswm-query.lisp (query-enter-function): Use with-placement
+	macro to place the query window in an arbitrary place.
+
+	* src/clfswm-placement.lisp: New file. Allow to place info windows
+	or query windows on an arbitrary place. Allow to bannish the
+	pointer on an arbitrary place.
+
+2009-05-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-circulate-mode.lisp (reorder-child)
+	(reorder-brother): Unfocus windows before reordering children or
+	brothers.
+
+2009-05-13  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-circulate-mode.lisp (reorder-brother): Ensure that
+	the parent is a frame.
+
+	* src/clfswm-second-mode.lisp (sm-handle-motion-notify): Handle
+	motion with a default modifier.
+
+	* src/clfswm.lisp (handle-motion-notify): Handle motion with a
+	default modifier.
+
+	* src/clfswm-info.lisp (info-mode): Handle motion with a default
+	modifier.
+	(info-mode): Optimization in loop function.
+
+2009-05-10  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-circulate-mode.lisp (reorder-brother): Handle
+	root-frame correctly.
+
+	* clfswm.asd: Dependency fix for clfswm-generic-mode.
+
+	* src/clfswm-circulate-mode.lisp (reorder-child)
+	(reorder-brother): Handle empty frames.
+	(reorder-brother): Redisplay only the parent frame of the  current
+	child.
+
+	* src/clfswm-util.lisp (frame-toggle-maximize): Redisplay only the
+	parent frame of the  current frame.
+
+2009-05-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (frame-toggle-maximize): New function:
+	Maximize/Unmaximize the current frame in its parent frame.
+
+	* src/clfswm-layout.lisp (maximize-layout): New layout: Maximize
+	windows and frames in there parent frame.
+
+2009-05-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/*.lisp: Add support for Clozure Common Lisp (CCL).
+
+	* src/clfswm-circulate-mode.lisp (reorder-child)
+	(reorder-brother): Reinitialise on circulate type change
+	child to brother or brother to child.
+
+	* src/*.lisp (*): Use map-window instead of xlib:map-window. So
+	calls xlib:display-finish-output on each map-request. So speed up
+	the window display.
+
+	* src/xlib-util.lisp (map-window): New function. Call
+	xlib:display-finish-output on each map request.
+
+2009-04-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-second-mode.lisp (sm-handle-motion-notify):
+	Optimisation when drawing second mode window.
+
+2009-04-27  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-circulate-mode.lisp (circulate-mode): Optimisation in
+	window redraw.
+
+2009-04-22  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (run-program-from-query-string): Launch
+	command only with a return validation.
+
+2009-04-22  Xavier Maillard  <xma@gnu.org>
+
+	* src/clfswm-query.lisp (query-string): Use a generic mode.
+
+2009-04-19  Xavier Maillard  <xma@gnu.org>
+
+	* src/clfswm-info.lisp (info-mode): Use generic-mode for info-mode.
+
+2009-04-18  Xavier Maillard  <xma@gnu.org>
+
+	* src/clfswm-generic-mode.lisp (generic-mode): Add a generic mode
+	to define all other modes.
+
+2009-04-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/package.lisp (): Use *default-font-string* for all
+	font-string.
+
+	* src/clfswm-info.lisp (info-mode): Ensure integer windows size.
+
+2009-02-17  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp (null-size-window-p): Better check of null
+	sized windows.
+
+2009-02-14  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (handle-map-request): Add a fix to manage
+	correctly fullscreen windows (SDL particularly).
+
+2008-12-20  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp (get-color): Allocate colors only once -> fix
+	a segfault with clisp/new-clx.
+
+	* src/clfswm.lisp (handle-motion-notify): Add a	needed window
+	argument.
+
+	* src/clfswm-second-mode.lisp (sm-handle-motion-notify): Add a
+	needed window argument.
+
+2008-10-30  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp (wait-no-key-or-button-press)
+	(wait-a-key-or-button-press): Check buttons press/release correctly"
+
+2008-10-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/menu-def.lisp: Add children navigation menu in the movement
+	menu (select next/previous child/brother/level).
+
+2008-10-26  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	*  *: Rename 'sister' frame to 'brother' frame.
+
+	* src/clfswm-keys.lisp (unalias-modifiers): Convert a modifier
+	alias in a real modifier.
+
+	* src/package.lisp (*modifier-alias*): New list of modifier alias
+	For example: :alt is :mod-1, :numlock is :mod-2...
+
+	* src/tools.lisp (remove-hook): New function.
+
+	* src/clfswm-keys.lisp (with-capslock, without-capslock)
+	(with-numlock, without-cnumlock): New functions.
+
+2008-10-25  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-info.lisp: Use the *binding-hook* to create info
+	keys and mouse bindings.
+
+	* src/bindings-second-mode.lisp: Use the *binding-hook* to create
+	second keys and mouse bindings.
+
+	* src/bindings.lisp: Use the *binding-hook* to create main keys
+	and mouse bindings.
+
+2008-10-10  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-menu.lisp (open-menu): Remember parent menu to undo
+	menu opening.
+
+2008-10-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/menu-def.lisp: Use a menu instead of a function for the
+	standard menu.
+
+2008-10-08  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (show-standard-menu): Display the standard
+	menu from the 'update-menus' command.
+
+2008-10-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-query.lisp (query-string): Do not ungrab keyboard if
+	it's already grabbed.
+
+	* src/clfswm-internal.lisp (display-frame-info): Use configurable
+	colors and fix a bug with background.
+	(display-frame-info): Set window background when displaying info.
+
+2008-10-06  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp (my-character->keysyms): Use a macro to avoid
+	warning with clisp/new-clx.
+
+2008-10-04  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (jump-to-slot): Prevent to jump on a
+	deleted child.
+
+2008-09-23  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* *: **** Release 0809 ****
+
+2008-09-23  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (ensure-unique-name): New function and menu
+	entry.
+	(ensure-unique-number): New function and menu entry.
+
+2008-09-22  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-nw-hooks.lisp (named-frame-nw-hook): New new window
+	hook: open the next window in a named frame.
+	(numbered-frame-nw-hook): New new window hook: open the next
+	window in a numbered frame.
+
+	* src/clfswm-query.lisp (query-string): Grab the keyboard in all
+	cases. So query-string can be called even in the main mode.
+
+	* src/clfswm-internal.lisp (show-all-children): Do not raise a
+	child by default => far less flickering.
+
+2008-09-19  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/bindings-second-mode.lisp: Bind "t" to tile-current-frame.
+
+	* src/menu-def.lisp: Change key binding for the CLFSWM menu
+	entry.
+
+	* src/xlib-util.lisp (xgrab-pointer): Handle the case where cursor
+	is nil. (workaround on some CLX implementation).
+
+2008-09-12  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/menu-def.lisp: Add a menu to set a focus policy for all
+	frames.
+
+	* src/clfswm-util.lisp (set-focus-policy-generic-for-all)
+	(all-frames-set-*-focus-policy): Set a focus policy for all
+	frames.
+
+	* src/clfswm.lisp (handle-enter-notify): sloppy-select
+	mode. Select a child and its parents on mouse over.
+
+2008-09-03  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (handle-enter-notify): Add a sloppy strict focus
+	policy -> Sloppy focus only for windows in the current frame.
+	(main-unprotected): Exit clfswm on init error (ie: when another
+	window manager is running).
+
+	* src/clfswm-util.lisp (reset-clfswm): New function.
+
+2008-09-02  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-menu.lisp (init-menu): New function.
+
+	* src/clfswm-util.lisp (reload-clfswm): New function to reload
+	CLFSWM.
+	(exit-clfswm): Rename quit-clfswm to exit-clfswm.
+
+	* src/clfswm.lisp (main, main-unprotected): Handle error in a
+	superior main function. Now CLFSWM can't break the X session. It
+	just reinitialize the display and run a new main loop.
+
+	* src/clfswm-corner.lisp: Make *clfswm-terminal* and
+	*vt-keyboard-on* global to avoid warnings when loading clfswm.
+
+	* src/clfswm-layout.lisp: Add a specific GIMP layout menu.
+	(help-on-gimp-layout): Describe how to use the GIMP layout.
+
+2008-09-01  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-layout.lisp (set-gimp-layout): Change the layout to
+	main-window-right-layout. Change the keybinding for (shift)alt+tab
+	to not select windows in the main window lisst.
+	Bind F8 to add a window in the main window list.
+	Bind F9 to remove a window in the main window list.
+	Change the focus policy to :sloppy.
+	(set-previous-layout): Restore the previous layout, keybinding and
+	focus policy.
+
+2008-08-31  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-menu.lisp (add-menu-comment): Add comments in menu.
+
+	* src/clfswm-layout.lisp (main-window-left-layout)
+	(main-window-bottom-layout, main-window-top-layout): New
+	functions.
+	Factorize layouts in menu.
+
+2008-08-30  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-layout.lisp (main-window-right-layout): A possible
+	GIMP layout: one or more main windows on one side of the
+	frame. Others on the other size.
+
+	* src/clfswm-util.lisp
+	(current-frame-set-click/sloppy-focus-policy): Each frame can have
+	a different focus policy (one of :click or :sloppy).
+	The default focus policy is set with *default-focus-policy*.
+
+2008-08-23  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-info.lisp (show-config-variable): New function.
+
+2008-08-19  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-layout.lisp (tile-horizontal-layout): New layout.
+
+	* src/clfswm-info.lisp: Colored help for key binding and corners
+	actions.
+
+2008-08-18  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (delete-focus-window)
+	(destroy-focus-window): Remove chid only in
+	handle-unmap/destroy-notify. Focus *current-root* only when
+	closing/killing the current child.
+
+	* src/clfswm-autodoc.lisp (produce-corner-*-doc): New autodoc
+	functions or corners.
+
+2008-08-17  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-corner.lisp (present-clfswm-terminal): New corner
+	action: Hide/Unhide a terminal on mouse corner action. (By default
+	right mouse button on the top left corner).
+
+	* src/config.lisp (*never-managed-window-list*): New config
+	variable.
+
+	* src/clfswm-internal.lisp (never-managed-window-p): New function:
+	Handle never managed window in a more simple way.
+
+	* src/clfswm-corner.lisp: New file and new and more simple method
+	to define corners actions.
+
+2008-08-15  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-info.lisp (info-mode): Info line can now be colored.
+
+	* src/clfswm-layout.lisp (fast-layout-switch)
+	(define-fast-layout-switch): New functions: Switch between two
+	layouts.
+
+	* src/clfswm-second-mode.lisp (leave-second-mode): Takes care if
+	really in the second mode. So leave-second-mode can be used even
+	in the main mode.
+
+	* src/clfswm-util.lisp (switch-to-last-child): New function:
+	Store the current child and switch to the previous one.
+
+2008-07-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (display-current-window-info): Display the
+	window id.
+	(have-to-present-virtual-keyboard): Add a virtual keyboard corner
+	(top right by default). By default 'xvkbd' is used.
+
+2008-06-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp (move-window, resize-window): Compress motion
+	events.
+
+	* src/clfswm.lisp (handle-motion-notify): Compress motion events.
+
+	* src/clfswm-second-mode.lisp (sm-handle-motion-notify): Compress
+	motion events.
+
+	* src/clfswm-info.lisp (info-mode): Compress motion events.
+
+2008-06-21  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (show-all-children): Compute geometry
+	and selection first and then show only necessary children.
+	(show-child): remove unneeded display-p parameter.
+
+	* src/config.lisp (get-fullscreen-size): Place the frame border
+	outside the screen (this prevent the loose of 2 pixels per
+	directions :)
+
+2008-06-12  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (focus-child): Algorithm change to
+	raise only the selected child.
+
+2008-06-08  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (raise-p-list, show-all-children):
+	Raise only viewable children.
+
+2008-06-06  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (show-all-children): Always raise all
+	displayed children. Remove all references to raise-p.
+
+2008-06-04  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/menu-def.lisp (child-menu): New menu entry on raise/lower
+	child in its frame.
+
+	* src/bindings-second-mode.lisp ("Page_Down", "Page_Up"): New
+	second mode binding on raise/lower child in its frame.
+
+	* src/clfswm-nw-hooks.lisp (leave-focus-frame-nw-hook): Adapt
+	behaviour to the new raise/lower property.
+	Call clear-nw-hook before the rest of the hook.
+
+	* src/bindings.lisp (mouse-click-to-focus-and-move-window)
+	(mouse-click-to-focus-and-resize-window): Stop button event. This
+	prevent a keyboard/pointer freeze.
+
+2008-06-03  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (frame-lower-child)
+	(frame-raise-child): New functions to raise/lower a child in its
+	frame.
+
+	* src/clfswm-util.lisp (have-to-present-windows)
+	(have-to-present-all-windows): New functions to have an MaxOS
+	expose like on mouse click in screen corner.
+
+	* src/clfswm-info.lisp ("Page_Down", "Page_Up"): Add boundaries.
+
+2008-05-30  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (unhide-a-child-from-all-frames): Unhide a
+	child from a choice in all frames with hidden children.
+
+	* src/clfswm-info.lisp (info-mode-menu): Handle separators.
+
+2008-05-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (hide-current-child, unhide-a-child)
+	(unhide-all-children): New functions.
+
+	* src/clfswm-info.lisp (info-mode-menu): Handle symbols and
+	functions.
+
+	* src/clfswm-util.lisp (hide/show-frame-window): new function and
+	menu item.
+
+2008-05-23  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (rename-current-child): Do not display the
+	frame info for a window.
+
+2008-05-20  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (remove-child-in-frame): Destroy the
+	frame window for the removed child and its children.
+
+2008-05-18  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-autodoc.lisp (produce-*-doc-*): Add a note to use the
+	autodoc functions.
+
+2008-05-17  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-nw-hooks.lisp (default-frame-nw-hook): Do not handle
+	the ROX pinboard (ie: leave it lowered in the root window as
+	expected).
+
+	* src/clfswm-layout.lisp (tile-left-space-layout): New layout.
+	(tile-left-layout, tile-right-layout, tile-top-layout)
+	(tile-bottom-layout): Use all the frame space when there is only
+	one child.
+
+	* src/clfswm-internal.lisp (place-window-from-hints): Center
+	unmanaged windows in the root screen.
+
+	* src/clfswm-nw-hooks.lisp (clear-nw-hook, clear-all-nw-hooks):
+	new functions.
+
+2008-05-15  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (current-frame-manage-window-type): Fix a
+	typo in managed types.
+
+	* src/clfswm-internal.lisp (show-child): Always display frame info
+	even if the frame is hidden.
+
+	* src/xlib-util.lisp (resize-window): Use a better algorithme to
+	resize windows.
+
+2008-05-13  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (with-movement): Display frame info for all
+	frames in current root.
+
+2008-05-12  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/*.lisp: Rename 'brother' frames to 'sister' frames.
+
+	* src/bindings-second-mode.lisp (define-second-key #\a): New
+	binding on 'add-default-frame'.
+
+	* src/clfswm-autodoc.lisp (produce-*-doc-*-in-file): Show a
+	message to follow the autodocumentation process.
+
+2008-05-10  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (bind-or-jump): Bind "Tab", "Return" and
+	"Space" to jump to a child. "B" to bind a slot on the current
+	child.
+
+	* src/bindings-second-mode.lisp: Use "Tab" instead of
+	"Iso_Left_Tab".
+
+2008-05-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (find-child-under-mouse): Take care of
+	unmanaged (hidden) windows.
+
+	* src/clfswm-internal.lisp (place-window-from-hints): Give a
+	minimal size for windows.
+	(with-all-windows-frames-and-parent): New function.
+
+	* src/config.lisp (*default-window-width/height*): New parameters.
+
+	* src/clfswm-internal.lisp (place-window-from-hints): Center
+	windows in the screen instead of in there frame.
+
+	* src/bindings-second-mode.lisp (tile-space-current-frame): New
+	binding on C-t.
+
+	* src/clfswm-layout.lisp (register-layout): Intern the once name
+	in the right package.
+
+2008-05-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* doc/dot-clfswmrc: Update to  follow the new clfswm way.
+
+2008-05-03  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (set-current-child)
+	(adapt-child-to-parent, show-child, hide-child): Handle the case
+	where child is not a frame or a window.
+
+	* src/clfswm-util.lisp
+	(mouse-click-to-focus-generic,mouse-focus-move/resize-generic):
+	Check if child is a frame.
+
+	* src/clfswm-internal.lisp (managed-window-p): Handle the case
+	where frame is null.
+	(place-frame): Check if frame and parent are frames.
+
+	* src/clfswm-info.lisp (info-mode): display all frame info before
+	leaving.
+
+	* src/clfswm-second-mode.lisp (second-key-mode): display all frame
+	info before leaving.
+
+	* src/clfswm-internal.lisp (display-all-frame-info): New function.
+
+2008-05-02  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/tools.lisp (getenv): Implemented for ECL.
+	(urun-prog): Implemented for ECL.
+
+	* src/clfswm-util.lisp (identify-key): Use a double buffer to
+	display text.
+
+	* src/clfswm-query.lisp (query-string): Use a double buffer to
+	display text.
+
+	* src/clfswm-info.lisp (draw-info-window): Use a double buffer to
+	display text.
+
+	* src/xlib-util.lisp (clear-pixmap-buffer, copy-pixmap-buffer):
+	New functions.
+
+2008-05-01  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-info.lisp (info-mode): Add boundaries in the info mode window.
+
+	* src/menu-def.lisp: New file: move all menu definition in
+	menu-def.lisp.
+
+	* src/clfswm-layout.lisp (register-layout): Use a function instead
+	of a macro.
+
+2008-04-30  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-autodoc.lisp (produce-menu-doc,
+	(produce-menu-doc-html): New functions.
+	(produce-doc-*): Moved to clfswm-autodoc.lisp.
+
+	* src/clfswm-util.lisp (paste-selection-no-clear): Prevent to
+	paste a child on one of its own children. (this prevent a
+	recursive bug).
+	(move-child-to): Rename move/copy-current-child-by to
+	move/copy-child-to.
+	(mouse-move-window-over-frame): New function to move the window
+	under the mouse cursor to another frame.
+
+	* src/clfswm-internal.lisp (find-child-in-parent): New function.
+
+2008-04-29  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (show-all-children): Display unmanaged
+	windows only when its window parent is the current child.
+
+2008-04-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (manage-current-window)
+	(unmanage-current-window): New functions: Allow to force to manage
+	or unmanage a window by its parent frame.
+
+	* src/bindings-second-mode.lisp (#\o): binded to
+	set-open-in-new-frame-in-parent-frame-nw-hook and
+	(#\o :control) to set-open-in-new-frame-in-root-frame-nw-hook
+
+	* src/clfswm-util.lisp (with-current-window): New macro.
+
+	* src/xlib-util.lisp (move-window, resize-window): Remove uneeded
+	exposure and enter-window handle event.
+
+	* src/clfswm-util.lisp (move-frame, resize-frame): Show all
+	children for the current child after the move/resize.
+
+2008-04-27  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/xlib-util.lisp (resize-window): Take care of window size
+	hints.
+
+	* src/clfswm-util.lisp (mouse-focus-move/resize-generic): Allow to
+	move/resize unmanaged windows.
+
+	* src/xlib-util.lisp (move-window, resize-window): New functions.
+
+2008-04-25  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (current-frame-manage-window-type): Let the
+	user choose what window type the current frame must handle.
+	(display-current-window-info): New function.
+	(current-frame-manage-all-window-type)
+	(current-frame-manage-only-normal-window-type)
+	(current-frame-manage-no-window-type): New functions.
+
+	* src/clfswm-internal.lisp (managed-window-p): New function.
+
+	* src/package.lisp (frame): Managed type: new frame
+	parameter. This allow to choose what window type a frame must
+	handle.
+
+	* src/*.lisp: Rename all 'father' occurrences to 'parent'.
+
+	* src/clfswm-nw-hooks.lisp
+	(open-in-new-frame-in-parent-frame-nw-hook): New new window hook.
+
+	* src/clfswm-util.lisp (adapt-current-frame-to-window-hints): New
+	function.
+
+	* src/tools.lisp (ensure-printable): Return always a string even
+	with a null string.
+
+2008-04-24  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/config.lisp (*default-nw-hook*): New variable to change the
+	default new window hook.
+
+2008-04-22  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.asd (clfswm): Add a dependency from
+	clfswm-second-mode.lisp to clfswm.lisp.
+
+	* src/clfswm-util.lisp (identify-key): Show the documentation for
+	the function bound on a key.
+	(with-movement): Move with-movement,
+	current-frame-fill/pack/resize-*  from bindings-second-mode.lisp
+	to clfswm-util.lisp.
+
+	* src/clfswm-menu.lisp: New menu system that let user change keys
+	or functions associated to keys.
+
+2008-04-18  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (show-all-children): Display-child is
+	the first child by default. Solve a bug with father-p.
+
+2008-04-17  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (add-frame): Add frame return the
+	created frame.
+	(show-all-children): Move the size computation outside the
+	show-child part.
+
+	* src/bindings-second-mode.lisp (with-movement): Redisplay only
+	the current child.
+
+	* src/clfswm-util.lisp (mouse-click-to-focus-generic): Redisplay
+	only the current child.
+
+	* src/clfswm-internal.lisp (show-all-children): New display-child
+	parameter to display only the desired child and its children.
+	(select-next/previous-child): Only display the current child.
+
+2008-04-14  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (init-display): Move the default frame creation
+	on the default init hook.
+
+	* src/clfswm-keys.lisp (define-ungrab/grab): Handle all keysyms in
+	the main mode (for example: "1" on an azerty keyboard).
+
+2008-04-13  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-keys.lisp (find-key-from-code): Better handle of
+	keysyms. Revert to old grabbing method for the main mode.
+
+2008-04-12  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (init-display): Add key handling on no focus
+	window and on frame windows.
+
+2008-04-11  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm.lisp (main): Keyboard handle strategie change: Grab
+	all keys by default and replay just what is needed. No change for
+	the second mode.
+
+	* src/clfswm-keys.lisp: remove grab/ungrab main keys.
+	(find-key-from-code): Test for shift and not shift presence.
+
+2008-04-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (switch-to-root-frame): show later -
+	new key parameter to have less flickering.
+
+2008-04-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/bindings-second-mode.lisp (frame-layout-once-menu): Set the
+	layout only one time and revert to no-layout to freely handle
+	frames.
+
+	* src/clfswm-nw-hooks.lisp
+	(open-in-new-frame-in-root-frame-nw-hook): Tile layout with spaces
+	with new created window.
+
+	* src/clfswm-layout.lisp (register-layout): Now register
+	automatically a once layout to set the layout only one time and
+	revert to no-layout to freely handle frames.
+
+2008-04-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-nw-hooks.lisp (leave-focus-frame-nw-hook): New
+	nw-hook: Open the next window in the current frame and leave the
+	focus to the current child.
+
+2008-04-04  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/bindings-second-mode.lisp: Add keys definitions to
+	bind-or-jump in the second mode.
+
+	* src/clfswm-util.lisp (bind-or-jump): remove the auto-defining
+	macro for bind-or-jump-(1|2|3...).
+
+	* src/clfswm-keys.lisp (define-define-key/mouse): Allow additional
+	arguments to function. This allow to do things like:
+ 	(define-main-key (key) 'my-function 10 20 'foo) -> 10 20 and 'foo
+	are passed to my-function on key press.
+
+2008-04-03  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (bind-or-jump): New (great) function.
+
+2008-04-02  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (child-fullname): New function
+
+	* src/clfswm-info.lisp (info-mode-menu): Add an explicit optional
+	docstring in info-mode-menu. An item can be
+	'((key function) (key function)) or with docstring
+	'((key function "documentation 1") (key function "bla bla") (key function))
+
+	* src/tools.lisp (ensure-n-elems): New function.
+
+	* src/bindings-second-mode.lisp: Bind Alt+mouse-1/3 to move or
+	resize a frame or the window's father.
+
+	* src/clfswm.lisp (init-display): Remove tile-space-layout by
+	default on the root frame.
+
+	* src/clfswm-util.lisp (move/resize-frame): Add standard event
+	hooks handlers (map-request, configure-notify...)
+
+	* src/clfswm-internal.lisp (adapt-child-to-father): Limit minimal
+	child size to 1x1.
+
+2008-04-01  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/bindings.lisp: Bind Alt+mouse-1/3 to move or resize a frame
+	or the window's father.
+
+	* src/clfswm-util.lisp (mouse-click-to-focus-generic): Stop button
+	event only if there is a geometry change.
+	(mouse-focus-move/resize-generic): Generic function to move or
+	resize a frame or a window father frame.
+
+2008-04-01  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (show-all-children): Return t if there
+	is a geometry change.
+
+2008-03-30  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/bindings.lisp (Up/Down): Swap select previous/next level.
+
+	* src/bindings-second-mode.lisp (Up/Down): Swap select previous/next level.
+
+	* src/clfswm.lisp (init-display): Create a default frame in the root frame.
+
+	* src/clfswm-internal.lisp (place-frame): Place frame from real (pixel) coordinates.
+	(with-all-*): Reverse the child list to manage the first child last (like in
+	show-all-children).
+
+	* src/config.lisp (*create-frame-on-root*): New variable: Create a new frame on the
+	root window only if true.
+
+	* src/clfswm-util.lisp (mouse-click-to-focus-generic): Create a new frame on the
+	root window only if *create-frame-on-root* is true.
+
+	* src/bindings-second-mode.lisp (sm-mouse-click-to-focus-generic): Create a new frame
+	on the root window.
+
+2008-03-29  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/bindings-second-mode.lisp (sm-mouse-click-to-focus-generic): Focus, move and resize
+	the current child (even if it's a window).
+
+2008-03-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (mouse-click-to-focus-and-move)
+	(mouse-click-to-focus-and-resize): New functions.
+
+	* src/clfswm-internal.lisp (*-fl->px): Convert float coordinates to pixel.
+	(*-px->fl): Convert pixel coordinates to float.
+
+	* src/tools.lisp (call-hook): Move call-hook to tools.lisp.
+
+2008-03-27  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-layout.lisp (no-layout): Use :first-only to raise only the
+	first child.
+
+	* src/clfswm-internal.lisp (hide-all): Split hide-all-children in hide-all
+	and hide-all-children.
+	(raise-if-needed): New function.
+	(show-child): Use a first-p parameter to raise windows only when they are
+	first child.
+
+2008-03-26  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-internal.lisp (select-next/previous-level): Don't use show-all-children
+	-> less flickering.
+
+2008-03-25  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-info.lisp (keys-from-list): new function.
+
+	* src/*: rename 'childs' in 'children'.
+
+	* src/*: rename 'group' in 'frame'.
+
+2008-03-22  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-pack.lisp (explode-group/explode-current-group): new functions.
+
+2008-03-21  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-pack.lisp: Pack, Fill, Resize functions.
+
+2008-03-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-nw-hooks.lisp: Register system for new window hooks.
+	Bind control+o to open the next window in a new group in the root group
+	 (as open in next window in a new workspace in 0801 version).
+
+2008-03-15  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* src/clfswm-util.lisp (show/hide-all-groups-info/key): Show/hide all groups info
+	window.
+
+2008-03-14  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* bindings-second-mode.lisp ("ISO_Left_Tab"): Use ISO_Left_Tab
+	instead of Tab for select-previous-child.
+
+2008-03-13  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-util.lisp (force-window-in-group/force-window-center-in-group):
+	new functions.
+
+2008-03-11  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-util.lisp (identify-key): Display the documentation
+	associated to keys when identifying a key.
+
+2008-03-10  Xavier Maillard  <xma@gnu.org>
+
+	* contrib/clfswm: Complete rewrite of the script. Detect error and
+	act accordingly. Add command line arguments to configure the
+	script execution. User can now choose different common lisp
+	implementation (clisp and sbcl only), choose where to store the
+	dumped image, where to find clfswm source.
+
+2008-03-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-internal.lisp (process-new-window): Beginning of new
+	window hook: each group have a hook to tell what he wants to do
+	with the new created window.
+
+2008-03-08  Xavier Maillard  <xma@gnu.org>
+
+	* contrib/clfswm: New script. Dump a CLISP image of CLFSWM then
+ 	call the resulting executable.
+
+	* clfswm.lisp (read-conf-file): Check for the user config file in
+	XDG_CONFIG_HOME *first*. Freedesktop.org standards should be
+	prefered whenever possible.
+
+2008-02-27  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-layout.lisp (*-layout): Add an optional raise-p
+	parameter in each layout.
+
+2008-02-26  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-util.lisp (copy/cut-current-child): Does not affect the
+	root group.
+	(copy/move-current-child-by-name/number): new functions
+	(focus-group-by-name/number): new functions
+	(delete-group-by-name/number): new functions
+
+2008-02-24  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* ************************************************************ *
+	*: Major update - No more reference  to workspaces. The main   *
+	structure is a tree of groups or application windows.          *
+	* ************************************************************ *
+
+2008-02-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (read-conf-file): Read configuration in
+	$HOME/.clfswmrc or in /etc/clfswmrc or in
+	$XDG_CONFIG_HOME/clfswm/clfswmrc.
+	(xdg-config-home): Return the content of $XDG-CONFIG-HOME (default
+	to $HOME/.config/).
+
+2008-01-18  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-internal.lisp (show-all-group): Use *root* and *root-gc*
+	by default.
+
+2008-01-03  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-internal.lisp (find-window-group): New function.
+
+	* clfswm*: Change to make clfswm run with clisp/new-clx.
+
+2008-01-01  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-util.lisp (query-show-paren): Add show parent matching in
+	query string.
+	(query-string): Bind control+k to delete end of line.
+
+	* clfswm-second-mode.lisp (draw-second-mode-window): Display
+	the action on mouse motion in second mode.
+
+	* clfswm.lisp (handle-exposure): Redisplay groups on exposure
+	event but do not clear the root window.
+	(handle-configure-request): Adjust unmanaged window from there
+	request.
+
+	* clfswm-internal.lisp (process-new-window): Adjust new window
+	with the specified hints (max/min/base width/height).
+
+2007-12-31  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (handle-configure-request): Send an Configuration
+	Notify event. This solve a bug with xterm and rxvt who takes some
+	times to be mapped. Now there is no delay.
+
+	* bindings-second-mode.lisp (define-shell): Run programs after
+	living the second mode.
+
+2007-12-30  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-internal.lisp (process-new-window): Do not crop transient
+	window to group size.
+	(adapt-window-to-group): Do not crop transient window to group
+	size.
+
+	* clfswm.lisp (handle-configure-request): Adapt just the window to
+	its group and don't take care of the configure request. Remove the
+	bug with the Gimp outside the group and speed up the window
+	manipulation.
+	(handle-exposure): Remove show-all-group on exposure event
+	-> Speed up.
+
+2007-12-29  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-util.lisp (circulate-group-up-copy-window)
+	(circulate-group-down-copy-window)
+	(circulate-workspace-up-copy-group)
+	(circulate-workspace-down-copy-group): Prevent the copy of the
+	same window in the same workspace.
+
+	* bindings-second-mode.lisp (release-copy-selected-window)
+	(release-copy-selected-group): Prevent the copy of the same window
+	in the same workspace.
+
+	* clfswm-pager.lisp (generic-pager-move-window-on-previous-line)
+	(generic-pager-move-window-on-next-line): Remove the copy
+	property.
+	(generic-pager-move-group-on-next-workspace)
+	(generic-pager-move-group-on-previous-workspace): Prevent the copy
+	of the same window in the same workspace.
+
+	* bindings-pager.lisp (mouse-pager-copy-selected-window-release)
+	(mouse-pager-copy-selected-group-release): Prevent the copy of the
+	same window in the same workspace.
+
+	* tools.lisp (setf/=): new macro to set a variable only when
+	necessary.
+
+	* clfswm-internal.lisp (adapt-window-to-group): use set/= to set
+	x, y... only when necessary.
+
+2007-12-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (handle-configure-notify, *configure-notify-hook*):
+	new function and hook: force windows to stay in its group (solve a
+	bug with the Gimp).
+
+2007-12-25  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* bindings-second-mode.lisp (mouse-motion): use hide-group to have
+	less flickering when moving/resizing groups.
+
+	* clfswm-internal.lisp (hide-group): new function.
+	(show-all-group): clear-all: new parameter.
+
+2007-12-22  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-keys.lisp (define-define-key): undefine-*-multi-name: new
+	macro.
+	* clfswm*: Color change for the pager. Typo or better description
+	in bindings definitions. Define bindings for a qwerty keyboard by
+	default. dot-clfswmrc show examples to switch to an azerty
+	keyboard.
+	License change to GPL v3.
+	* config.lisp: new file - group all globals variables in this
+	file.
+
+2007-08-26  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* xlib-util.lisp (hide-window): Remove structure-notivy events
+	when hidding a window.
+
+2007-05-16  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* package.lisp (*sm-property-notify-hook*): Readded
+	property-notify-hook in second mode.
+
+2007-05-15  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-keys.lisp (produce-doc-html): Better clean up for strings.
+
+2007-05-13  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-pack.lisp (tile-current-workspace-to/right/left/top/bottom):
+	Tile the current workspace with the current window on one side and
+	others on the other (this emulate the larswm, dwm, wmii way). See
+	the default configuration file to enable this mode by default.
+
+	* clfswm-pager.lisp (pager-tile-current-workspace-to): idem for
+	the pager.
+
+2007-05-12  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-pager.lisp (pager-draw-window-in-group): Add
+	ensure-printable to print windows name even with non-ascii
+	characters.
+
+2007-05-11  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-pager.lisp (pager-explode-current-group): Create a new
+	group for each window in group.
+	(pager-implode-current-group): Move all windows in workspace to
+	one group and remove other groups.
+
+	* clfswm-pack.lisp (explode-group): Create a new group for each
+	window in group.
+	(implode-group): Move all windows in workspace to one group and
+	remove other groups.
+
+	* clfswm-util.lisp (identify-key): Remove local configuration
+	variables and made them available for configuration from
+	package.lisp.
+	(query-string): idem.
+
+2007-04-29  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* netwm-util.lisp: Start of NetWM compliance.
+	Add a Netwm client list gestion.
+
+2007-04-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-internal.lisp (create-group-on-request): open a new group
+	only when the current group is not empty.
+
+	* bindings-second-mode.lisp (define-second-key-#\o-control): Fix a
+	bug with null workspace.
+
+	* clfswm-pager.lisp (pager-handle-event): Add a hook
+	system. This hooks can be changed in the user configuration file.
+
+	* package.lisp: All colors and font variables are set in
+	package.lisp and can be configured in the user configuration
+	file.
+	Note: If you have configured some less ugly colors (esp. for the
+	pager) don't hesitate to let me know :)
+
+	* clfswm-second-mode.lisp (sm-handle-event): Add a hook
+	system. This hooks can be changed in the user configuration file.
+
+	* clfswm.lisp (handle-event): Add a hook system. This hooks can be
+	changed in the user configuration file (~/.clfswmrc)
+
+2007-04-25  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-util.lisp (stop-all-pending-actions): new function: reset
+	arrow action, open next window in new workspace/group.
+
+	* bindings.lisp (stop-all-pending-actions): new binding.
+	(open-next-window-in-new-group-once): Open the next windows in a
+	new group (only once) or open all new windows in a new group (like
+	others windows managers).
+
+2007-04-22  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (read-conf-file): New function to read a lisp
+	configuration file at startup.
+	(focus-group-under-mouse): Check if group isn't the current group
+	( prevent a bug with unclutter ).
+
+2007-03-02  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* bindings.lisp (run-program-from-query-string): A program can be
+	launch from a input query window.
+
+2007-03-01  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-info.lisp: Fix a bug with banish pointer in info mode.
+
+2007-02-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (process-new-window): One can now open the next
+	window in a workspace called by its number.
+
+	* clfswm-util.lisp (query-font-string): Minimal editing
+	capabilities.
+	(eval-from-string): And an REPL in the window manager... :)
+
+2007-02-26  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (process-new-window): One can now open the next
+	window in a new workspace or a new group.
+
+	* clfswm-pager.lisp (pager-mode): Display the next arrow action
+	with the hidden windows.
+
+	* clfswm.lisp (second-key-mode): Display the current workspace
+	number and the next arrow action in the state window.
+
+	* clfswm-pager.lisp (pager-mode): Hide all windows before leaving
+	the pager mode and then redisplay only the current workspace.
+
+2007-02-25  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (add-workspace): Workspaces are now numbered. So
+	they can be focused with a keypress, sorted or renumbered.
+
+2007-02-24  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-pager.lisp (pager-mode): Remove multiple silly
+	pager-draw-display. This prevent a lot of flickering in the
+	pager.
+
+	* clfswm.lisp: Remove all display-force-output and replace them
+	with only one display-finish-output in the event loop.
+
+2006-11-06  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-pager.lisp (pager-center-group): New function - center a
+	group at the middle of the screen.
+
+	* clfswm-pack.lisp (center-group): New function - center a group
+	at the middle of the screen.
+
+	* clfswm.lisp (show-group): Add a cross line under the group.
+	(show-group): Group are showned even if fullscreened.
+	(init-display): Add an exposure event on the root window.
+
+2006-11-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* package.lisp (*default-group*): Default group is the same size
+	of a fullscreened group.
+
+	* bindings*: Use shift to move, control+shift to copy.
+
+	* *.lisp: Add comments for configuration or alternatives. So grep
+	for CONFIG to see where you can configure clfswm. And grep for
+	Alternative to use some commented code.
+
+	* clfswm.lisp (second-key-mode): Use a single window to show the
+	second mode. See for alternatives at the end of this file.
+
+2006-11-03  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-keys.lisp (define-define-key/mouse): Factorisation in a
+	macro of key and mouse definitions.
+	(define-define-key/mouse): Use state instead of modifiers list
+	this fix a bug when the modifiers list is not in the rigth order.
+
+	* clfswm.lisp (second-key-mode): Add a colored border in second mode.
+
+2006-11-02  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-info.lisp (info-mode): Add an info mode.
+
+2006-11-01  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (process-new-window): Change border size for
+	transient windows.
+	(show-all-windows-in-workspace): Unhide all windows even when the
+	current group is in fullscreen mode.
+
+2006-10-26  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-util.lisp (identify-key): Add an exposure handle-event to
+	redisplay the identify window after a terminal switch.
+
+	* clfswm-pager.lisp (pager-mode): Add an exposure handle-event to
+	redisplay the pager after a terminal switch.
+
+2006-10-24  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-util.lisp (identify-key): Add a window to display
+	the keys to identify on screen.
+
+	* bindings.lisp, bindings-pager.lisp: Define same keys to
+	move/copy groups/windows in second mode and in pager.
+
+	* clfswm.lisp (handle-event*): Same version in all clfswm (fix some
+	drawing lags).
+	(show-all-windows-in-workspace): unhide window before adapting it
+	to group.
+
+2006-10-23  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (handle-event): Revert to an older version.
+
+2006-10-18  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-util.lisp (force-window-in-group)
+	(force-window-center-in-group): New functions for transient windows.
+
+	* clfswm-pager.lisp (pager-remove-current-workspace/group):
+	bugfix: hide all windows before removing group or workspace.
+
+2006-10-17  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* bindings-pager.lisp (mouse-pager-move-selected-group)
+	(mouse-pager-copy-selected-group)
+	(mouse-pager-move-selected-window)
+	(mouse-pager-copy-selected-window, mouse-pager-rotate-window-up)
+	(mouse-pager-rotate-window-down): New functions to have mouse in
+	pager mode.
+
+	* clfswm-pager.lisp (pager-swap-window)
+	(pager-copy-group-on-next/previous-workspace)
+	(pager-copy-window-on-next/previous-line): New functions
+
+2006-10-15  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-pager.lisp (pager-move-window-on-next/previous-line,
+	(pager-move-group-on-next/previous-workspace): new functions.
+
+	* clfswm-pack.lisp (resize-half-x-x-current-group): resize group
+	to its half size (new functions).
+
+2006-10-11  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-pager.lisp: workspaces, groups and windows can now be
+	selectionned with the keyboard or the mouse.
+
+2006-10-09  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-pager.lisp (pager-select-workspace-right/left):
+	workspaces can now be selectionned with the keyboard.
+
+2006-10-08  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-keys.lisp (undefine-main-key, undefine-second-key, undefine-mouse-action):
+	new function to remove a previous defined key or mouse combination.
+
+2006-10-07  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (main): Check for access error in init-display.
+
+	* clfswm-keys.lisp (define-ungrab/grab): check for keysym and
+	keycode before grabbing.
+
+	* bindings.lisp: Remove nlambda and use defun to keep the function
+	documentation with clisp.
+	(define-shell): new macro to define shell command for the second
+	mode.
+
+2006-10-06  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm-keys.lisp (define-ungrab/grab): use a cond instead of a
+	boggus typecase.
+
+2006-10-05  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* bindings.lisp (accept-motion): Move group bugfix in upper mouse
+	workspace circulation.
+
+	* clfswm-util.lisp (absorb-orphan-window): new function.
+
+	* clfswm-keys.lisp: Keysyms support.
+
+2006-10-02  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp (show-group): Use one gc for all groups and not one
+	per group.
+
+2006-10-01  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* bindings.lisp (define-second-key (#\l :mod-1)): fix a typo.
+
+	* clfswm.lisp (adapt-window-to-group): Adapt only windows with
+	width and height outside group.
+
+2006-09-28  Philippe Brochard  <pbrochard@common-lisp.net>
+
+	* clfswm.lisp: First public release.
+

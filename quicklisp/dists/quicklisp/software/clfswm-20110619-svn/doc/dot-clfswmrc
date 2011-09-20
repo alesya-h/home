@@ -1,0 +1,196 @@
+;;; -*- lisp -*-
+;;;
+;;; CLFSWM configuration file example
+;;;
+;;; Send me your configuration file at pbrochard _at_ common-lisp -dot- net
+;;; if you want to share it with others.
+
+(in-package :clfswm)
+
+
+
+;;;; Uncomment the line above if you need default modifiers (or not)
+;;(with-capslock)
+;;(with-numlock)
+;;(without-capslock)
+;;(without-numlock)
+
+;;;; Uncomment the line above if you want to enable the notify event compression.
+;;;; This variable may be useful to speed up some slow version of CLX
+;;;; It is particulary useful with CLISP/MIT-CLX.
+;; (setf *have-to-compress-notify* t)
+
+
+;;; Color configuration example
+;;;
+;;; See in package.lisp or config.lisp for all variables
+;;(setf *color-unselected* "Blue")
+
+
+;;; How to change the default fullscreen size
+;;(defun get-fullscreen-size ()
+;;  "Return the size of root child (values rx ry rw rh)
+;;You can tweak this to what you want"
+;;  (values -2 -2 (+ (xlib:screen-width *screen*) 2) (- (xlib:screen-height *screen*) 20)))
+
+
+;;; Contributed code example
+;;; See in the clfswm/contrib directory to find some contributed code
+;;; and se load-contrib to load them. For example:
+;;(load-contrib "contrib-example.lisp")
+
+;;(load-contrib "mpd.lisp")
+;;(load-contrib "keyb_fr.lisp")
+;;(load-contrib "xmms.lisp")
+;;(load-contrib "cd-player.lisp")
+;;(load-contrib "reboot-halt.lisp")
+
+
+;;;; Client/server connection - the connection is crypted and you can only
+;;;; connect to the server with the same clfswm binary.
+;;(load-contrib "server/server.lisp")
+;;(unless (is-started-as-client-p)
+;;  (start-server))
+
+
+
+;;; Binding example: Undefine Control-F1 and define  Control-F5 as a
+;;; new binding in main mode
+;;;
+;;; See bindings.lisp, bindings-second-mode.lisp for all default bindings definitions.
+;;
+;;(defun $start-emacs ()
+;;  "Run or raise emacs"
+;;  (setf *second-mode-leave-function*
+;;        (lambda ()
+;;          (run-or-raise (lambda (win) (string-equal "emacs"
+;;						    (xlib:get-wm-class win)))
+;;                        (lambda () (do-shell "cd $HOME && exec emacsclient -c")))))
+;;  (leave-second-mode))
+;;
+;;(defun $start-conkeror ()
+;;  "Run or raise conkeror"
+;;  (setf *second-mode-leave-function*
+;;        (lambda ()
+;;          (run-or-raise (lambda (win) (string-equal "Navigator"
+;;						    (xlib:get-wm-class win)))
+;;                        (lambda () (do-shell "cd $HOME && exec conkeror")))))
+;;  (leave-second-mode))
+;;
+;;(defun binding-example ()
+;;  (undefine-main-key ("F1" :mod-1))
+;;  (define-main-key ("F5" :mod-1) 'help-on-clfswm)
+;;  (define-second-key ("e") '$start-emacs)
+;;  (define-second-key ("c") '$start-conkeror)
+;;  ;; Binding example for apwal
+;;  (define-second-key (#\Space)
+;;      (defun tpm-apwal ()
+;;	"Run Apwal"
+;;	(do-shell "exec apwal")
+;;	(show-all-windows-in-workspace (current-workspace))
+;;	(throw 'exit-second-loop nil))))
+;;
+;;(add-hook *binding-hook* 'binding-example)
+
+
+;;; Set up an UZBL frame where all uzbl windows will be absorbed.
+;;;
+;;(defun set-uzbl-frame-nw-hook (&optional (frame *current-child*))
+;;  "Open the window in the UZBL frame if it match uzbl absorb-nw-test"
+;;  (when (frame-p frame)
+;;    (setf (frame-nw-hook frame) 'absorb-window-nw-hook
+;;	  (frame-data-slot frame :nw-absorb-test)  (nw-absorb-test-class "uzbl-core"))))
+;;
+;;#-:uzbl-menu-added
+;;(add-menu-key 'frame-nw-hook-menu "z" 'set-uzbl-frame-nw-hook)
+;;
+;;(pushnew :uzbl-menu-added *features*)
+;;
+;;
+;;(defun init-uzbl-frame ()
+;;  (let ((frame (first (frame-child *root-frame*))))
+;;    (setf (frame-data-slot frame :tile-size) 0.7)
+;;    (setf *current-root* frame
+;;	  *current-child* frame)
+;;    (bind-on-slot 0)
+;;    (let ((uzbl-frame (create-frame :name "Uzbl" :x 0.01 :y 0.01 :w 0.98 :h 0.98)))
+;;      (add-frame uzbl-frame frame)
+;;      (set-uzbl-frame-nw-hook uzbl-frame))))
+;;
+;;(unless (member 'init-uzbl-frame *init-hook*)
+;;  (add-hook *init-hook* 'init-uzbl-frame))
+;;; End UZBL setup.
+
+
+;;; A more complex example I use to record my desktop and show
+;;; documentation associated to each key press.
+;;;See contrib/osd.lisp
+;;(load-contrib "osd.lisp")
+;;;;; -- Doc example end --
+
+
+
+;;;;; Init hook examples:
+;;(defun my-init-hook-1 ()
+;;  (dbg 'my-init-hook)
+;;  ;;(add-frame (create-frame :name "Default" :layout #'tile-left-layout :data (list '(:tile-size 0.6))) *root-frame*)
+;;  (add-frame (create-frame :name "The Gimp" :x 0.6 :y 0 :w 0.3 :h 0.2) *root-frame*)
+;;  (add-frame (create-frame :name "Net" :x 0.52 :y 0.3 :w 0.4 :h 0.3) *root-frame*)
+;;  (add-frame (create-frame :x 0.4 :y 0 :w 0.2 :h 0.3) (first (frame-child *root-frame*)))
+;;  (add-frame (create-frame :x 0.6 :y 0.4 :w 0.4 :h 0.2) (first (frame-child *root-frame*)))
+;;  (add-frame (create-frame :x 0.4 :y 0.7 :w 0.2 :h 0.3) (first (frame-child *root-frame*)))
+;;  (let ((frame (create-frame :name "The Qiv" :x 0 :y 0.4 :w 0.4 :h 0.2)))
+;;    (add-frame frame (first (frame-child *root-frame*)))
+;;    (add-frame (create-frame) frame))
+;;  (add-frame (create-frame :x 0.1 :y 0.55 :w 0.8 :h 0.43) *root-frame*)
+;;  (add-frame (create-frame :x 0.2 :y 0.1 :w 0.6 :h 0.4) (first (frame-child *root-frame*)))
+;;  (add-frame (create-frame :x 0.3 :y 0.55 :w 0.4 :h 0.3) (first (frame-child *root-frame*)))
+;;  (add-frame (create-frame :x 0.1 :y 0.1 :w 0.3 :h 0.6) (first (frame-child (first (frame-child *root-frame*)))))
+;;  (setf *current-child* (first (frame-child *current-root*)))
+;;  (setf (frame-layout *current-child*) #'tile-layout))
+;;
+;;(defun my-init-hook-2 ()
+;;  (dbg 'my-init-hook)
+;;  (add-frame (create-frame :name "Default" :layout #'tile-left-layout :data (list '(:tile-size 0.6))) *root-frame*)
+;;  (setf *current-child* (first (frame-child *current-root*)))
+;;  (setf (frame-layout *current-child*) #'tile-layout))
+;;
+;;
+;;(defun my-init-hook-3 ()
+;;  (dbg 'my-init-hook)
+;;  (add-frame (create-frame :name "plop" :x 0.1 :y 0.4 :w 0.7 :h 0.3) *root-frame*)
+;;  (add-frame (create-frame :name "Default" :layout nil :x 0.1 :y 0.5 :w 0.8 :h 0.5)
+;;	     *root-frame*)
+;;  (setf *current-child* (first (frame-child *current-root*)))
+;;  (setf (frame-layout *root-frame*) nil))
+;;
+;;
+;;
+;;(defun my-init-hook-4 ()
+;;  (let ((frame (add-frame (create-frame :name "Default"
+;;                                        :layout #'tile-left-layout
+;;					:x 0.05 :y 0.05 :w 0.9 :h 0.9)
+;;			  *root-frame*)))
+;;    (setf *current-child* frame)))
+;;
+;;
+;;;;; Use this hook and prevent yourself to create a new frame to emulate
+;;;;; the MS Windows desktop style :)
+;;(defun my-init-hook-ms-windows-style ()
+;;  (setf (frame-managed-type *root-frame*) nil))
+;;
+;;
+;;;;; Here is another example useful with the ROX filer: Only the
+;;;;; root frame fullscreen with some space on the left for icons.
+;;(defun my-init-hook-rox-filer ()
+;;  (setf (frame-layout *root-frame*) #'tile-left-space-layout
+;;	(frame-data-slot *root-frame* :tile-size) 0.9))
+;;
+;;
+;;
+;;
+;;(setf *init-hook* '(my-init-hook-4))  ;; <- choose one in 1 to 4,
+;;;;                                             my-init-hook-ms-windows-style
+;;;;                                             my-init-hook-rox-filer
+;;;;(setf *init-hook* nil)
+;;;;; Init hook end

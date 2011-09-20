@@ -37,6 +37,7 @@ emacs --daemon &
 #wmname LG3D # for GUI java programs under lightweight window managers
 
 #exec stumpwm
-exec ~/bin/dwm
+sbcl --load /home/alesguzik/p/my/scripts/start-clfswm.lisp
+#exec ~/bin/dwm
 #exec awesome
 #exec xterm

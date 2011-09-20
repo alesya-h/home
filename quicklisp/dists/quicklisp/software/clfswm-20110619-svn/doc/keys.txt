@@ -1,0 +1,327 @@
+    * CLFSWM Keys *
+      -----------
+
+Note: Mod-1 is the Meta or Alt key
+
+Main mode keys:
+--------------
+
+  Mod-1                F1              Open the help and info window
+  Mod-1 Control Shift  Home            Exit clfswm
+  Mod-1                Right           Select the next brother
+  Mod-1                Left            Select the previous brother
+  Mod-1                Down            Select the previous level in frame
+  Mod-1                Up              Select the next level in frame
+  Mod-1 Control        Left            Select spatially the nearest brother of the current child in the left direction
+  Mod-1 Control        Right           Select spatially the nearest brother of the current child in the right direction
+  Mod-1 Control        Up              Select spatially the nearest brother of the current child in the up direction
+  Mod-1 Control        Down            Select spatially the nearest brother of the current child in the down direction
+  Mod-1                Tab             Select the next child
+  Mod-1 Shift          Tab             Select the previous child
+  Mod-1 Control        Tab             Select the next subchild
+  Mod-1                Return          Enter in the selected frame - ie make it the root frame
+  Mod-1 Shift          Return          Leave the selected frame - ie make its parent the root frame
+  Mod-5                Return          Maximize/Unmaximize the current frame in its parent frame
+  Mod-1                Page_up         Select the previous child in the current frame
+  Mod-1                Page_down       Select the next child in the current frame
+  Mod-1 Control        Page_up         Lower the child in the current frame
+  Mod-1 Control        Page_down       Raise the child in the current frame
+  Mod-1                Home            Switch to the root frame
+  Mod-1 Shift          Home            Switch and select the root frame
+  Mod-1                F10             Switch between two layouts
+  Control Shift        F10             Present all windows in all frames (An expose like)
+                       F10             Present all windows in the current child (An expose like)
+  Control              F10             Present all windows in the current frame (An expose like)
+  Control              L2              Hide/Unhide a terminal
+  Shift                L2              Show all frames info windows until a key is release
+  Mod-1 Shift          L2              Show all frames info windows
+  Mod-1                B               Move the pointer to the lower right corner of the screen
+  Control              Escape          Close or kill the current window (ask before doing anything)
+  Mod-1                T               Switch to editing mode (second mode)
+  Control              Less            Switch to editing mode (second mode)
+  Mod-1                1               Bind or jump to a slot (a frame or a window)
+  Mod-1                2               Bind or jump to a slot (a frame or a window)
+  Mod-1                3               Bind or jump to a slot (a frame or a window)
+  Mod-1                4               Bind or jump to a slot (a frame or a window)
+  Mod-1                5               Bind or jump to a slot (a frame or a window)
+  Mod-1                6               Bind or jump to a slot (a frame or a window)
+  Mod-1                7               Bind or jump to a slot (a frame or a window)
+  Mod-1                8               Bind or jump to a slot (a frame or a window)
+  Mod-1                9               Bind or jump to a slot (a frame or a window)
+  Mod-1                0               Bind or jump to a slot (a frame or a window)
+
+
+Mouse buttons actions in main mode:
+----------------------------------
+
+                       1               Move and focus the current frame or focus the current window parent.
+Or do actions on corners
+                       2               Do actions on corners
+                       3               Resize and focus the current frame or focus the current window parent.
+Or do actions on corners
+  Mod-1                1               Move and focus the current child - Create a new frame on the root window
+  Mod-1                3               Resize and focus the current child - Create a new frame on the root window
+  Mod-1 Shift          1               Move (constrained by other frames) and focus the current child - Create a new frame on the root window
+  Mod-1 Shift          3               Resize (constrained by other frames) and focus the current child - Create a new frame on the root window
+  Mod-1 Control        1               Move the child under the mouse cursor to another frame
+                       4               Select the next level in frame
+                       5               Select the previous level in frame
+  Mod-1                4               Enter in the selected frame - ie make it the root frame
+  Mod-1                5               Leave the selected frame - ie make its parent the root frame
+
+
+Second mode keys:
+----------------
+
+  Mod-1                F1              Open the help and info window
+                       M               Open the main menu
+                       Less            Open the main menu
+  Control              Less            Open the main menu
+                       F               Open the frame menu
+                       W               Open the window menu
+                       N               Open the action by name menu
+                       U               Open the action by number menu
+                       P               Open the frame pack menu
+                       L               Open the frame fill menu
+                       R               Open the frame resize menu
+                       X               Update layout managed children position
+  Control              G               Stop all pending actions
+                       Q               Close focus window: Delete the focus window in all frames and workspaces
+                       K               Close or kill the current window (ask before doing anything)
+                       I               Identify a key
+                       Colon           Eval a lisp form from the query input
+                       Exclam          Run a program from the query input
+                       Return          Leave second mode
+                       Escape          Leave second mode
+                       T               Tile the current frame
+  Mod-1 Control Shift  Home            Exit clfswm
+  Mod-1                Right           Select the next brother
+  Mod-1                Left            Select the previous brother
+  Mod-1                Down            Select the previous level in frame
+  Mod-1                Up              Select the next level in frame
+  Mod-1 Control        Left            Select spatially the nearest brother of the current child in the left direction
+  Mod-1 Control        Right           Select spatially the nearest brother of the current child in the right direction
+  Mod-1 Control        Up              Select spatially the nearest brother of the current child in the up direction
+  Mod-1 Control        Down            Select spatially the nearest brother of the current child in the down direction
+                       Right           Speed move mouse to right
+                       Left            Speed move mouse to left
+                       Down            Speed move mouse to down
+                       Up              Speed move mouse to up
+  Control              Left            Undo last speed mouse move
+  Control              Up              Revert to the first speed move mouse
+  Control              Down            Reset speed mouse coordinates
+  Mod-1                Tab             Select the next child
+  Mod-1 Shift          Tab             Select the previous child
+  Mod-1 Control        Tab             Select the next subchild
+                       Tab             Store the current child and switch to the previous one
+  Mod-1                Return          Enter in the selected frame - ie make it the root frame
+  Mod-1 Shift          Return          Leave the selected frame - ie make its parent the root frame
+  Mod-5                Return          Maximize/Unmaximize the current frame in its parent frame
+  Mod-1                Page_up         Lower the child in the current frame
+  Mod-1                Page_down       Raise the child in the current frame
+  Mod-1                Home            Switch to the root frame
+  Mod-1 Shift          Home            Switch and select the root frame
+                       Menu            Show/Hide the root frame
+  Mod-1                B               Move the pointer to the lower right corner of the screen
+                       O               Open the next window in a new frame in the parent frame
+  Control              O               Open the next window in a new frame in the root frame
+                       A               Add a default frame in the current frame
+  Control              A               Add a frame in the parent frame (and reorganize parent frame)
+                       Plus            Increase the tile layout size
+                       Minus           Decrease the tile layout size
+  Control              Plus            Increase slowly the tile layout size
+  Control              Minus           Decrease slowly the tile layout size
+  Control              Escape          Close or kill the current window (ask before doing anything)
+  Control              X               Cut the current child to the selection
+  Mod-1 Control        X               Clear the current selection
+  Control              C               Copy the current child to the selection
+  Control              V               Paste the selection in the current frame
+  Control Shift        V               Paste the selection in the current frame - Do not clear the selection after paste
+  Control              Delete          Remove the current child from its parent frame
+                       Delete          Delete the current child and its children in all frames
+                       C               start an xterm
+                       E               start emacs
+  Control              E               start an emacs for another user
+                       H               start an xclock
+  Mod-1                F10             Switch between two layouts
+  Control Shift        F10             Present all windows in all frames (An expose like)
+                       F10             Present all windows in the current child (An expose like)
+  Control              F10             Present all windows in the current frame (An expose like)
+  Shift                L2              Show all frames info windows until a key is release
+  Mod-1 Shift          L2              Show all frames info windows
+  Mod-1                1               Bind or jump to a slot (a frame or a window)
+  Mod-1                2               Bind or jump to a slot (a frame or a window)
+  Mod-1                3               Bind or jump to a slot (a frame or a window)
+  Mod-1                4               Bind or jump to a slot (a frame or a window)
+  Mod-1                5               Bind or jump to a slot (a frame or a window)
+  Mod-1                6               Bind or jump to a slot (a frame or a window)
+  Mod-1                7               Bind or jump to a slot (a frame or a window)
+  Mod-1                8               Bind or jump to a slot (a frame or a window)
+  Mod-1                9               Bind or jump to a slot (a frame or a window)
+  Mod-1                0               Bind or jump to a slot (a frame or a window)
+
+
+Mouse buttons actions in second mode:
+------------------------------------
+
+                       1               Move and focus the current child - Create a new frame on the root window.
+Or do corners actions
+                       2               Do actions on corners
+                       3               Resize and focus the current child - Create a new frame on the root window.
+Or do corners actions
+  Mod-1                1               Move and focus the current child - Create a new frame on the root window
+  Mod-1                3               Resize and focus the current child - Create a new frame on the root window
+  Mod-1 Shift          1               Move (constrained by other frames) and focus the current child - Create a new frame on the root window
+  Mod-1 Shift          3               Resize (constrained by other frames) and focus the current child - Create a new frame on the root window
+  Mod-1 Control        1               Move the child under the mouse cursor to another frame
+                       4               Select the next level in frame
+                       5               Select the previous level in frame
+  Mod-1                4               Enter in the selected frame - ie make it the root frame
+  Mod-1                5               Leave the selected frame - ie make its parent the root frame
+
+
+Info mode keys:
+--------------
+
+                       Q               Leave the info mode
+                       Return          Leave the info mode and valid the selected item
+                       Space           Leave the info mode and valid the selected item
+                       Escape          Leave the info mode
+  Control              G               Leave the info mode
+                       Twosuperior     Move the pointer to the lower right corner of the screen
+                       Down            Move one line down
+                       Up              Move one line up
+                       Left            Move one char left
+                       Right           Move one char right
+                       Home            Move to first line
+                       End             Move to last line
+                       Page_down       Move ten lines down
+                       Page_up         Move ten lines up
+
+
+Mouse buttons actions in info mode:
+----------------------------------
+
+                       1               NIL
+                       2               Leave the info mode
+                       3               Leave the info mode
+                       4               Move one line up
+                       5               Move one line down
+                       Motion          NIL
+
+
+Circulate mode keys:
+-------------------
+
+                       Escape          Leave the circulate mode
+  Control              G               Leave the circulate mode
+  Mod-1                Escape          Leave the circulate mode
+  Mod-1 Control        G               Leave the circulate mode
+  Mod-1                Tab             Select the next child
+  Mod-1 Control        Tab             Select the next subchild
+  Mod-1 Shift          Tab             Select the previous child
+  Mod-1 Shift          Iso_left_tab    Select the previous child
+  Mod-1                Right           Select the next brother
+  Mod-1                Left            Select the previous borther
+
+
+Expose windows mode keys:
+------------------------
+
+                       A               Select child 'a' (0)
+                       B               Select child 'b' (1)
+                       C               Select child 'c' (2)
+                       D               Select child 'd' (3)
+                       E               Select child 'e' (4)
+                       F               Select child 'f' (5)
+                       G               Select child 'g' (6)
+                       H               Select child 'h' (7)
+                       I               Select child 'i' (8)
+                       J               Select child 'j' (9)
+                       K               Select child 'k' (10)
+                       L               Select child 'l' (11)
+                       M               Select child 'm' (12)
+                       N               Select child 'n' (13)
+                       O               Select child 'o' (14)
+                       P               Select child 'p' (15)
+                       Q               Select child 'q' (16)
+                       R               Select child 'r' (17)
+                       S               Select child 's' (18)
+                       T               Select child 't' (19)
+                       U               Select child 'u' (20)
+                       V               Select child 'v' (21)
+                       W               Select child 'w' (22)
+                       X               Select child 'x' (23)
+                       Y               Select child 'y' (24)
+                       Z               Select child 'z' (25)
+                       0               Select child '0' (26)
+                       1               Select child '1' (27)
+                       2               Select child '2' (28)
+                       3               Select child '3' (29)
+                       4               Select child '4' (30)
+                       5               Select child '5' (31)
+                       6               Select child '6' (32)
+                       7               Select child '7' (33)
+                       8               Select child '8' (34)
+                       9               Select child '9' (35)
+                       A               Select child 'A' (36)
+                       B               Select child 'B' (37)
+                       C               Select child 'C' (38)
+                       D               Select child 'D' (39)
+                       E               Select child 'E' (40)
+                       F               Select child 'F' (41)
+                       G               Select child 'G' (42)
+                       H               Select child 'H' (43)
+                       I               Select child 'I' (44)
+                       J               Select child 'J' (45)
+                       K               Select child 'K' (46)
+                       L               Select child 'L' (47)
+                       M               Select child 'M' (48)
+                       N               Select child 'N' (49)
+                       O               Select child 'O' (50)
+                       P               Select child 'P' (51)
+                       Q               Select child 'Q' (52)
+                       R               Select child 'R' (53)
+                       S               Select child 'S' (54)
+                       T               Select child 'T' (55)
+                       U               Select child 'U' (56)
+                       V               Select child 'V' (57)
+                       W               Select child 'W' (58)
+                       X               Select child 'X' (59)
+                       Y               Select child 'Y' (60)
+                       Z               Select child 'Z' (61)
+                       Escape          Leave the expose mode
+  Control              G               Leave the expose mode
+  Mod-1                Escape          Leave the expose mode
+  Mod-1 Control        G               Leave the expose mode
+                       Return          Valid the expose mode
+                       Space           Valid the expose mode
+                       Tab             Valid the expose mode
+                       Right           Speed move mouse to right
+                       Left            Speed move mouse to left
+                       Down            Speed move mouse to down
+                       Up              Speed move mouse to up
+  Control              Left            Undo last speed mouse move
+  Control              Up              Revert to the first speed move mouse
+  Control              Down            Reset speed mouse coordinates
+
+
+Mouse buttons actions in expose windows mode:
+--------------------------------------------
+
+                       1               Valid the expose mode
+                       2               Leave the expose mode
+                       3               Leave the expose mode
+
+
+
+This documentation was produced with the CLFSWM auto-doc functions.
+To reproduce it, use the produce-doc-in-file or the produce-all-docs
+function from the Lisp REPL.
+
+Something like this:
+LISP> (in-package :clfswm)
+CLFSWM> (produce-doc-in-file "my-keys.txt")
+or
+CLFSWM> (produce-all-docs)
+
