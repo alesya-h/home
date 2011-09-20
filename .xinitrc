@@ -12,8 +12,8 @@ source ~/shell_general.sh
 
 N=$((15 * 60))
 X=-2
-CMD="awsetbg -u hsetroot -F -R $HOME/wallpapers/"
-changefile="$HOME/wallpapers/change"
+CMD="qiv -r -z -m -u $HOME/graphics/wallpapers/"
+changefile="$HOME/graphics/wallpapers/change"
 while true; do
     if [ $X -eq 0 ]
     then
