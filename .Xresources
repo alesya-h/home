@@ -1,27 +1,59 @@
-XTerm*background: black
-XTerm*foreground: white
-XTerm*pointerColor: red
-XTerm*pointerColorBackground: black
-XTerm*cursorColor: yellow
-XTerm*internalBorder: 0
-XTerm*loginShell: true
-XTerm*scrollBar: false
-XTerm*scrollKey: true
-XTerm*saveLines: 1000
-XTerm*multiClickTime: 250
-XTerm*faceName: DejaVu Sans Mono
-XTerm*faceSize: 10
-
+! Uncomment this to use color for the bold attribute
+! XTerm*VT100.colorBDMode: on
+! Uncomment this to use color for underline attribute
+! XTerm*VT100.colorULMode:  on
 UXTerm*background: black
-UXTerm*foreground: white
-UXTerm*pointerColor: red
-UXTerm*pointerColorBackground: black
 UXTerm*cursorColor: yellow
+UXTerm*faceName: DejaVu Sans Mono
+UXTerm*faceSize: 11
+UXTerm*foreground: white
 UXTerm*internalBorder: 0
 UXTerm*loginShell: true
+UXTerm*multiClickTime: 250
+UXTerm*pointerColor: red
+UXTerm*pointerColorBackground: black
+UXTerm*saveLines: 1000
 UXTerm*scrollBar: false
 UXTerm*scrollKey: true
-UXTerm*saveLines: 1000
-UXTerm*multiClickTime: 250
-UXTerm*faceName: DejaVu Sans Mono
-UXTerm*faceSize: 10
+
+XTerm*VT100.colorMode: on
+
+XTerm*VT100.color0: black
+XTerm*VT100.color1: red4
+XTerm*VT100.color2: chartreuse4
+XTerm*VT100.color3: gold
+XTerm*VT100.color4: RoyalBlue4
+XTerm*VT100.color5: VioletRed4
+XTerm*VT100.color6: aquamarine3
+XTerm*VT100.color7: gray90
+XTerm*VT100.color8: gray30
+XTerm*VT100.color9: red1
+XTerm*VT100.color10: chartreuse2
+XTerm*VT100.color11: yellow
+XTerm*VT100.color12: RoyalBlue1
+XTerm*VT100.color13: VioletRed1
+XTerm*VT100.color14: aquamarine1
+XTerm*VT100.color15: white
+XTerm*VT100.colorBDMode: off
+! XTerm*VT100.colorUL: magenta
+! XTerm*VT100.colorUL: yellow
+! XTerm*VT100.colorULMode:  on
+XTerm*VT100.cursorColor: yellow
+XTerm*VT100.dynamicColors:  on
+XTerm*VT100.eightBitInput:  true
+XTerm*VT100.eightBitOutput:  true
+XTerm*VT100.titeInhibit:  true
+XTerm*VT100.underLine:  on
+XTerm*background: black
+XTerm*faceName: DejaVu Sans Mono
+XTerm*faceSize: 11
+XTerm*foreground: white
+XTerm*highlightSelection:  true
+XTerm*internalBorder: 0
+XTerm*loginShell: true
+XTerm*multiClickTime: 250
+XTerm*pointerColor: red
+XTerm*pointerColorBackground: black
+XTerm*saveLines: 1000
+XTerm*scrollBar: false
+XTerm*scrollKey: true
