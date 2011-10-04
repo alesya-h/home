@@ -1,0 +1,335 @@
+Metadata-Version: 1.0
+Name: ncrypt
+Version: 0.6.4
+Summary: Yet another OpenSSL wrapper for python
+Home-page: http://www.tachyontech.net
+Author: K.S Sreeram, Jeethu Rao
+Author-email: sreeram@tachyontech.net, jeethu@tachyontech.net
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: D
+Classifier: e
+Classifier: v
+Classifier: e
+Classifier: l
+Classifier: o
+Classifier: p
+Classifier: m
+Classifier: e
+Classifier: n
+Classifier: t
+Classifier:  
+Classifier: S
+Classifier: t
+Classifier: a
+Classifier: t
+Classifier: u
+Classifier: s
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: 3
+Classifier:  
+Classifier: -
+Classifier:  
+Classifier: A
+Classifier: l
+Classifier: p
+Classifier: h
+Classifier: a
+Classifier: 
+
+Classifier: I
+Classifier: n
+Classifier: t
+Classifier: e
+Classifier: n
+Classifier: d
+Classifier: e
+Classifier: d
+Classifier:  
+Classifier: A
+Classifier: u
+Classifier: d
+Classifier: i
+Classifier: e
+Classifier: n
+Classifier: c
+Classifier: e
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: D
+Classifier: e
+Classifier: v
+Classifier: e
+Classifier: l
+Classifier: o
+Classifier: p
+Classifier: e
+Classifier: r
+Classifier: s
+Classifier: 
+
+Classifier: L
+Classifier: i
+Classifier: c
+Classifier: e
+Classifier: n
+Classifier: s
+Classifier: e
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: O
+Classifier: S
+Classifier: I
+Classifier:  
+Classifier: A
+Classifier: p
+Classifier: p
+Classifier: r
+Classifier: o
+Classifier: v
+Classifier: e
+Classifier: d
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: G
+Classifier: N
+Classifier: U
+Classifier:  
+Classifier: G
+Classifier: e
+Classifier: n
+Classifier: e
+Classifier: r
+Classifier: a
+Classifier: l
+Classifier:  
+Classifier: P
+Classifier: u
+Classifier: b
+Classifier: l
+Classifier: i
+Classifier: c
+Classifier:  
+Classifier: L
+Classifier: i
+Classifier: c
+Classifier: e
+Classifier: n
+Classifier: s
+Classifier: e
+Classifier:  
+Classifier: (
+Classifier: G
+Classifier: P
+Classifier: L
+Classifier: )
+Classifier: 
+
+Classifier: P
+Classifier: r
+Classifier: o
+Classifier: g
+Classifier: r
+Classifier: a
+Classifier: m
+Classifier: m
+Classifier: i
+Classifier: n
+Classifier: g
+Classifier:  
+Classifier: L
+Classifier: a
+Classifier: n
+Classifier: g
+Classifier: u
+Classifier: a
+Classifier: g
+Classifier: e
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: P
+Classifier: y
+Classifier: t
+Classifier: h
+Classifier: o
+Classifier: n
+Classifier: 
+
+Classifier: P
+Classifier: r
+Classifier: o
+Classifier: g
+Classifier: r
+Classifier: a
+Classifier: m
+Classifier: m
+Classifier: i
+Classifier: n
+Classifier: g
+Classifier:  
+Classifier: L
+Classifier: a
+Classifier: n
+Classifier: g
+Classifier: u
+Classifier: a
+Classifier: g
+Classifier: e
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: C
+Classifier: 
+
+Classifier: T
+Classifier: o
+Classifier: p
+Classifier: i
+Classifier: c
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: S
+Classifier: o
+Classifier: f
+Classifier: t
+Classifier: w
+Classifier: a
+Classifier: r
+Classifier: e
+Classifier:  
+Classifier: D
+Classifier: e
+Classifier: v
+Classifier: e
+Classifier: l
+Classifier: o
+Classifier: p
+Classifier: m
+Classifier: e
+Classifier: n
+Classifier: t
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: L
+Classifier: i
+Classifier: b
+Classifier: r
+Classifier: a
+Classifier: r
+Classifier: i
+Classifier: e
+Classifier: s
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: P
+Classifier: y
+Classifier: t
+Classifier: h
+Classifier: o
+Classifier: n
+Classifier:  
+Classifier: M
+Classifier: o
+Classifier: d
+Classifier: u
+Classifier: l
+Classifier: e
+Classifier: s
+Classifier: 
+
+Classifier: T
+Classifier: o
+Classifier: p
+Classifier: i
+Classifier: c
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: S
+Classifier: e
+Classifier: c
+Classifier: u
+Classifier: r
+Classifier: i
+Classifier: t
+Classifier: y
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: C
+Classifier: r
+Classifier: y
+Classifier: p
+Classifier: t
+Classifier: o
+Classifier: g
+Classifier: r
+Classifier: a
+Classifier: p
+Classifier: h
+Classifier: y
+Classifier: 
+
+Classifier: O
+Classifier: p
+Classifier: e
+Classifier: r
+Classifier: a
+Classifier: t
+Classifier: i
+Classifier: n
+Classifier: g
+Classifier:  
+Classifier: S
+Classifier: y
+Classifier: s
+Classifier: t
+Classifier: e
+Classifier: m
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: M
+Classifier: i
+Classifier: c
+Classifier: r
+Classifier: o
+Classifier: s
+Classifier: o
+Classifier: f
+Classifier: t
+Classifier:  
+Classifier: :
+Classifier: :
+Classifier:  
+Classifier: W
+Classifier: i
+Classifier: n
+Classifier: d
+Classifier: o
+Classifier: w
+Classifier: s
+Classifier: 
+

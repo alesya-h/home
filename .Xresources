@@ -35,7 +35,7 @@ XTerm*faceName: DejaVu Sans Mono
 XTerm*faceSize: 11
 XTerm*highlightSelection:  true
 XTerm*internalBorder: 0
-XTerm*loginShell: true
+XTerm*loginShell: false
 XTerm*multiClickTime: 250
 XTerm*saveLines: 1000
 XTerm*scrollBar: false
