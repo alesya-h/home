@@ -1,0 +1,7 @@
+#!/bin/bash
+
+TODO_FILE=~/documents/tasks.org
+if [ -e $TODO_FILE]
+then
+    cat $TODO_FILE
+fi
