@@ -5,7 +5,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi &
 
-setxkbmap -layout us,ru -variant -option grp:caps_toggle,grp_led:caps,terminate:ctrl_alt_bksp &
+setxkbmap -layout us,ru -variant -option grp:caps_toggle,grp_led:caps,terminate:ctrl_alt_bksp
 
 source ~/login_general.sh
 source ~/shell_general.sh
@@ -33,6 +33,7 @@ xrdb -merge .Xresources &
 VBoxClient-all &
 xscreensaver -no-splash &
 emacs --daemon &
+$HOME/.dropbox-dist/dropboxd &
 
 #wmname LG3D # for GUI java programs under lightweight window managers
 #exec stumpwm
