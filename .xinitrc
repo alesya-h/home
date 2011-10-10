@@ -12,7 +12,7 @@ source ~/shell_general.sh
 
 N=$((15 * 60))
 X=-2
-CMD="qiv -r -z -m -u $HOME/graphics/wallpapers/"
+CMD="bgtext.sh"
 changefile="$HOME/graphics/wallpapers/change"
 while true; do
     if [ $X -eq 0 ]
