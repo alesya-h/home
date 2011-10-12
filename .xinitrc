@@ -28,16 +28,16 @@ while true; do
     sleep 1 #1m
 done &
 
-xrdb -merge .Xresources &
+xrdb -merge .Xresources
 
 VBoxClient-all &
-xscreensaver -no-splash &
+exec xscreensaver -no-splash &
 emacs --daemon &
-$HOME/.dropbox-dist/dropboxd &
+exec $HOME/.dropbox-dist/dropboxd &
 
+export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers
-#exec stumpwm
+exec xterm&
 sbcl --load $HOME/p/my/scripts/start-clfswm.lisp
 #exec ~/bin/dwm
 #exec awesome
-#exec xterm

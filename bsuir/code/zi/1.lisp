@@ -26,25 +26,23 @@
        (lambda (letter)
          (elt alphabet letter)) word))
 
-(defun humanize (word)
-  (map 'vector
-       (lambda (n)
-         (elt *alphabet* n)) word))
-
 (defvar *alphabet* (concatenate 'list "аимртуця"))
 (defvar *library*
   (list "армия" "мицар" "мария" "тарту" "рация" "марта" "марат" "тиара"))
 (defvar *sequence* '(#(#b000 #b101 #b101 #b001 #b101)
                      #(#b010 #b110 #b010 #b011 #b001)
                      #(#b001 #b000 #b000 #b100 #b001)))
-;; (setf *sequence* '(#(4 2 3 1 5)
-;;                    #(3 1 0 4 2)
-;;                    #(3 4 2 1 5)))
-
 (setf *sequence* '(#(6 1 7 0 5)
                    #(1 2 4 5 2)
                    #(1 7 6 0 5)))
+(setf *sequence* '(#(#b111 #b101 #b101 #b001 #b101)
+                   #(#b010 #b110 #b010 #b011 #b001)
+                   #(#b101 #b010 #b010 #b011 #b000)))
 
+(defun humanize (word)
+  (map 'vector
+       (lambda (n)
+         (elt *alphabet* n)) word))
 
 (logging
  "Translating library"
