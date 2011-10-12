@@ -14,7 +14,7 @@ compinit
 
 
 # bind special keys according to readline configuration
-eval "$(sed -n 's/^/bindkey /; s/: / /p' /etc/inputrc)"
+eval `sed -n 's/^/bindkey /; s/: / /p' /etc/inputrc`
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 bindkey '^i' expand-or-complete-prefix
