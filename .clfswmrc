@@ -1,0 +1,25 @@
+(in-package :clfswm)
+
+;;; Redefine Space layout
+(defun tile-space-layout (child parent)
+  "Tile Space: tile child in its frame leaving spaces between them"
+  (with-slots (rx ry rw rh) parent
+    (let* ((managed-children (update-layout-managed-children child parent))
+	   (pos (child-position child managed-children))
+	   (len (length managed-children))
+	   (cols (ceiling (sqrt len)))
+           (rows (ceiling (/ len cols)))
+           (col (mod pos cols))
+           (row (floor pos cols))
+	   (space-percent (or (frame-data-slot parent :tile-space-size) 0.1))
+           (col-space-total (* rw space-percent))
+           (row-space-total (* rh space-percent))
+           (col-space (floor col-space-total (1+ cols)))
+           (row-space (floor row-space-total (1+ rows)))
+           (child-width (floor (- rw col-space-total) cols))
+           (child-height (floor (- rh row-space-total) rows))
+           )
+      (values (round (print (adj-border-xy (+ rx col-space (* (+ col-space child-width) col)) child)))
+              (round (print (adj-border-xy (+ ry row-space (* (+ row-space child-height) row)) child)))
+	      (round (print (adj-border-wh child-width child)))
+	      (round (print (adj-border-wh child-height child)))))))
