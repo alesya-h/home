@@ -1,0 +1,6 @@
+#!/bin/sh
+DIARY="$HOME/documents/diary.org"
+
+echo "* $(date)" >> "$DIARY"
+cat >> "$DIARY"
+echo >> "$DIARY"
