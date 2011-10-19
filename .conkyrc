@@ -23,21 +23,21 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-alignment top_left
+alignment top_right
 background no
 border_width 1
 cpu_avg_samples 2
 default_color white
-default_outline_color white
-default_shade_color white
+default_outline_color black
+default_shade_color black
 draw_borders no
 draw_graph_borders yes
 draw_outline no
-draw_shades no
+draw_shades yes
 use_xft yes
 xftfont DejaVu Sans Mono:size=12
 gap_x 5
-gap_y 60
+gap_y 5
 minimum_size 5 5
 net_avg_samples 2
 no_buffers yes
@@ -55,6 +55,8 @@ show_graph_scale no
 show_graph_range no
 
 TEXT
+${alignr}${time}
+${execi 60 notifications}
 ${scroll 16 $nodename - $sysname $kernel on $machine | }
 $hr
 ${color grey}Uptime:$color $uptime
