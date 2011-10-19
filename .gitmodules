@@ -1,6 +1,7 @@
 [submodule "p/my/make-sch-rb"]
 	path = p/my/make-sch-rb
-	url = git@github.com:alesguzik/make-sch-rb.git
+	url = git@bitbucket.org:alesguzik/make-sch-rb.git
 [submodule ".emacs.d"]
 	path = .emacs.d
-	url = git@github.com:alesguzik/.emacs.d.git
+	url = git@bitbucket.org:alesguzik/.emacs.d.git
+
