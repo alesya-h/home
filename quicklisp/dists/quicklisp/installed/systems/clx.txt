@@ -1,1 +1,0 @@
-dists/quicklisp/software/clx-0.7.4/clx.asd
