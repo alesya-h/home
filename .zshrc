@@ -22,8 +22,8 @@ bindkey '^i' expand-or-complete-prefix
 autoload -U promptinit && promptinit
 autoload -U colors && colors
 
-# command L equivalent to command |less
-alias -g L='|less' 
+autoload -U select-word-style
+select-word-style bash
 
 #hg_branch() {
 #    hg branch 2> /dev/null | awk '{ print "[hg:" $1 }'
