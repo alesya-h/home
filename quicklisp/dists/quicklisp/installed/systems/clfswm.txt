@@ -1,1 +1,0 @@
-dists/quicklisp/software/clfswm-20110619-svn/clfswm.asd

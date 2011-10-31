@@ -1,1 +1,0 @@
-dists/quicklisp/software/cl-glfw-20110730-git/cl-glfw-opengl-version_4_1.asd

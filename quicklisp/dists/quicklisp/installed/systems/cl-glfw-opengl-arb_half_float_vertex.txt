@@ -1,1 +1,0 @@
-dists/quicklisp/software/cl-glfw-20110730-git/lib/cl-glfw-opengl-arb_half_float_vertex.asd

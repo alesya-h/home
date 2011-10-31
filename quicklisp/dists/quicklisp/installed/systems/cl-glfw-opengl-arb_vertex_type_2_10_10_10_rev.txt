@@ -1,1 +1,0 @@
-dists/quicklisp/software/cl-glfw-20110730-git/lib/cl-glfw-opengl-arb_vertex_type_2_10_10_10_rev.asd
