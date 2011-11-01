@@ -37,3 +37,15 @@
          (x7 ,x7)
          (x8 ,x8))
      (,sch)))
+
+(defclass circuit-component ()
+  (component-singular
+  component-d
+  number-element
+  number-out-slot
+  number-in-slot
+  check))
+
+(defmethod set-arrays ((sing vector) (d vector) (cc circuit-component))
+  (setf (slot-value cc 'component-singular) sing)
+  (setf (slot-value cc 'component-d) d))
