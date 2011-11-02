@@ -6,4 +6,4 @@ export ALTERNATE_EDITOR="emacs"
 export BROWSER=firefox
 export CLICOLOR=1
 
-export PATH="$PATH:$HOME/p/my/scripts:$HOME/bin"
+export PATH="$PATH:$HOME/p/my/scripts:$HOME/bin:$HOME/.local/bin"

@@ -13,7 +13,7 @@ source ~/shell_general.sh
 N=$((15 * 60))
 X=-2
 CMD="bgtext.sh"
-changefile="$HOME/graphics/wallpapers/change"
+changefile="$HOME/Pictures/wallpapers/change"
 while true; do
     if [ $X -eq 0 ]
     then
@@ -38,5 +38,5 @@ exec $HOME/.dropbox-dist/dropboxd &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers
-xterm
+xterm &
 clfswm
