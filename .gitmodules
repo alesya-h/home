@@ -4,3 +4,6 @@
 [submodule "p/my/make-sch-rb"]
 	path = p/my/make-sch-rb
 	url = git@bitbucket.org:alesguzik/make-sch-rb
+[submodule ".rbenv"]
+	path = .rbenv
+	url = git://github.com/sstephenson/rbenv.git
