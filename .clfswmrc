@@ -23,3 +23,15 @@
               (round (print (adj-border-xy (+ ry row-space (* (+ row-space child-height) row)) child)))
 	      (round (print (adj-border-wh child-width child)))
 	      (round (print (adj-border-wh child-height child)))))))
+
+
+
+(defmacro creating-frame-tree (f params children &rest body)
+  `(let ((,f (create-frame ,@params)))
+    (dolist (child ,children)
+      (add-frame child ,f))
+    ,@body
+    frame))
+
+(add-frame (creating-frame-tree f (list :name "Communications" :layout #'tile-horizontal-layout)
+                                nil))
