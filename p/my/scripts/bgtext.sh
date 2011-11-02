@@ -4,7 +4,7 @@ CMD='date'
 BGCOLOR=transparent
 FGCOLOR=white
 FONT_SIZE=24
-BG_SRC=$HOME/graphics/wallpapers/
+BG_SRC=$HOME/Pictures/wallpapers/
 
 if [ -d $BG_SRC ]
 then
