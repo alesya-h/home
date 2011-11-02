@@ -1,5 +1,5 @@
 #!/bin/sh
-DIARY="$HOME/documents/diary.org"
+DIARY="$HOME/Documents/diary.org"
 
 echo "* $(date)" >> "$DIARY"
 cat >> "$DIARY"

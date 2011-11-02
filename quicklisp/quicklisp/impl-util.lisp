@@ -71,10 +71,7 @@
   (:implementation sbcl
     ".sbclrc")
   (:implementation cmucl
-    ".cmucl-init.lisp")
-  (:implementation scl
-    ".scl-init.lisp")
-  )
+    ".cmucl-init.lisp"))
 
 (defun init-file-name-for (&optional implementation-designator)
   (let* ((class-name (find-symbol (string-upcase implementation-designator)
@@ -158,6 +155,7 @@ quicklisp at CL startup."
     (ql-sbcl:native-namestring pathname)))
 
 
+
 ;;;
 ;;; Deleting a directory tree
 ;;;
@@ -189,9 +187,6 @@ quicklisp at CL startup."
   (:implementation cmucl
     (directory (merge-pathnames *wild-entry* directory)
                #+cmucl :truenamep #+cmucl nil))
-  (:implementation scl
-    (directory (merge-pathnames *wild-entry* directory)
-               #+scl :truenamep #+scl nil))
   (:implementation lispworks
     (directory (merge-pathnames *wild-entry* directory)
                #+lispworks :directories #+lispworks t
@@ -228,8 +223,6 @@ quicklisp at CL startup."
     (ql-clisp:delete-dir entry))
   (:implementation cmucl
     (ql-cmucl:unix-rmdir (namestring entry)))
-  (:implementation scl
-    (ql-scl:unix-rmdir (ql-scl:unix-namestring entry)))
   (:implementation ecl
     (ql-ecl:rmdir entry))
   (:implementation lispworks

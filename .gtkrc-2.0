@@ -3,7 +3,7 @@
 gtk-theme-name = "Ambiance"
 style "user-font"
 {
-	font_name="Sans 10"
+	font_name="Sans 12"
 }
 widget_class "*" style "user-font"
 

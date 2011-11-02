@@ -1,3 +1,11 @@
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.dpi: 90
+Xft.rgba: rgb
+
 XTerm*VT100.colorMode: on
 
 XTerm*background: black
@@ -32,7 +40,7 @@ XTerm*VT100.eightBitOutput:  true
 XTerm*VT100.titeInhibit:  true
 XTerm*VT100.underLine:  on
 XTerm*faceName: DejaVu Sans Mono
-XTerm*faceSize: 11
+XTerm*faceSize: 12
 XTerm*highlightSelection:  true
 XTerm*internalBorder: 0
 XTerm*loginShell: false

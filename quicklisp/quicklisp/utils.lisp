@@ -96,7 +96,3 @@
   (with-open-file (stream file :direction :output
                           :if-exists :rename-and-delete)
     (write-line line stream)))
-
-(defun file-size (file)
-  (with-open-file (stream file :element-type '(unsigned-byte 8))
-    (file-length stream)))

@@ -12,8 +12,7 @@
            #:delete-file-if-exists
            #:ensure-file-exists
            #:split-spaces
-           #:first-line
-           #:file-size))
+           #:first-line))
 
 (defpackage #:ql-setup
   (:documentation
@@ -207,11 +206,7 @@
            #:prefix
            #:local-archive-file
            #:ensure-local-archive-file
-           #:check-local-archive-file
-           #:invalid-local-archive
-           #:missing-local-archive
-           #:badly-sized-local-archive
-           #:delete-and-retry)
+           #:local-archive-file-valid-p)
   ;; Systems
   (:export #:dist
            #:release
@@ -263,7 +258,6 @@
            #:add-to-init-file
            #:use-only-quicklisp-systems
            #:write-asdf-manifest-file
-           #:where-is-system
            #:help))
 
 (in-package #:quicklisp-client)
