@@ -26,18 +26,19 @@
 
 
 (defmacro creating-frame-tree (f params children &rest body)
-  `(let ((,f (create-frame ,@params)))
+  `(let ((,f (apply #'create-frame ,params)))
     (dolist (child ,children)
       (add-frame child ,f))
     ,@body
-    frame))
+    ,f))
 
 
 (defun my-init-hook ()
   (dbg 'my-init-hook)
   (setf (frame-data-slot *root-frame* :tile-space-size) 0.05)
   (setf (frame-layout *root-frame*) #'tile-space-layout)
-  (add-frame (creating-frame-tree f (list :name "Communications" :layout #'tile-horizontal-layout)
+  (add-frame (creating-frame-tree f (list :name "Communications" :layout 
+#'tile-horizontal-layout)
                                   (list
                                    (creating-frame-tree f '() '())
                                    ))
