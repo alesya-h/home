@@ -25,27 +25,66 @@
 	      (round (print (adj-border-wh child-height child)))))))
 
 
-(defmacro creating-frame-tree (f params children &rest body)
-  `(let ((,f (apply #'create-frame ,params)))
-    (dolist (child ,children)
-      (add-frame child ,f))
-    ,@body
-    ,f))
+(defmacro frame-tree (params &rest children)
+  `(let ((frame (create-frame ,@params)))
+    (dolist (child (list ,@children))
+      (add-frame child frame))
+    frame))
 
+(defun run-in-frame (frame cmd &optional (delay 0))
+  (let ((old-current-child *current-child*))
+    (setf *current-child* frame)
+    (if (listp cmd)
+        (dolist (c cmd)
+          (do-shell c))
+        (do-shell cmd))
+    ;; (sleep delay)
+    (setf *current-child* old-current-child))
+  frame)
 
 (defun my-init-hook ()
   (dbg 'my-init-hook)
-  (setf (frame-data-slot *root-frame* :tile-space-size) 0.05)
-  (setf (frame-layout *root-frame*) #'tile-space-layout)
-  (add-frame (creating-frame-tree f (list :name "Communications" :layout 
-#'tile-horizontal-layout)
-                                  (list
-                                   (creating-frame-tree f '() '())
-                                   ))
-             *root-frame*)
+  (setf (frame-layout *root-frame*) #'tile-space-layout
+        (frame-data-slot *root-frame* :tile-space-size) 0.05
+        (frame-data-slot *root-frame* :tile-layout-keep-position) :yes)
+  (let* ((skype-frame (create-frame :name "Skype"
+                                    :layout #'main-window-left-layout
+                                    :data (list '(:tile-size 0.2))))
+         (im-frame (create-frame :name "IM"
+                                 :layout #'main-window-left-layout
+                                 :data (list '(:tile-size 0.2))))
+         (mail-frame (create-frame :name "Mail"
+                                   :layout #'maximize-layout))
+         (communications-frame
+          (create-frame :name "Communications"
+                        :layout #'maximize-layout
+                        :child (list
+                                (create-frame
+                                 :name "Communications:inner"
+                                 :layout #'tile-horizontal-layout
+                                 :data (list '(:tile-layout-keep-position :yes))
+                                 :child (list skype-frame im-frame mail-frame)))))
+         (distractors-frame (create-frame
+                             :name "Distractors"
+                             :layout #'tile-horizontal-layout
+                             :data (list '(:tile-layout-keep-position :yes))))
+         (work-frame (create-frame
+                             :name "Work"
+                             :layout #'tile-horizontal-layout
+                             :data (list '(:tile-layout-keep-position :yes))))
+         (utility-frame (create-frame
+                             :name "Utility"
+                             :layout #'tile-space-layout
+                             :data (list '(:tile-layout-keep-position :yes)
+                                         '(:tile-space-size 0.05)))))
+    (add-frame utility-frame *root-frame*)
+    (add-frame work-frame *root-frame*)
+    (add-frame distractors-frame *root-frame*)
+    (add-frame communications-frame *root-frame*)
+    )
   (setf *current-child* (first (frame-child *current-root*))))
 
-(setf *init-hook* '(my-init-hook))
+;; (setf *init-hook* '(my-init-hook))
 
 ;; (do-shell "exec apwal")
 
