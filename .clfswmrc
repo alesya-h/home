@@ -1,5 +1,17 @@
 (in-package :clfswm)
 
+(defun update-layout-managed-children-keep-position (child parent)
+  (let ((managed-children (frame-data-slot parent :layout-managed-children))
+	(managed-in-parent (get-managed-child parent)))
+    (dolist (ch managed-in-parent)
+      (unless (child-member ch managed-children)
+	(setf managed-children (append managed-children (list ch)))))
+    (setf managed-children (remove-if-not (lambda (x)
+					    (child-member x managed-in-parent))
+					  managed-children))
+    (setf (frame-data-slot parent :layout-managed-children) managed-children)
+    managed-children))
+
 ;;; Redefine Space layout
 (defun tile-space-layout (child parent)
   "Tile Space: tile child in its frame leaving spaces between them"
@@ -38,8 +50,9 @@
         (dolist (c cmd)
           (do-shell c))
         (do-shell cmd))
-    ;; (sleep delay)
-    (setf *current-child* old-current-child))
+;    (with-timer (delay)
+;      (setf *current-child* old-current-child))
+  )
   frame)
 
 (defun my-init-hook ()
@@ -47,44 +60,50 @@
   (setf (frame-layout *root-frame*) #'tile-space-layout
         (frame-data-slot *root-frame* :tile-space-size) 0.05
         (frame-data-slot *root-frame* :tile-layout-keep-position) :yes)
-  (let* ((skype-frame (create-frame :name "Skype"
-                                    :layout #'main-window-left-layout
-                                    :data (list '(:tile-size 0.2))))
-         (im-frame (create-frame :name "IM"
-                                 :layout #'main-window-left-layout
-                                 :data (list '(:tile-size 0.2))))
-         (mail-frame (create-frame :name "Mail"
-                                   :layout #'maximize-layout))
-         (communications-frame
-          (create-frame :name "Communications"
-                        :layout #'maximize-layout
-                        :child (list
-                                (create-frame
-                                 :name "Communications:inner"
+  (let* (
+         (utility-frame (add-frame (create-frame
+                                    :name "Utility"
+                                    :layout #'tile-space-layout
+                                    :data (list '(:tile-layout-keep-position :yes)
+                                                '(:tile-space-size 0.05)))
+                                   *root-frame*))
+         (work-frame (add-frame (create-frame
+                                 :name "Work"
                                  :layout #'tile-horizontal-layout
-                                 :data (list '(:tile-layout-keep-position :yes))
-                                 :child (list skype-frame im-frame mail-frame)))))
-         (distractors-frame (create-frame
-                             :name "Distractors"
-                             :layout #'tile-horizontal-layout
-                             :data (list '(:tile-layout-keep-position :yes))))
-         (work-frame (create-frame
-                             :name "Work"
-                             :layout #'tile-horizontal-layout
-                             :data (list '(:tile-layout-keep-position :yes))))
-         (utility-frame (create-frame
-                             :name "Utility"
-                             :layout #'tile-space-layout
-                             :data (list '(:tile-layout-keep-position :yes)
-                                         '(:tile-space-size 0.05)))))
-    (add-frame utility-frame *root-frame*)
-    (add-frame work-frame *root-frame*)
-    (add-frame distractors-frame *root-frame*)
-    (add-frame communications-frame *root-frame*)
-    )
-  (setf *current-child* (first (frame-child *current-root*))))
+                                 :data (list '(:tile-layout-keep-position :yes)))
+                                *root-frame*))
+         (distractors-frame (add-frame (create-frame
+                                        :name "Distractors"
+                                        :layout #'tile-horizontal-layout
+                                        :data (list '(:tile-layout-keep-position :yes)))
+                                       *root-frame*))
+         (communications-frame (add-frame 
+                                (create-frame :name "Communications"
+                                              :layout #'maximize-layout)
+                                *root-frame*))
+         (communications-inner-frame (add-frame
+                                      (create-frame
+                                       :name "Communications:inner"
+                                       :layout #'tile-horizontal-layout
+                                       :data (list '(:tile-layout-keep-position :yes)))
+                                      communications-frame))
+         (skype-frame (add-frame (create-frame :name "Skype"
+                                               :layout #'main-window-left-layout
+                                               :data (list '(:tile-size 0.2)))
+                                 communications-inner-frame))
+         (im-frame (add-frame (create-frame :name "IM"
+                                            :layout #'main-window-left-layout
+                                            :data (list '(:tile-size 0.2)))
+                              communications-inner-frame))
+         (mail-frame (add-frame (create-frame :name "Mail"
+                                              :layout #'maximize-layout)
+                                communications-inner-frame))
+         )
+    (setf *current-child* distractors-frame)
+    (run-in-frame skype-frame "skype" 20)
+    ))
 
-;; (setf *init-hook* '(my-init-hook))
+(setf *init-hook* '(my-init-hook))
 
 ;; (do-shell "exec apwal")
 
