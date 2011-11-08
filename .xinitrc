@@ -24,7 +24,7 @@ while true; do
         rm $changefile
     fi
     X=$((($X + 1) % $N))
-    xsetroot -name "`acpi` | `date`"
+#   xsetroot -name "`acpi` | `date`"
     sleep 1 #1m
 done &
 
@@ -32,10 +32,10 @@ xrdb -merge .Xresources
 
 xscreensaver -no-splash &
 conky &
-emacs --daemon &
 $HOME/.dropbox-dist/dropboxd &
+[[ -z "$(ps -C emacs --no-headers)" ]] && emacs --daemon
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers
-xterm &
+# xterm
 clfswm

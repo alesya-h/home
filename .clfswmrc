@@ -36,24 +36,25 @@
 	      (round (print (adj-border-wh child-width child)))
 	      (round (print (adj-border-wh child-height child)))))))
 
-
-(defmacro frame-tree (params &rest children)
-  `(let ((frame (create-frame ,@params)))
-    (dolist (child (list ,@children))
-      (add-frame child frame))
-    frame))
-
-(defun run-in-frame (frame cmd &optional (delay 0))
+(defun eval-in-frame (frame fun &optional (at 0) till)
   (let ((old-current-child *current-child*))
-    (setf *current-child* frame)
-    (if (listp cmd)
-        (dolist (c cmd)
-          (do-shell c))
-        (do-shell cmd))
-;    (with-timer (delay)
-;      (setf *current-child* old-current-child))
-  )
-  frame)
+    (add-timer at
+               (lambda ()
+                 (setf *current-child* frame)
+                 (show-all-children)
+                 (funcall fun)
+                 ))
+    (when till
+      (add-timer till
+                 (lambda ()
+                   (setf *current-child* old-current-child))))
+  (values)))
+
+(defun shell-in-frame (frame cmd &optional (at 0) till)
+  (eval-in-frame frame (lambda () (do-shell cmd)) at till))
+
+(defun execute-in-frame (frame cmd args &optional (at 0) till)
+  (eval-in-frame frame (lambda () (do-execute cmd args)) at till))
 
 (defun my-init-hook ()
   (dbg 'my-init-hook)
@@ -69,9 +70,18 @@
                                    *root-frame*))
          (work-frame (add-frame (create-frame
                                  :name "Work"
-                                 :layout #'tile-horizontal-layout
-                                 :data (list '(:tile-layout-keep-position :yes)))
+                                 :layout #'tile-space-layout
+                                 :data (list '(:tile-layout-keep-position :yes)
+                                             '(:tile-space-size 0.05)))
                                 *root-frame*))
+         (learn-frame (add-frame (create-frame
+                                 :name "Learn"
+                                 :layout #'maximize-layout)
+                                work-frame))
+         (code-frame (add-frame (create-frame
+                                 :name "Code"
+                                 :layout #'maximize-layout)
+                                work-frame))
          (distractors-frame (add-frame (create-frame
                                         :name "Distractors"
                                         :layout #'tile-horizontal-layout
@@ -99,8 +109,13 @@
                                               :layout #'maximize-layout)
                                 communications-inner-frame))
          )
-    (setf *current-child* distractors-frame)
-    (run-in-frame skype-frame "skype" 20)
+    (shell-in-frame code-frame "ecc" 1)
+    (shell-in-frame learn-frame "conkeror" 4)
+    (shell-in-frame skype-frame "skype" 7)
+    (at 10
+      (lambda ()
+	(setf *current-child* distractors-frame)
+	(show-all-children)))
     ))
 
 (setf *init-hook* '(my-init-hook))
