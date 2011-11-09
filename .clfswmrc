@@ -110,9 +110,11 @@
                                 communications-inner-frame))
          )
     (shell-in-frame code-frame "ecc" 1)
-    (shell-in-frame learn-frame "conkeror" 4)
-    (shell-in-frame skype-frame "skype" 7)
-    (at 10
+    (shell-in-frame learn-frame "conkeror" 3)
+    (shell-in-frame im-frame "pidgin" 6)
+    (shell-in-frame mail-frame "thunderbird" 9)
+    (shell-in-frame skype-frame "skype" 12)
+    (at 15
       (lambda ()
 	(setf *current-child* distractors-frame)
 	(show-all-children)))
