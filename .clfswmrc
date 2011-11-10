@@ -62,12 +62,34 @@
         (frame-data-slot *root-frame* :tile-space-size) 0.05
         (frame-data-slot *root-frame* :tile-layout-keep-position) :yes)
   (let* (
+         (distractors-frame (add-frame (create-frame
+                                        :name "Distractors"
+                                        :layout #'tile-horizontal-layout
+                                        :data (list '(:tile-layout-keep-position :yes)))
+                                       *root-frame*))
          (utility-frame (add-frame (create-frame
                                     :name "Utility"
                                     :layout #'tile-space-layout
                                     :data (list '(:tile-layout-keep-position :yes)
                                                 '(:tile-space-size 0.05)))
                                    *root-frame*))
+         (communications-frame (add-frame
+                                      (create-frame
+                                       :name "Communications"
+                                       :layout #'tile-horizontal-layout
+                                       :data (list '(:tile-layout-keep-position :yes)))
+                                      *root-frame*))
+         (skype-frame (add-frame (create-frame :name "Skype"
+                                               :layout #'main-window-left-layout
+                                               :data (list '(:tile-size 0.2)))
+                                 communications-frame))
+         (im-frame (add-frame (create-frame :name "IM"
+                                            :layout #'main-window-left-layout
+                                            :data (list '(:tile-size 0.2)))
+                              communications-frame))
+         (mail-frame (add-frame (create-frame :name "Mail"
+                                              :layout #'maximize-layout)
+                                communications-frame))
          (work-frame (add-frame (create-frame
                                  :name "Work"
                                  :layout #'tile-space-layout
@@ -82,42 +104,17 @@
                                  :name "Code"
                                  :layout #'maximize-layout)
                                 work-frame))
-         (distractors-frame (add-frame (create-frame
-                                        :name "Distractors"
-                                        :layout #'tile-horizontal-layout
-                                        :data (list '(:tile-layout-keep-position :yes)))
-                                       *root-frame*))
-         (communications-frame (add-frame 
-                                (create-frame :name "Communications"
-                                              :layout #'maximize-layout)
-                                *root-frame*))
-         (communications-inner-frame (add-frame
-                                      (create-frame
-                                       :name "Communications:inner"
-                                       :layout #'tile-horizontal-layout
-                                       :data (list '(:tile-layout-keep-position :yes)))
-                                      communications-frame))
-         (skype-frame (add-frame (create-frame :name "Skype"
-                                               :layout #'main-window-left-layout
-                                               :data (list '(:tile-size 0.2)))
-                                 communications-inner-frame))
-         (im-frame (add-frame (create-frame :name "IM"
-                                            :layout #'main-window-left-layout
-                                            :data (list '(:tile-size 0.2)))
-                              communications-inner-frame))
-         (mail-frame (add-frame (create-frame :name "Mail"
-                                              :layout #'maximize-layout)
-                                communications-inner-frame))
          )
-    (shell-in-frame code-frame "ecc" 1)
-    (shell-in-frame learn-frame "conkeror" 3)
-    (shell-in-frame im-frame "pidgin" 6)
-    (shell-in-frame mail-frame "thunderbird" 9)
-    (shell-in-frame skype-frame "skype" 12)
-    (at 15
-      (lambda ()
-	(setf *current-child* distractors-frame)
-	(show-all-children)))
+    (shell-in-frame learn-frame "conkeror" 1)
+    (shell-in-frame mail-frame "claws-mail" 10)
+    (shell-in-frame im-frame "pidgin" 12)
+    (shell-in-frame skype-frame "skype" 15)
+    (shell-in-frame code-frame "ecc" 25)
+
+    ;; (at 15
+    ;;   (lambda ()
+    ;;     (setf *current-child* distractors-frame)
+    ;;     (show-all-children)))
     ))
 
 (setf *init-hook* '(my-init-hook))

@@ -5,7 +5,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi &
 
-setxkbmap -layout dvp,ru -variant -option grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp
+xmodmap ~/.Xmodmap
+setxkbmap -layout dvp,ru -variant -option grp:caps_toggle,grp_led:caps,terminate:ctrl_alt_bksp
 
 source ~/login_general.sh
 source ~/shell_general.sh
@@ -33,7 +34,7 @@ xrdb -merge .Xresources
 xscreensaver -no-splash &
 conky &
 $HOME/.dropbox-dist/dropboxd &
-[[ -z "$(ps -C emacs --no-headers)" ]] && emacs --daemon
+[[ -z "$(ps -C emacs --no-headers)" ]] && emacs --daemon &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers
