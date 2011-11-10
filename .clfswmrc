@@ -106,10 +106,10 @@
                                 work-frame))
          )
     (shell-in-frame learn-frame "conkeror" 1)
-    (shell-in-frame mail-frame "claws-mail" 10)
-    (shell-in-frame im-frame "pidgin" 12)
-    (shell-in-frame skype-frame "skype" 15)
-    (shell-in-frame code-frame "ecc" 25)
+    (shell-in-frame mail-frame "claws-mail" 20)
+    (shell-in-frame im-frame "pidgin" 25)
+    (shell-in-frame skype-frame "skype" 30)
+    (shell-in-frame code-frame "ecc" 40)
 
     ;; (at 15
     ;;   (lambda ()
