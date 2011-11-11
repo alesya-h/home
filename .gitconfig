@@ -9,3 +9,5 @@
 	history-view-vpane-position = 541
 [gui]
 	spellingdictionary = none
+[core]
+	excludesfile = /home/alesguzik/.gitignore_global
