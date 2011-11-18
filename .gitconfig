@@ -11,3 +11,5 @@
 	spellingdictionary = none
 [core]
 	excludesfile = /home/alesguzik/.gitignore_global
+[branch]
+	autosetuprebase = always
