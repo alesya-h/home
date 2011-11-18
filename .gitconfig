@@ -13,3 +13,5 @@
 	excludesfile = /home/alesguzik/.gitignore_global
 [branch]
 	autosetuprebase = always
+[branch "master"]
+	rebase = true
