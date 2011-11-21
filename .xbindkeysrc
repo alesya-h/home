@@ -1,9 +1,53 @@
+"sudo pm-suspend"
+    m:0x0 + c:150
+    XF86Sleep
 "xscreensaver-command -lock"
     m:0x40 + c:127
     Mod4 + Pause
-"amixer -c 0 set Master 1-"
+
+"amixer -c 0 set Master mute"
+    m:0x0 + c:121
+    XF86AudioMute
+"amixer -c 0 set Master unmute"
+    m:0x40 + c:121
+    Mod4 + XF86AudioMute
+"amixer -c 0 set Master 1- unmute"
     m:0x40 + c:95
     Mod4 + F11
-"amixer -c 0 set Master 1+"
+"amixer -c 0 set Master 1+ unmute"
     m:0x40 + c:96
     Mod4 + F12
+"amixer -c 0 set Master 1- unmute"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+"amixer -c 0 set Master 1+ unmute"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
+"mpc prev"
+    m:0x0 + c:173
+    XF86AudioPrev
+"mpc next"
+    m:0x0 + c:171
+    XF86AudioNext
+"mpc seek -2"
+    m:0x40 + c:173
+    Mod4 + XF86AudioPrev
+"mpc seek +2"
+    m:0x40 + c:171
+    Mod4 + XF86AudioNext
+"mpc stop"
+    m:0x40 + c:174
+    Mod4 + XF86AudioStop
+"mpc pause"
+    m:0x0 + c:174
+    XF86AudioStop
+"mpc play"
+    m:0x0 + c:172
+    XF86AudioPlay
+"mpc single"
+    m:0x4 + c:174
+    Control + XF86AudioStop
+"mpc random"
+    m:0x4 + c:172
+    Control + XF86AudioPlay
