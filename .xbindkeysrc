@@ -1,3 +1,9 @@
 "xscreensaver-command -lock"
     m:0x40 + c:127
     Mod4 + Pause
+"amixer -c 0 set Master 1-"
+    m:0x40 + c:95
+    Mod4 + F11
+"amixer -c 0 set Master 1+"
+    m:0x40 + c:96
+    Mod4 + F12
