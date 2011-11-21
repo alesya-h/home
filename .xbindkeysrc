@@ -51,3 +51,9 @@
 "mpc random"
     m:0x4 + c:172
     Control + XF86AudioPlay
+"sudo poweroff"
+    m:0x1 + c:150
+    Shift + XF86Sleep
+"sudo reboot"
+    m:0x4 + c:150
+    Control + XF86Sleep
