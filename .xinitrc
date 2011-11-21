@@ -7,6 +7,7 @@ fi &
 
 setxkbmap -layout dvp,ru -variant -option grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp
 xmodmap ~/.Xmodmap
+xbindkeys
 
 source ~/login_general.sh
 source ~/shell_general.sh
