@@ -35,7 +35,7 @@ xrdb -merge .Xresources
 xscreensaver -no-splash &
 conky &
 $HOME/.dropbox-dist/dropboxd &
-[[ -z "$(ps -C emacs --no-headers)" ]] && emacs --daemon &
+# [[ -z "$(ps -C emacs --no-headers)" ]] && emacs --daemon &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers

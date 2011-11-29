@@ -6,7 +6,7 @@ Xft.antialias: 1
 Xft.dpi: 90
 Xft.rgba: rgb
 
-Emacs.Font: DejaVu Sans Mono-16
+Emacs.Font: DejaVu Sans Mono-12
 
 XTerm*VT100.colorMode: on
 

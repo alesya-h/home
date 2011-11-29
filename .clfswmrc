@@ -2,7 +2,7 @@
 
 (defun update-layout-managed-children-keep-position (child parent)
   (let ((managed-children (frame-data-slot parent :layout-managed-children))
-	(managed-in-parent (get-managed-child parent)))
+        (managed-in-parent (get-managed-child parent)))
     (dolist (ch managed-in-parent)
       (unless (child-member ch managed-children)
 	(setf managed-children (append managed-children (list ch)))))
@@ -62,22 +62,22 @@
         (frame-data-slot *root-frame* :tile-space-size) 0.05
         (frame-data-slot *root-frame* :tile-layout-keep-position) :yes)
   (let* (
-         (distractors-frame (add-frame (create-frame
-                                        :name "Distractors"
-                                        :layout #'tile-horizontal-layout
-                                        :data (list '(:tile-layout-keep-position :yes)))
-                                       *root-frame*))
-         (utility-frame (add-frame (create-frame
-                                    :name "Utility"
-                                    :layout #'tile-space-layout
-                                    :data (list '(:tile-layout-keep-position :yes)
-                                                '(:tile-space-size 0.05)))
-                                   *root-frame*))
+         ;; (distractors-frame (add-frame (create-frame
+         ;;                                :name "Distractors"
+         ;;                                :layout #'tile-horizontal-layout
+         ;;                                :data (list '(:tile-layout-keep-position :yes)))
+         ;;                               *root-frame*))
+         ;; (utility-frame (add-frame (create-frame
+         ;;                            :name "Utility"
+         ;;                            :layout #'tile-space-layout
+         ;;                            :data (list '(:tile-layout-keep-position :yes)
+         ;;                                        '(:tile-space-size 0.05)))
+         ;;                           *root-frame*))
          (communications-frame (add-frame
-                                      (create-frame
-                                       :name "Communications"
-                                       :layout #'tile-horizontal-layout
-                                       :data (list '(:tile-layout-keep-position :yes)))
+                                (create-frame
+                                 :name "Communications"
+                                 :layout #'tile-horizontal-layout
+                                 :data (list '(:tile-layout-keep-position :yes)))
                                       *root-frame*))
          (skype-frame (add-frame (create-frame :name "Skype"
                                                :layout #'main-window-left-layout
@@ -97,20 +97,21 @@
                                              '(:tile-space-size 0.05)))
                                 *root-frame*))
          (learn-frame (add-frame (create-frame
-                                 :name "Learn"
-                                 :layout #'maximize-layout)
-                                work-frame))
+                                  :name "Learn"
+                                  :layout #'maximize-layout)
+                                 work-frame))
          (code-frame (add-frame (create-frame
                                  :name "Code"
-                                 :layout #'maximize-layout)
+                                 :layout #'main-window-left-layout
+                                 :data (list '(:tile-size 0.2)))
                                 work-frame))
          )
-    (shell-in-frame learn-frame "conkeror" 1)
-    (shell-in-frame mail-frame "claws-mail" 20)
-    (shell-in-frame im-frame "pidgin" 25)
-    (shell-in-frame skype-frame "skype" 30)
-    (shell-in-frame code-frame "ecc" 40)
-
+    (shell-in-frame learn-frame "firefox" 1)
+    (shell-in-frame mail-frame "claws-mail" 10)
+    (shell-in-frame im-frame "pidgin" 15)
+    (shell-in-frame skype-frame "skype" 20)
+    (shell-in-frame code-frame "emacs" 30)
+    
     ;; (at 15
     ;;   (lambda ()
     ;;     (setf *current-child* distractors-frame)
