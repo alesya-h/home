@@ -16,6 +16,7 @@
 [branch "master"]
 	rebase = true
 [alias]
+  co = checkout
 	me = log --author='Ales Guzik' --format=format:'%ci %s'
 	sub = submodule update --init --recursive
 	staged = diff --staged
