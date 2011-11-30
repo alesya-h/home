@@ -82,7 +82,7 @@ reverse_files_only=1
 copymove_persistent_attr=1
 select_flags=6
 editor_backup_extension=~
-skin=sand256
+skin=xoria256
 keymap=mc.keymap
 auto_save_setup_panels=1
 
@@ -101,7 +101,7 @@ editor_group_undo=0
 
 [Layout]
 equal_split=1
-first_panel_size=68
+first_panel_size=106
 message_visible=1
 keybar_visible=1
 xterm_title=1
