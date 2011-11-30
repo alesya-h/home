@@ -39,7 +39,7 @@ XTerm*pointerColorBackground: black
 
 XTerm*VT100.eightBitInput:  true
 XTerm*VT100.eightBitOutput:  true
-XTerm*VT100.titeInhibit:  true
+XTerm*VT100.titeInhibit:  false
 XTerm*VT100.underLine:  on
 XTerm*faceName: DejaVu Sans Mono
 XTerm*faceSize: 12
