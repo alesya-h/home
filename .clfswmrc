@@ -1,5 +1,6 @@
 (in-package :clfswm)
 
+;; fix
 (defun update-layout-managed-children-keep-position (child parent)
   (let ((managed-children (frame-data-slot parent :layout-managed-children))
         (managed-in-parent (get-managed-child parent)))
@@ -12,18 +13,42 @@
     (setf (frame-data-slot parent :layout-managed-children) managed-children)
     managed-children))
 
+
+(defmethod tile-layout (child parent)
+  (let* ((managed-children (update-layout-managed-children child parent))
+	 (pos (child-position child managed-children))
+	 (len (length managed-children))
+	 (d1 (ceiling (sqrt len)))
+	 (d2  (ceiling (/ len d1)))
+	 (nx (if (> (frame-rw parent) (frame-rh parent)) d1 d2))
+	 (ny (if (> (frame-rw parent) (frame-rh parent)) d2 d1))
+	 (dx (/ (frame-rw parent) nx))
+	 (dy (/ (frame-rh parent) ny))
+	 (dpos (- (* nx ny) len))
+	 (width dx))
+    (when (plusp dpos)
+      (if (zerop pos)
+	  (setf width (* dx (1+ dpos)))
+	  (incf pos dpos)))
+    (values (round (adj-border-xy (+ (frame-rx parent) (truncate (* (mod pos nx) dx))) child))
+	    (round (adj-border-xy (+ (frame-ry parent) (truncate (* (truncate (/ pos nx)) dy))) child))
+	    (round (adj-border-wh width child))
+	    (round (adj-border-wh dy child)))))
+
 ;;; Redefine Space layout
 (defun tile-space-layout (child parent)
   "Tile Space: tile child in its frame leaving spaces between them"
   (with-slots (rx ry rw rh) parent
     (let* ((managed-children (update-layout-managed-children child parent))
-	   (pos (child-position child managed-children))
-	   (len (length managed-children))
-	   (cols (ceiling (sqrt len)))
-           (rows (ceiling (/ len cols)))
+           (pos (child-position child managed-children))
+           (len (length managed-children))
+           (d1 (ceiling (sqrt len)))
+           (d2 (ceiling (/ len d1)))
+           (cols (if (> rw rh) d1 d2))
+           (rows (if (> rw rh) d2 d1))
            (col (mod pos cols))
            (row (floor pos cols))
-	   (space-percent (or (frame-data-slot parent :tile-space-size) 0.05))
+           (space-percent (or (frame-data-slot parent :tile-space-size) 0.05))
            (col-space-total (* rw space-percent))
            (row-space-total (* rh space-percent))
            (col-space (floor col-space-total (1+ cols)))
@@ -62,23 +87,12 @@
         (frame-data-slot *root-frame* :tile-space-size) 0.05
         (frame-data-slot *root-frame* :tile-layout-keep-position) :yes)
   (let* (
-         ;; (distractors-frame (add-frame (create-frame
-         ;;                                :name "Distractors"
-         ;;                                :layout #'tile-horizontal-layout
-         ;;                                :data (list '(:tile-layout-keep-position :yes)))
-         ;;                               *root-frame*))
-         ;; (utility-frame (add-frame (create-frame
-         ;;                            :name "Utility"
-         ;;                            :layout #'tile-space-layout
-         ;;                            :data (list '(:tile-layout-keep-position :yes)
-         ;;                                        '(:tile-space-size 0.05)))
-         ;;                           *root-frame*))
          (communications-frame (add-frame
                                 (create-frame
                                  :name "Communications"
-                                 :layout #'tile-horizontal-layout
+                                 :layout #'tile-layout
                                  :data (list '(:tile-layout-keep-position :yes)))
-                                      *root-frame*))
+                                *root-frame*))
          (im-frame (add-frame (create-frame :name "IM"
                                             :layout #'main-window-left-layout
                                             :data (list '(:tile-size 0.2)))
@@ -106,17 +120,6 @@
     (shell-in-frame mail-frame "claws-mail" 12)
     (shell-in-frame im-frame "pidgin" 15)
     (shell-in-frame im-frame "skype" 15)
-    (shell-in-frame code-frame "emacs" 30)
-    
-    ;; (at 15
-    ;;   (lambda ()
-    ;;     (setf *current-child* distractors-frame)
-    ;;     (show-all-children)))
-    ))
+    (shell-in-frame code-frame "emacs" 30)))
 
 (setf *init-hook* '(my-init-hook))
-
-;; (do-shell "exec apwal")
-
-;; (my-frame (:name "Communications" :layout #'tile-left-layout :data (list '(:tile-size 0.6)))
-
