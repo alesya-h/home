@@ -44,7 +44,8 @@ XTerm*VT100.underLine:  on
 XTerm*faceName: DejaVu Sans Mono
 XTerm*faceSize: 12
 XTerm*highlightSelection:  true
-XTerm*internalBorder: 0
+XTerm*internalBorder: 1
+XTerm*borderColor: violet
 XTerm*loginShell: false
 XTerm*multiClickTime: 250
 XTerm*saveLines: 1000
