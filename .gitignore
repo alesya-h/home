@@ -46,3 +46,7 @@
 /quicklisp
 /.fonts
 /.conkeror.mozdev.org
+/.lein
+/.m2
+/.java_history
+/.jline-clojure.main.history
