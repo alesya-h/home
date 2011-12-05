@@ -5,7 +5,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi &
 
-setxkbmap -layout dvp,ru -variant -option grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp
+setxkbmap -layout dvorak,ru -variant -option grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp
 xmodmap ~/.Xmodmap
 xbindkeys
 
