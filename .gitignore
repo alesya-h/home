@@ -50,3 +50,17 @@
 /.m2
 /.java_history
 /.jline-clojure.main.history
+/.adobe/
+/.claws-mail/
+/.config/
+/.gem/
+/.gitk
+/.irb_history
+/.gstreamer-0.10/
+/.mysql_history
+/.recentf
+/.recently-used
+/.surf/
+/.thumbnails/
+/.xchat2/
+/.xscreensaver-getimage.cache

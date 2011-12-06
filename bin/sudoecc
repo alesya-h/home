@@ -1,0 +1,2 @@
+#!/bin/sh
+exec emacsclient -c /sudo::/`readlink -f $1`

@@ -25,5 +25,3 @@
 	st = status
 [color]
 	ui = auto
-[status]
-	showuntrackedfiles = no
