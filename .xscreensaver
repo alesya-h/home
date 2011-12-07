@@ -1,9 +1,9 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.15 for alesguzik on Mon Dec  5 17:21:47 2011.
+# Written by xscreensaver-demo 5.15 for alesguzik on Wed Dec  7 14:30:34 2011.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
-cycle:		0:10:00
+cycle:		0:03:00
 lock:		True
 lockTimeout:	0:00:00
 passwdTimeout:	0:00:30
@@ -114,11 +114,11 @@ programs:								      \
 -				vidwhacker -root			    \n\
 -				blaster -root				    \n\
 -				bumps -root				    \n\
-				ccurve -root				    \n\
+-				ccurve -root				    \n\
 -				compass -root				    \n\
 -				deluxe -root				    \n\
 -				demon -root				    \n\
-  GL: 				extrusion -root				    \n\
+- GL: 				extrusion -root				    \n\
 -				loop -root				    \n\
 -				penetrate -root				    \n\
 -				petri -root				    \n\
@@ -179,7 +179,7 @@ programs:								      \
 - GL: 				bouncingcow -root			    \n\
 -				cloudlife -root				    \n\
 - GL: 				cubestorm -root				    \n\
-				eruption -root				    \n\
+-				eruption -root				    \n\
 - GL: 				flipflop -root				    \n\
 - GL: 				flyingtoasters -root			    \n\
 -				fontglide -root				    \n\
@@ -200,17 +200,19 @@ programs:								      \
 -				abstractile -root			    \n\
 -				anemotaxis -root			    \n\
 - GL: 				antinspect -root			    \n\
-				fireworkx -root				    \n\
-				fuzzyflakes -root			    \n\
+-				fireworkx -root				    \n\
+-				fuzzyflakes -root			    \n\
 -				interaggregate -root			    \n\
 -				intermomentary -root			    \n\
 -				memscroller -root			    \n\
 - GL: 				noof -root				    \n\
-				pacman -root				    \n\
+-				pacman -root				    \n\
 - GL: 				pinion -root				    \n\
-  GL: 				polyhedra -root				    \n\
+- GL: 				polyhedra -root				    \n\
 - GL: 				providence -root			    \n\
-				substrate -root				    \n\
+				substrate -root -growth-delay 7965	      \
+				  -max-cycles 4035 -circle-percent 33	      \
+				  -initial-cracks 5			    \n\
 -				wormhole -root				    \n\
 - GL: 				antmaze -root				    \n\
 - GL: 				boing -root				    \n\
@@ -244,7 +246,7 @@ programs:								      \
 - GL: 				companioncube -root			    \n\
 - GL: 				hilbert -root				    \n\
 - GL: 				tronbit -root				    \n\
-				electricsheep --root 1			    \n\
+-				electricsheep --root 1			    \n\
 
 
 pointerPollTime:    0:00:05
