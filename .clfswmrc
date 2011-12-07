@@ -123,3 +123,60 @@
     (shell-in-frame code-frame "emacs" 30)))
 
 (setf *init-hook* '(my-init-hook))
+;;; ### Internal variables definitions                    ### ;;;
+;;; ### You can edit this part when clfswm is not running ### ;;;
+;;; ### And you can remove this part to revert to the     ### ;;;
+;;; ### original configuration variables values.          ### ;;;
+(in-package :clfswm)
+
+(setf
+  ;; Gimp Layout Group:
+
+  ;; Notify Window Group:
+
+  ;; Menu Group:
+
+  ;; Expose Mode Group:
+
+  ;; Circulate Mode Group:
+
+  ;; Info Mode Group:
+
+  ;; Query String Group:
+
+  ;; Identify Key Group:
+
+  ;; Second Mode Group:
+
+  ;; Frame Colors Group:
+
+  ;; Corner Group:
+
+  ;; Placement Group:
+
+  ;; Hook Group:
+  *INIT-HOOK* (quote (CLFSWM::MY-INIT-HOOK))
+  *BINDING-HOOK* (quote (CLFSWM::SET-DEFAULT-CIRCULATE-KEYS CLFSWM::SET-DEFAULT-EXPOSE-KEYS
+                                           CLFSWM::INIT-*INFO-KEYS*
+                                           CLFSWM::INIT-*INFO-MOUSE*
+                                           CLFSWM::SET-DEFAULT-INFO-KEYS
+                                           CLFSWM::SET-DEFAULT-INFO-MOUSE
+                                           CLFSWM::INIT-*QUERY-KEYS*
+                                           CLFSWM::SET-DEFAULT-QUERY-KEYS
+                                           CLFSWM::INIT-*MAIN-KEYS*
+                                           CLFSWM::INIT-*MAIN-MOUSE*
+                                           CLFSWM::SET-DEFAULT-MAIN-KEYS
+                                           CLFSWM::SET-DEFAULT-MAIN-MOUSE
+                                           CLFSWM::INIT-*SECOND-KEYS*
+                                           CLFSWM::INIT-*SECOND-MOUSE*
+                                           CLFSWM::SET-DEFAULT-SECOND-KEYS
+                                           CLFSWM::SET-DEFAULT-SECOND-MOUSE))
+
+  ;; Main Mode Group:
+  *COLOR-MAYBE-SELECTED* "Light Sky Blue"
+  *COLOR-UNSELECTED* "White"
+
+  ;; Miscellaneous Group:
+
+)
+;;; ### End of internal variables definitions ### ;;;
