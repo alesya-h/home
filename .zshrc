@@ -55,14 +55,14 @@ function prompt_char {
     echo '○'
 }
 
-
-export PS1='%T %B%F{cyan}%~%F{green}${vcs_info_msg_0_}%f %(!.®.⊙)%b ' # ⊞⊠⊙§¢¥€∞®∑ϴΦΩΞΨαγλμπ○◧◯◉●►▻▷▸▹▩▧▨▦▶▗▚▖▒
+ # ⊞⊠⊙§¢¥€∞®∑ϴΦΩΞΨαγλμπ○◧◯◉●►▻▷▸▹▩▧▨▦▶▗▚▖▒
+export PS1='%T %B%F{cyan}%~%F{green}${vcs_info_msg_0_}%f %(!.®.⊙)%b '
 export RPS1='%{$fg_bold[black]%} $BAT %D{%a %d.%m} %n@%m%f%b'
 
 source $HOME/login_general.sh
 source $HOME/shell_general.sh
 # case-insensitive (uppercase from lowercase) completion
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # process completion
 zstyle ':completion:*:processes' command 'ps -au$USER'
