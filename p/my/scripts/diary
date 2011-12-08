@@ -1,6 +1,19 @@
 #!/bin/sh
+
+if [[ $1 = "-h" ]]
+then
+    HIDE=1
+fi
+
+if [[ $HIDE ]]
+then
+    stty -echo
+fi
+
 DIARY="$HOME/Documents/diary.org"
 
 echo "* $(date)" >> "$DIARY"
 cat >> "$DIARY"
+stty echo
 echo >> "$DIARY"
+
