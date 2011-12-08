@@ -102,7 +102,7 @@
                                 communications-frame))
          (work-frame (add-frame (create-frame
                                  :name "Work"
-                                 :layout #'tile-space-layout
+                                 :layout #'tile-layout
                                  :data (list '(:tile-layout-keep-position :yes)
                                              '(:tile-space-size 0.05)))
                                 *root-frame*))
