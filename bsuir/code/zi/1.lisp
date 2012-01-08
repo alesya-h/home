@@ -1,15 +1,4 @@
-(ql:quickload "gsll")
-
-;; (defun combinations (n seq)
-;;   (if (= n 0)
-;;       '( () )
-;;       (apply
-;;        #'concatenate
-;;        (cons 'list
-;;              (loop for item in seq
-;;                 collect (map 'list
-;;                              (lambda (x) (cons item x))
-;;                              (combinations (- n 1) seq)))))))
+;; (ql:quickload "bordeaux-threads")
 
 (defmacro logging (message &rest body)
   `(progn
@@ -32,10 +21,16 @@
                              (* len (/ i n))
                              (* len (/ (1+ i) n)))))))))
 
+(defun all-permutations (list)
+  (cond ((null list) nil)
+        ((null (cdr list)) (list list))
+        (t (loop for element in list
+             append (mapcar (lambda (l) (cons element l))
+                            (all-permutations (remove element list)))))))
+
 (defun permutations (n)
-  (loop with p = (gsll:make-permutation n)
-     collect (grid:copy-to p)
-     while (nth-value 1 (gsll:permutation-next p))))
+  (all-permutations
+   (loop for i from 0 below n collect i)))
 
 (defun encode (word alphabet)
   (map 'vector
@@ -49,6 +44,11 @@
 (setf *sequence* '(#(#b100 #b100 #b000 #b000 #b010)
                      #(#b100 #b001 #b101 #b000 #b100)
                      #(#b101 #b100 #b101 #b101 #b111)))
+(setf *sequence* '(#(#b111 #b101 #b101 #b001 #b101)
+                   #(#b010 #b110 #b010 #b011 #b001)
+                   #(#b101 #b010 #b010 #b011 #b000)))
+
+(setf *sequence* (reverse (mapcar #'reverse *sequence*)))
 
 (defun humanize (word)
   (map 'vector
@@ -69,8 +69,6 @@
   (loop for alphabet in alphabets
      and x = 0 then (1+ x)
      initially (format t "Bruteforce over ~A started.~%" (current-thread-name))
-;;     when (= (mod x 1000) 0)
-;;       do (format t "~D: Processing alphabet ~S~%" x alphabet)
      do (let ((encoded-words (map 'list
                              (lambda (word) (encode word alphabet))
                              *library-translated*)))
@@ -89,8 +87,9 @@
                               alphabet
                               (list
                                (humanize (elt *library-translated* w1-pos))
-                               (humanize (elt *library-translated* w1-pos))
-                               (humanize (elt *library-translated* w1-pos))))))))
+                               (humanize (elt *library-translated* w2-pos))
+                               (humanize (elt *library-translated* w3-pos))))))))
      finally (format t "Bruteforce over ~A finished~%" (current-thread-name))))
 
-(parallelize #'bruteforce *alphabets* 4)
+;; (parallelize #'bruteforce *alphabets* 4)
+(bruteforce *alphabets*)
