@@ -29,7 +29,7 @@
          (communications-frame (add-frame
                                 (create-frame
                                  :name "Communications"
-                                 :layout #'tile-layout
+                                 :layout #'tile-layout-mix
                                  :data (list '(:tile-layout-keep-position :yes)))
                                 *root-frame*))
          (im-frame (add-frame (create-frame :name "IM"
@@ -41,7 +41,7 @@
                                 communications-frame))
          (work-frame (add-frame (create-frame
                                  :name "Work"
-                                 :layout #'tile-layout
+                                 :layout #'tile-layout-mix
                                  :data (list '(:tile-layout-keep-position :yes)
                                              '(:tile-space-size 0.05)))
                                 *root-frame*))
@@ -56,7 +56,7 @@
                                 work-frame))
          )
     (shell-in-frame learn-frame "firefox" 1)
-    (shell-in-frame mail-frame "claws-mail" 12)
+    (shell-in-frame mail-frame "claws-mail" 10)
     (shell-in-frame im-frame "pidgin" 15)
     (shell-in-frame im-frame "skype" 15)
     (shell-in-frame code-frame "emacs" 30)))
