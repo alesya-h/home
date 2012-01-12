@@ -64,3 +64,16 @@
 /.thumbnails/
 /.xchat2/
 /.xscreensaver-getimage.cache
+/.viminfo
+/bin/clfswm.core
+/Mail
+/News
+/quicklisp.lisp
+/.rdebug_hist
+/.pry_history
+/.pki
+/.gnupg
+/.ICEauthority
+/Pictures
+/p/work/*
+
