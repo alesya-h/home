@@ -1,6 +1,6 @@
 # Auto-written by gtk2_prefs. Do not edit.
 
-gtk-theme-name = "Ambiance"
+gtk-theme-name = "Clearlooks"
 style "user-font"
 {
 	font_name="Sans 12"
