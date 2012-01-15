@@ -1,3 +1,4 @@
+# git clone git://common-lisp.net/projects/clfswm/clfswm.git
 pushd ~/quicklisp/local-projects/clfswm
 git pull
 cd ~
