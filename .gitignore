@@ -77,3 +77,8 @@
 /Pictures
 /p/work/*
 
+/.java
+/.spamassassin
+/mindterm
+/.rightscale
+/.cassandra.history
