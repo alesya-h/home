@@ -12,9 +12,11 @@ xbindkeys
 source ~/login_general.sh
 source ~/shell_general.sh
 
+xcompmgr&
+
 N=$((15 * 60))
 X=-2
-CMD="bgtext.sh"
+CMD="habak -mS Pictures/wallpapers/" #"bgtext.sh"
 changefile="$HOME/Pictures/wallpapers/change"
 while true; do
     if [ $X -eq 0 ]
@@ -39,5 +41,5 @@ $HOME/.dropbox-dist/dropboxd &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers
-# xterm
+xterm
 clfswm

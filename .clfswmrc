@@ -20,6 +20,9 @@
 (defun execute-in-frame (frame cmd args &optional (at 0) till)
   (eval-in-frame frame (lambda () (do-execute cmd args)) at till))
 
+(defun-equal-wm-class equal-wm-class-conky "Conky")
+(push (list 'equal-wm-class-conky nil) *never-managed-window-list*)
+
 (defun my-init-hook ()
   (dbg 'my-init-hook)
   (setf (frame-layout *root-frame*) #'tile-space-layout
@@ -73,8 +76,6 @@
 
   ;; Notify Window Group:
 
-  ;; Menu Group:
-
   ;; Expose Mode Group:
 
   ;; Circulate Mode Group:
@@ -90,6 +91,8 @@
   ;; Frame Colors Group:
 
   ;; Corner Group:
+
+  ;; Menu Group:
 
   ;; Placement Group:
 
@@ -116,6 +119,9 @@
   *COLOR-UNSELECTED* "White"
 
   ;; Miscellaneous Group:
+  ;; *NEVER-MANAGED-WINDOW-LIST* (quote ((CLFSWM::EQUAL-WM-CLASS-ROX-PINBOARD NIL)
+  ;;       (CLFSWM::EQUAL-WM-CLASS-XVKBD NIL)
+  ;;       (CLFSWM::EQUAL-CLFSWM-TERMINAL CLFSWM::RAISE-AND-FOCUS-WINDOW)))
 
 )
 ;;; ### End of internal variables definitions ### ;;;
