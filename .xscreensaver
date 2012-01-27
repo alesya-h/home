@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.15 for alesguzik on Wed Dec  7 14:30:34 2011.
+# Written by xscreensaver-demo 5.15 for alesguzik on Tue Jan 24 15:29:46 2012.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -143,7 +143,7 @@ programs:								      \
 - GL: 				flipscreen3d -root			    \n\
 - GL: 				gltext -root				    \n\
 - GL: 				menger -root				    \n\
-  GL: 				molecule -root				    \n\
+- GL: 				molecule -root				    \n\
 -				rotzoomer -root				    \n\
 -				speedmine -root				    \n\
 - GL: 				starwars -root				    \n\
@@ -172,7 +172,7 @@ programs:								      \
 -				twang -root				    \n\
 - GL: 				antspotlight -root			    \n\
 				apple2 -root				    \n\
-  GL: 				atunnel -root				    \n\
+- GL: 				atunnel -root				    \n\
 -				barcode -root				    \n\
 - GL: 				blinkbox -root				    \n\
 - GL: 				blocktube -root				    \n\
@@ -228,7 +228,7 @@ programs:								      \
 - GL: 				timetunnel -root			    \n\
 - GL: 				glschool -root				    \n\
 - GL: 				topblock -root				    \n\
-  GL: 				cubicgrid -root				    \n\
+- GL: 				cubicgrid -root				    \n\
 -				cwaves -root				    \n\
 - GL: 				gears -root				    \n\
 - GL: 				glcells -root				    \n\
