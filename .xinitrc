@@ -8,6 +8,7 @@ fi &
 setxkbmap -layout dvorak,ru -variant -option grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp
 xmodmap ~/.Xmodmap
 xbindkeys
+bluetooth-off
 
 xrandr --output VGA1 --left-of LVDS1 || true
 # xcalib -s 0 $HOME/TPLCD95.icm
