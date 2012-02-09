@@ -9,6 +9,10 @@ setxkbmap -layout dvorak,ru -variant -option grp:menu_toggle,grp_led:caps,termin
 xmodmap ~/.Xmodmap
 xbindkeys
 
+xrandr --output VGA1 --left-of LVDS1 || true
+# xcalib -s 0 $HOME/TPLCD95.icm
+dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
+dispwin -d 2 -I /usr/share/color/icc/Argyll/sRGB.icm
 source ~/login_general.sh
 source ~/shell_general.sh
 
@@ -16,7 +20,7 @@ xcompmgr&
 
 N=$((15 * 60))
 X=-2
-CMD="habak -mS Pictures/wallpapers/" #"bgtext.sh"
+CMD="habak -mS Pictures/wallpapers/dual" #"bgtext.sh"
 changefile="$HOME/Pictures/wallpapers/change"
 while true; do
     if [ $X -eq 0 ]
