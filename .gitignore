@@ -3,7 +3,7 @@
 # For a project mostly in C, the following would be a good set of
 # exclude patterns (uncomment them if you want to use them):
 # *.[oa]
-# *~
+*~
 /.zcompdump
 /.ssh
 /.histfile
@@ -76,7 +76,6 @@
 /.ICEauthority
 /Pictures
 /p/work/*
-
 /.java
 /.spamassassin
 /mindterm
@@ -84,7 +83,10 @@
 /.cassandra.history
 /.purple
 /.VirtualBox
-/.recentf~
 /.ncmpcpp
 /.thunderbird
 /.wine
+/VirtualBox VMs
+/.pentadactyl
+/.warsow-0.6
+/.wicd
