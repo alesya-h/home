@@ -10,28 +10,28 @@ Emacs.Font: DejaVu Sans Mono-12
 
 XTerm*VT100.colorMode: on
 
-!! XTerm*background: black
-!! XTerm*foreground: white
-!!
-!! XTerm*VT100.color0: black
-!! XTerm*VT100.color1: red4
-!! XTerm*VT100.color2: chartreuse4
-!! XTerm*VT100.color3: gold
-!! XTerm*VT100.color4: RoyalBlue4
-!! XTerm*VT100.color5: VioletRed4
-!! XTerm*VT100.color6: aquamarine3
-!! XTerm*VT100.color7: gray90
-!! XTerm*VT100.color8: gray30
-!! XTerm*VT100.color9: red1
-!! XTerm*VT100.color10: chartreuse2
-!! XTerm*VT100.color11: yellow
-!! XTerm*VT100.color12: RoyalBlue1
-!! XTerm*VT100.color13: VioletRed1
-!! XTerm*VT100.color14: aquamarine1
-!! XTerm*VT100.color15: white
-!! XTerm*VT100.colorBDMode: off
-!! XTerm*VT100.cursorColor: yellow
-!! XTerm*VT100.dynamicColors:  on
+XTerm*background: black
+XTerm*foreground: white
+
+XTerm*VT100.color0: black
+XTerm*VT100.color1: red4
+XTerm*VT100.color2: chartreuse4
+XTerm*VT100.color3: gold
+XTerm*VT100.color4: RoyalBlue4
+XTerm*VT100.color5: VioletRed4
+XTerm*VT100.color6: aquamarine3
+XTerm*VT100.color7: gray90
+XTerm*VT100.color8: gray30
+XTerm*VT100.color9: red1
+XTerm*VT100.color10: chartreuse2
+XTerm*VT100.color11: yellow
+XTerm*VT100.color12: RoyalBlue1
+XTerm*VT100.color13: VioletRed1
+XTerm*VT100.color14: aquamarine1
+XTerm*VT100.color15: white
+XTerm*VT100.colorBDMode: off
+XTerm*VT100.cursorColor: yellow
+XTerm*VT100.dynamicColors:  on
 
 ! settings
 
@@ -46,10 +46,10 @@ XTerm*internalBorder: 1
 XTerm*borderColor: violet
 XTerm*loginShell: false
 XTerm*multiClickTime: 250
-XTerm*saveLines: 1000
+XTerm*saveLines: 100000
 XTerm*scrollBar: false
 XTerm*scrollKey: true
 XTerm*metaSendsEscape: true
 
 ! #include ".xrdb.d/solarized.xrdb" !! https://github.com/altercation/ethanschoonover.com/blob/master/projects/solarized/xresources-colors-solarized/Xresources
-#include ".xrdb.d/zenburn.xrdb"
+! #include ".xrdb.d/zenburn.xrdb"
