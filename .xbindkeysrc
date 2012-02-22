@@ -37,12 +37,9 @@
     m:0x40 + c:171
     Mod4 + XF86AudioNext
 "mpc stop"
-    m:0x40 + c:174
-    Mod4 + XF86AudioStop
-"mpc pause"
     m:0x0 + c:174
     XF86AudioStop
-"mpc play"
+"mpc toggle"
     m:0x0 + c:172
     XF86AudioPlay
 "mpc single"
