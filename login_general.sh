@@ -6,4 +6,4 @@ export ALTERNATE_EDITOR="emacs"
 export BROWSER=firefox
 export CLICOLOR=1
 
-export PATH="$HOME/.rbenv/bin:$PATH:$HOME/p/my/scripts:$HOME/bin:$HOME/.local/bin"
+export PATH="$HOME/.rbenv/bin:$PATH:$HOME/p/my/scripts:$HOME/p/my/fork/ruby-build/bin:$HOME/bin:$HOME/.local/bin"
