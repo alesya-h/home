@@ -10,7 +10,7 @@
 [gui]
 	spellingdictionary = none
 [core]
-	excludesfile = /home/alesguzik/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [branch]
 	autosetuprebase = always
 [branch "master"]
