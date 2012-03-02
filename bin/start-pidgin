@@ -1,1 +1,1 @@
-NSS_SSL_CBC_RANDOM_IV=0 pidgin
+env NSS_SSL_CBC_RANDOM_IV=0 pidgin
