@@ -1,4 +1,5 @@
 [[ "$TERM" == "xterm" ]] && export TERM="xterm-256color"
+[ -n "$TMUX" ] && export TERM=screen-256color
 
 alias pacman='sudo pacman'
 alias ec='emacsclient -n'
