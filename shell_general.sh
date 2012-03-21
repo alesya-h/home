@@ -1,5 +1,6 @@
 [[ "$TERM" == "xterm" ]] && export TERM="xterm-256color"
 [ -n "$TMUX" ] && export TERM=screen-256color
+[ -n "$TMUX" ] && export PATH="$HOME/.rbenv/bin:$PATH:$HOME/p/my/scripts:$HOME/p/my/fork/ruby-build/bin:$HOME/bin:$HOME/.local/bin"
 
 alias pacman='sudo pacman'
 alias ec='emacsclient -n'
