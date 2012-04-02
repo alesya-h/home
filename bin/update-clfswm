@@ -1,9 +1,9 @@
-# git clone git://common-lisp.net/projects/clfswm/clfswm.git
+# repo is at git://common-lisp.net/projects/clfswm/clfswm.git
 pushd ~/quicklisp/local-projects/clfswm
 git pull
 cd ~
 SBCL_HOME='' sbcl --eval "(require 'clfswm)" --eval '(sb-ext:save-lisp-and-die "clfswm.core" :executable t)'
-[ ! -d ~/.local ] && mkdir ~/.local
+[ ! -d ~/.local/bin ] && mkdir -p ~/.local/bin
 rm ~/.local/bin/clfswm.core || true
 mv clfswm.core ~/.local/bin/clfswm.core
 popd
