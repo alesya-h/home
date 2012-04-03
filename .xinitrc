@@ -27,7 +27,7 @@ done &
 xrdb -merge .Xresources
 
 xscreensaver -no-splash &
-conky &
+# conky &
 $HOME/.dropbox-dist/dropboxd &
 # [[ -z "$(ps -C emacs --no-headers)" ]] && emacs --daemon &
 
