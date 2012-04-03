@@ -1,2 +1,2 @@
 #!/bin/sh
-exec grep $@ --color -R .
+exec grep "$@" --color -R .
