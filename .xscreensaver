@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.15 for alesguzik on Tue Jan 24 15:29:46 2012.
+# Written by xscreensaver-demo 5.15 for me on Fri Apr 20 16:48:11 2012.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -32,7 +32,7 @@ dpmsOff:	4:00:00
 grabDesktopImages:  True
 grabVideoFrames:    False
 chooseRandomImages: True
-imageDirectory:	/home/alesguzik/Pictures/wallpapers
+imageDirectory:	/home/me/Pictures/wallpapers/calendar
 
 mode:		random
 selected:	187
@@ -91,7 +91,7 @@ programs:								      \
 -				strange -root				    \n\
 -				swirl -root				    \n\
 -				triangle -root				    \n\
--				xjack -root				    \n\
+				xjack -root				    \n\
 -				xlyap -root				    \n\
 - GL: 				atlantis -root				    \n\
 				bsod -root				    \n\

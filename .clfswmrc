@@ -1,29 +1,6 @@
 ; -*- mode: lisp -*-
 (in-package :clfswm)
 
-(defun eval-in-frame (frame fun &optional (at 0) till)
-  (let ((old-current-child *current-child*))
-    (add-timer at
-               (lambda ()
-                 (setf *current-child* frame)
-                 (show-all-children)
-                 (funcall fun)
-                 ))
-    (when till
-      (add-timer till
-                 (lambda ()
-                   (setf *current-child* old-current-child))))
-  (values)))
-
-(defun shell-in-frame (frame cmd &optional (at 0) till)
-  (eval-in-frame frame (lambda () (do-shell cmd)) at till))
-
-(defun execute-in-frame (frame cmd args &optional (at 0) till)
-  (eval-in-frame frame (lambda () (do-execute cmd args)) at till))
-
-(defun-equal-wm-class equal-wm-class-conky "Conky")
-(push (list 'equal-wm-class-conky nil) *never-managed-window-list*)
-
 (defun my-init-hook ()
   (dbg 'my-init-hook)
   (setf (frame-layout *root-frame*) #'tile-space-layout
@@ -59,71 +36,6 @@
                                  :data (list '(:tile-size 0.2)))
                                 work-frame))
          )
-;    (shell-in-frame learn-frame "firefox" 1)
-;    (shell-in-frame mail-frame "claws-mail" 10)
-;    (shell-in-frame im-frame "start-pidgin" 15)
-;    (shell-in-frame im-frame "skype" 15)
-;    (shell-in-frame code-frame "emacs" 30)
 ))
 
 (setf *init-hook* '(my-init-hook))
-;;; ### Internal variables definitions                    ### ;;;
-;;; ### You can edit this part when clfswm is not running ### ;;;
-;;; ### And you can remove this part to revert to the     ### ;;;
-;;; ### original configuration variables values.          ### ;;;
-(in-package :clfswm)
-
-(setf
-  ;; Gimp Layout Group:
-
-  ;; Notify Window Group:
-
-  ;; Expose Mode Group:
-
-  ;; Circulate Mode Group:
-
-  ;; Info Mode Group:
-
-  ;; Query String Group:
-
-  ;; Identify Key Group:
-
-  ;; Second Mode Group:
-
-  ;; Frame Colors Group:
-
-  ;; Corner Group:
-
-  ;; Menu Group:
-
-  ;; Placement Group:
-
-  ;; Hook Group:
-  *INIT-HOOK* (quote (CLFSWM::MY-INIT-HOOK))
-  *BINDING-HOOK* (quote (CLFSWM::SET-DEFAULT-CIRCULATE-KEYS CLFSWM::SET-DEFAULT-EXPOSE-KEYS
-                                           CLFSWM::INIT-*INFO-KEYS*
-                                           CLFSWM::INIT-*INFO-MOUSE*
-                                           CLFSWM::SET-DEFAULT-INFO-KEYS
-                                           CLFSWM::SET-DEFAULT-INFO-MOUSE
-                                           CLFSWM::INIT-*QUERY-KEYS*
-                                           CLFSWM::SET-DEFAULT-QUERY-KEYS
-                                           CLFSWM::INIT-*MAIN-KEYS*
-                                           CLFSWM::INIT-*MAIN-MOUSE*
-                                           CLFSWM::SET-DEFAULT-MAIN-KEYS
-                                           CLFSWM::SET-DEFAULT-MAIN-MOUSE
-                                           CLFSWM::INIT-*SECOND-KEYS*
-                                           CLFSWM::INIT-*SECOND-MOUSE*
-                                           CLFSWM::SET-DEFAULT-SECOND-KEYS
-                                           CLFSWM::SET-DEFAULT-SECOND-MOUSE))
-
-  ;; Main Mode Group:
-  *COLOR-MAYBE-SELECTED* "Light Sky Blue"
-  *COLOR-UNSELECTED* "White"
-
-  ;; Miscellaneous Group:
-  ;; *NEVER-MANAGED-WINDOW-LIST* (quote ((CLFSWM::EQUAL-WM-CLASS-ROX-PINBOARD NIL)
-  ;;       (CLFSWM::EQUAL-WM-CLASS-XVKBD NIL)
-  ;;       (CLFSWM::EQUAL-CLFSWM-TERMINAL CLFSWM::RAISE-AND-FOCUS-WINDOW)))
-
-)
-;;; ### End of internal variables definitions ### ;;;
