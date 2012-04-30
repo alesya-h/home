@@ -37,4 +37,4 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers
 xcompmgr&
 # xterm
-clfswm
+clfswm-loop
