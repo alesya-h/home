@@ -2,16 +2,16 @@
 
 if [ -z "$1" ]
 then
-    LOCAL_PORT=22
+	LOCAL_PORT=22
 else
-    LOCAL_PORT="$1"
+	LOCAL_PORT="$1"
 fi
 
 if [ -z "$2" ]
 then
-    REMOTE_PORT="20${LOCAL_PORT}"
+	REMOTE_PORT=$((${LOCAL_PORT} + 2000))
 else
-    REMOTE_PORT="$2"
+	REMOTE_PORT="$2"
 fi
 
 ssh -Nv -R "${REMOTE_PORT}:localhost:${LOCAL_PORT}" me@aguzik.net
