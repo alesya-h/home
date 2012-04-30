@@ -1,9 +1,8 @@
 [[ -n $LOGIN_GENERAL_LOADED ]] && return
 export LOGIN_GENERAL_LOADED=true
 
-export EDITOR="vim"
-export VISUAL="emacsclient"
-export ALTERNATE_EDITOR="emacs"
+export EDITOR="emacsclient"
+export ALTERNATE_EDITOR="vim"
 export BROWSER=firefox
 export CLICOLOR=1
 
