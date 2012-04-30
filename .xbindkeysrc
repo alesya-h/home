@@ -4,6 +4,12 @@
 "xscreensaver-command -lock"
     m:0x40 + c:127
     Mod4 + Pause
+"xscreensaver-command -lock"
+    m:0x0 + c:160
+    XF86ScreenSaver
+"sudo backlight-off"
+    m:0x0 + c:202
+    NoSymbol
 
 "amixer -c 0 set Master mute"
     m:0x0 + c:121
