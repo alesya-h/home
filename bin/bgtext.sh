@@ -12,7 +12,7 @@ then
 fi
 
 FONT=Liberation-Mono-Regular
-SIZE='1366x768'
+SIZE='1920x1080'
 
 #eval "$CMD" | convert -font "$FONT" -background "$BGCOLOR" -pointsize $FONT_SIZE -fill "$FGCOLOR" label:@- $HOME/graphics/overlay_text.png
 

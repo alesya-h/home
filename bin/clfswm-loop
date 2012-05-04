@@ -1,7 +1,8 @@
 #!/bin/sh
 while true; do
 	echo '+++++++++++++++++++++++++++++++++++++START+++++++++++++++++++++++++++++++++++++' >> ~/clfswm-err.log
-	clfswm >> ~/clfswm-fail.log
+	date >> ~/clfswm-fail.log
+	clfswm >> ~/clfswm-fail.log 2>&1
 	echo '--------------------------------------END--------------------------------------' >> ~/clfswm-err.log
 done
 
