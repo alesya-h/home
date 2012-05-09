@@ -1,0 +1,9 @@
+#!/bin/sh
+if [[ `synclient|awk '/TouchpadOff/ {print $3}'` == 1 ]]; then
+	# echo 'Enabling touchpad'
+	synclient TouchpadOff=0
+else
+	# echo 'Disabling touchpad'
+	synclient TouchpadOff=1
+fi
+

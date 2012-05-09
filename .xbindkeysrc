@@ -10,6 +10,9 @@
 "sudo backlight-off"
     m:0x0 + c:202
     NoSymbol
+"touchpad-toggle"
+    m:0x0 + c:199
+    XF86TouchpadToggle
 
 "amixer -c 0 set Master mute"
     m:0x0 + c:121
