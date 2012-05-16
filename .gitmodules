@@ -10,3 +10,6 @@
 [submodule "p/my/fork/ruby-build"]
 	path = p/my/fork/ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
+[submodule "p/my/bash-voice-notes"]
+	path = p/my/bash-voice-notes
+	url = git@github.com:alesguzik/bash-voice-notes.git

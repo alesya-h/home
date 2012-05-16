@@ -13,6 +13,12 @@
 "touchpad-toggle"
     m:0x0 + c:199
     XF86TouchpadToggle
+"note key-rec"
+    m:0x0 + c:156
+    XF86Launch1
+"note key-play"
+    m:0x40 + c:156
+    Mod4 + XF86Launch1
 
 "amixer -c 0 set Master mute"
     m:0x0 + c:121
