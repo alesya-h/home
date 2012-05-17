@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/*; do
     [ -x "$f" ] && . "$f"
@@ -13,7 +15,11 @@ xmodmap ~/.Xmodmap
 
 TOTAL_SCREENS=`xrandr|grep connected|wc -l`
 if [ $TOTAL_SCREENS -gt 1 ]; then
-	echo `xrandr|grep connected|awk -e '{print $1}'`|awk '{print "xrandr --output " $1 " --right-of " $2}' | sh
+  LAPTOP_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep LVDS)"
+  VGA_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep VGA)"
+  xrandr --output "$LAPTOP_SCREEN" --left-of "$VGA_SCREEN"
+	xrandr --output "$LAPTOP_SCREEN" --auto
+	xrandr --output "$VGA_SCREEN" --auto
 fi
 
 # xcalib -s 0 $HOME/TPLCD95.icm
@@ -38,4 +44,4 @@ xcompmgr&
 xbindkeys
 # xterm
 clfswm-loop
-# openbox
+# xcompmgr
