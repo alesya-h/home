@@ -46,6 +46,7 @@
         (delta-y (abs (- y2 y1)))
         (sign-x (if (< x1 x2) 1 -1))
         (sign-y (if (< y1 y2) 1 -1))
+        (err2 nil)
         (err (- delta-x delta-y)))
     (loop
        do (progn
@@ -62,7 +63,7 @@
                   (setq err (+ err delta-x))
                   (setq y1 (+ y1 sign-y))))))))
 
-(setq *dots* (append (make-line 10 10 100 30)
+(defparameter *dots* (append (make-line 10 10 100 30)
                      (make-line 300 30 40 17)
                      (make-circle 0 0 300)
                      (make-line 43 14 300 400)))
