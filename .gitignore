@@ -98,3 +98,6 @@
 /.texlive
 /.npm
 /.davfs2/secrets
+/.davfs2/cache
+/.vim/.netrwhist
+/.OGStudio/

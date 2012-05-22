@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/me/p/work/jobon'
-let g:netrw_dirhist_2='/home/me/p/work/jobon/test'
-let g:netrw_dirhist_3='/home/me/p/work/jobon/test/acceptance'
-let g:netrw_dirhist_4='/home/me/p/work/jobon'
-let g:netrw_dirhist_5='/usr/share/kbd/keymaps/i386/dvorak'
-let g:netrw_dirhist_6='/home/me/p/shelr/lib/shelr'
-let g:netrw_dirhist_7='/home/me/p/work/jobon/app/assets/stylesheets'
