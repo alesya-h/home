@@ -1,0 +1,2 @@
+#!/bin/sh
+echo -e "\ec\e[3J"
