@@ -8,6 +8,7 @@ alias be='bundle exec'
 
 alias ls='ls --color=auto'
 alias l='ls -la'
+alias sys='sudo systemctl'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
