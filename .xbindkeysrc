@@ -20,22 +20,13 @@
     m:0x40 + c:156
     Mod4 + XF86Launch1
 
-"amixer -c 0 set Master mute"
+"amixer set Master toggle"
     m:0x0 + c:121
     XF86AudioMute
-"amixer -c 0 set Master unmute"
-    m:0x40 + c:121
-    Mod4 + XF86AudioMute
-"amixer -c 0 set Master 1- unmute"
-    m:0x40 + c:95
-    Mod4 + F11
-"amixer -c 0 set Master 1+ unmute"
-    m:0x40 + c:96
-    Mod4 + F12
-"amixer -c 0 set Master 1- unmute"
+"amixer set Master 1- unmute"
     m:0x0 + c:122
     XF86AudioLowerVolume
-"amixer -c 0 set Master 1+ unmute"
+"amixer set Master 1+ unmute"
     m:0x0 + c:123
     XF86AudioRaiseVolume
 
