@@ -46,7 +46,7 @@ XTerm*internalBorder: 1
 XTerm*borderColor: violet
 XTerm*loginShell: false
 XTerm*multiClickTime: 250
-XTerm*saveLines: 100000
+XTerm*saveLines: 9999
 XTerm*scrollBar: false
 XTerm*scrollKey: true
 XTerm*metaSendsEscape: true
