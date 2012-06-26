@@ -14,9 +14,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias du1='du -d 1 -h'
-alias du2='du -d 2 -h'
-alias du3='du -d 3 -h'
+alias du1='du -d 1 -h|sort -h'
+alias du2='du -d 2 -h|sort -h'
+alias du3='du -d 3 -h|sort -h'
 
 alias f='find | grep'
 alias gg='git grep'
