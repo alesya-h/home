@@ -13,6 +13,7 @@ setxkbmap -layout dvorak,ru -variant -option grp:menu_toggle,grp_led:caps,termin
 xset r rate 200 50
 xmodmap ~/.Xmodmap
 
+dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
 TOTAL_SCREENS=`xrandr|grep connected|wc -l`
 if [ $TOTAL_SCREENS -gt 1 ]; then
   LAPTOP_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep LVDS)"
@@ -20,18 +21,18 @@ if [ $TOTAL_SCREENS -gt 1 ]; then
   xrandr --output "$LAPTOP_SCREEN" --left-of "$VGA_SCREEN"
 	xrandr --output "$LAPTOP_SCREEN" --auto
 	xrandr --output "$VGA_SCREEN" --auto
+  dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
+  dispwin -d 2 -I /usr/share/color/icc/Argyll/sRGB.icm
 fi
 
 # xcalib -s 0 $HOME/TPLCD95.icm
-dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
-dispwin -d 2 -I /usr/share/color/icc/Argyll/sRGB.icm
 source ~/login_general.sh
 source ~/shell_general.sh
 
-while true; do
-    chwp
-    sleep 10m #1m
-done &
+# while true; do
+#     chwp
+#     sleep 10m #1m
+# done &
 
 xscreensaver -no-splash &
 # conky &
@@ -44,4 +45,4 @@ xcompmgr&
 xbindkeys
 # xterm
 clfswm-loop
-# xcompmgr
+# startxfce4
