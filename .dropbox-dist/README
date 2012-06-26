@@ -1,5 +1,5 @@
 
-Thanks for downloading Dropbox! This is version 1.2.52 of the raw binary distribution of our
+Thanks for downloading Dropbox! This is version 1.4.7 of the raw binary distribution of our
 syncing daemon. Normal users should not install this package manually and instead
 should use our main Linux package located at http://www.dropbox.com/downloading?os=lnx
 
@@ -72,7 +72,7 @@ Regarding our inclusion of ncrypt (http://tachyon.in/ncrypt/):
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         SOFTWARE.
 
-Regarding our inclusion of netifaces (http://tachyon.in/ncrypt/):
+Regarding our inclusion of netifaces (http://alastairs-place.net/projects/netifaces/):
         Portions copyright:
         Copyright (c) 2007, 2008 Alastair Houghton
 
