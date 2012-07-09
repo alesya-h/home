@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ -f ./.env ]; then
+  echo -n "Sourcing ./.env"
+  source ./.env
+  echo " done."
+fi
+exec $@
