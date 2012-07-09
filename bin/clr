@@ -1,2 +1,2 @@
 #!/bin/sh
-echo -e "\ec\e[3J"
+echo -en "\ec\e[3J"
