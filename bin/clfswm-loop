@@ -4,6 +4,6 @@ while true; do
 	date >> ~/clfswm-fail.log
 	clfswm >> ~/clfswm-fail.log 2>&1
 	echo '--------------------------------------END--------------------------------------' >> ~/clfswm-fail.log
-	play -q "$HOME/Dropbox/smb_pipe.wav"
+	play -q "$HOME/Dropbox/smb/smb_pipe.wav"
 done
 
