@@ -57,7 +57,7 @@ function prompt_char {
 
  # ⊞⊠⊙§¢¥€∞®∑ϴΦΩΞΨαγλμπ○◧◯◉●►▻▷▸▹▩▧▨▦▶▗▚▖▒
 export PS1='%T %B%F{cyan}%~%F{green}${vcs_info_msg_0_}%f %(!.®.o)%b '
-export RPS1='%{$fg_bold[black]%} $BAT %D{%a %d.%m} %n@%m%f%b'
+export RPS1='%{$fg_bold[white]%} $BAT %n@%m%f%b'
 
 source $HOME/login_general.sh
 source $HOME/shell_general.sh
