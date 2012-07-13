@@ -12,6 +12,7 @@ XTerm*VT100.colorMode: on
 
 XTerm*background: black
 XTerm*foreground: white
+XTerm*geometry: 110x35
 
 XTerm*VT100.color0: black
 XTerm*VT100.color1: red1
