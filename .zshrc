@@ -45,7 +45,7 @@ setopt PROMPT_SUBST
 
 precmd () { 
     vcs_info
-    [[ -e `which acpi` ]] && export BAT=`acpi|awk '{sub("Charging,","^",$3);sub("Full,","=",$3);sub("Discharging,","v",$3);sub(",","",$4);sub("%","%%",$4);print $3$4}'`
+    [[ -e `which acpi` ]] && export BAT=`acpi|awk '{sub("Charging,","^",$3);sub("Full,","=",$3);sub("Unknown,","~",$3);sub("Discharging,","v",$3);sub(",","",$4);sub("%","%%",$4);print $3$4}'`
 #    HG_PROMPT_PART="$(hg_branch)$(hg_dirty)"
 }
 
