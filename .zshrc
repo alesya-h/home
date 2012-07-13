@@ -40,7 +40,7 @@ zstyle ':vcs_info:*' check-for-changes true
 # zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' stagedstr "+"
 zstyle ':vcs_info:*' unstagedstr "!"
-zstyle ':vcs_info:*' formats '[%s:%b%F{red}%c%u%F{green}]'
+zstyle ':vcs_info:*' formats '%s:%b%F{red}%c%u'
 setopt PROMPT_SUBST
 
 precmd () { 
@@ -56,7 +56,7 @@ function prompt_char {
 }
 
  # ⊞⊠⊙§¢¥€∞®∑ϴΦΩΞΨαγλμπ○◧◯◉●►▻▷▸▹▩▧▨▦▶▗▚▖▒
-export PS1='%T %B%F{cyan}%~%F{green}${vcs_info_msg_0_}%f %(!.®.o)%b '
+export PS1='%T %B%F{cyan}%~%F{green}[%F{yellow}${vcs_info_msg_0_}%F{green}]%f %(!.®.o)%b '
 export RPS1='%{$fg_bold[white]%} $BAT %n@%m%f%b'
 
 source $HOME/login_general.sh
