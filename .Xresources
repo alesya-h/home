@@ -14,7 +14,7 @@ XTerm*background: black
 XTerm*foreground: white
 
 XTerm*VT100.color0: black
-XTerm*VT100.color1: red4
+XTerm*VT100.color1: red1
 XTerm*VT100.color2: chartreuse4
 XTerm*VT100.color3: gold
 XTerm*VT100.color4: RoyalBlue4
