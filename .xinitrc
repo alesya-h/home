@@ -14,7 +14,7 @@ xset r rate 200 50
 xmodmap ~/.Xmodmap
 
 dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
-TOTAL_SCREENS=`xrandr|grep connected|wc -l`
+TOTAL_SCREENS=`xrandr|grep ' connected'|wc -l`
 if [ $TOTAL_SCREENS -gt 1 ]; then
   LAPTOP_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep LVDS)"
   VGA_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep VGA)"
