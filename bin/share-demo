@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+	LOCAL_PORT='3000'
+else
+	LOCAL_PORT="$1"
+fi
+
+REMOTE_PORT='5000'
+
+ssh -Nv -R "${REMOTE_PORT}:localhost:${LOCAL_PORT}" me@aguzik.net
+# add -f to fork to background
