@@ -1,0 +1,2 @@
+updatedb -l 0 -o mlocate.db -U . -e "$(readlink -f ./GoldenGate/tmp)" -n '.gitkeep .gitignore'
+locate -d mlocate.db '' |sed "s|$(pwd)/||"|grep -v -e "$(pwd)\|mlocate\.db\|\.gpicker-script\|TAGS\|^\.git\|/\.git\|~$" |tr '\n' '\0'
