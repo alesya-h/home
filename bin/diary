@@ -10,9 +10,8 @@ then
     stty -echo
 fi
 
-DIARY="$HOME/Documents/diary.org"
-
-echo "* $(date)" >> "$DIARY"
+DIARY="$HOME/Dropbox/$(basename $0).org"
+echo "* $(LC_ALL=C date -R)" >> "$DIARY"
 cat >> "$DIARY"
 stty echo
 echo >> "$DIARY"

@@ -29,5 +29,4 @@ alias ..8='cd ../../../../../../../..'
 alias ..9='cd ../../../../../../../../..'
 alias gg='git grep'
 
-notifications
 eval "$(rbenv init -)"
