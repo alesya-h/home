@@ -31,7 +31,7 @@ XTerm*VT100.color13: VioletRed1
 XTerm*VT100.color14: aquamarine1
 XTerm*VT100.color15: white
 XTerm*VT100.colorBDMode: off
-XTerm*VT100.cursorColor: yellow
+XTerm*VT100.cursorColor: white
 XTerm*VT100.dynamicColors:  on
 
 ! settings
