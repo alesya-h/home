@@ -56,8 +56,31 @@ function prompt_char {
 }
 
  # ⊞⊠⊙§¢¥€∞®∑ϴΦΩΞΨαγλμπ○◧◯◉●►▻▷▸▹▩▧▨▦▶▗▚▖▒
-export PS1='%T %B%F{cyan}%~%F{green}[%F{yellow}${vcs_info_msg_0_}%F{green}]%f %(!.®.o)%b '
-export RPS1='%{$fg_bold[white]%} $BAT %n@%m%f%b'
+case $(hostname) in
+  "laptop.aguzik.net" )
+    export HOSTCOLOR="white"
+    ;;
+  "aguzik.net" )
+    export HOSTCOLOR="blue"
+    ;;
+  * )
+    export HOSTCOLOR="red"
+    ;;
+esac
+
+case $(whoami) in
+  "me" )
+    export USERCOLOR="white"
+    ;;
+  "root" )
+    export USERCOLOR="red"
+    ;;
+  * )
+    export USERCOLOR="green"
+esac
+
+export PS1="%F{$HOSTCOLOR}%T %B%F{cyan}%~%F{green}[%F{yellow}\${vcs_info_msg_0_}%F{green}] %F{$USERCOLOR}%(!.®.o)%b%f "
+export RPS1="%B%F{white} \$BAT %F{$USERCOLOR}%n%f@%F{$HOSTCOLOR}%m%f%b"
 
 source $HOME/login_general.sh
 source $HOME/shell_general.sh
