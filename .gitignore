@@ -100,5 +100,13 @@
 /.davfs2/secrets
 /.davfs2/cache
 /.vim/.netrwhist
-/.OGStudio/
+/.OGStudio
 /sent
+/.freetalk
+/.netrc
+/.subversion
+/.vimgolf
+/.frozen-bubble
+/.lyrics
+/Ydisk
+/.gtk-bookmarks
