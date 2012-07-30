@@ -38,4 +38,4 @@
 ;         ))
   )
 
-(setf *init-hook* '(my-init-hook))
+;(setf *init-hook* '(my-init-hook))
