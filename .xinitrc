@@ -40,7 +40,6 @@ $HOME/.dropbox-dist/dropboxd &
 # [[ -z "$(ps -C emacs --no-headers)" ]] && emacs --daemon &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
-play -q "$HOME/Dropbox/smb/smb_1-up.wav" &
 #wmname LG3D # for GUI java programs under lightweight window managers
 xcompmgr&
 xbindkeys
