@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.15 for me on Fri Apr 20 16:48:11 2012.
+# Written by xscreensaver-demo 5.19 for me on Wed Aug  8 17:51:11 2012.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -31,7 +31,7 @@ dpmsSuspend:	2:00:00
 dpmsOff:	4:00:00
 grabDesktopImages:  True
 grabVideoFrames:    False
-chooseRandomImages: True
+chooseRandomImages: False
 imageDirectory:	/home/me/Pictures/wallpapers/calendar
 
 mode:		random
@@ -59,7 +59,7 @@ programs:								      \
 -				rorschach -root				    \n\
 -				decayscreen -root			    \n\
 -				flame -root				    \n\
--				halo -root				    \n\
+				halo -root				    \n\
 -				slidescreen -root			    \n\
 -				pedal -root				    \n\
 -				bouboule -root				    \n\
@@ -91,7 +91,7 @@ programs:								      \
 -				strange -root				    \n\
 -				swirl -root				    \n\
 -				triangle -root				    \n\
-				xjack -root				    \n\
+-				xjack -root				    \n\
 -				xlyap -root				    \n\
 - GL: 				atlantis -root				    \n\
 				bsod -root				    \n\
@@ -194,9 +194,9 @@ programs:								      \
 -				piecewise -root				    \n\
 - GL: 				polytopes -root				    \n\
 				pong -root				    \n\
--				popsquares -root			    \n\
-- GL: 				surfaces -root				    \n\
-				xanalogtv -root				    \n\
+				popsquares -root -bg #FFFF00 -fg #8C0000    \n\
+  GL: 				surfaces -root				    \n\
+-				xanalogtv -root				    \n\
 -				abstractile -root			    \n\
 -				anemotaxis -root			    \n\
 - GL: 				antinspect -root			    \n\
@@ -206,7 +206,7 @@ programs:								      \
 -				intermomentary -root			    \n\
 -				memscroller -root			    \n\
 - GL: 				noof -root				    \n\
--				pacman -root				    \n\
+				pacman -root				    \n\
 - GL: 				pinion -root				    \n\
 - GL: 				polyhedra -root				    \n\
 - GL: 				providence -root			    \n\
@@ -237,7 +237,7 @@ programs:								      \
 - GL: 				moebiusgears -root			    \n\
 - GL: 				voronoi -root				    \n\
 - GL: 				hypnowheel -root			    \n\
-- GL: 				klein -root				    \n\
+  GL: 				klein -root				    \n\
 -				lcdscrub -root				    \n\
 - GL: 				photopile -root				    \n\
 - GL: 				skytentacles -root			    \n\
