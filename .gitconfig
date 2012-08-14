@@ -17,12 +17,13 @@
 	rebase = true
 [alias]
   co = checkout
+	st = status
+	s = status
 	me = log --author='Ales Guzik' --format=format:'%ci %s'
 	sub = submodule update --init --recursive
 	staged = diff --staged
 	unstage = reset HEAD
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-	st = status
 [color]
 	ui = auto
 [push]
