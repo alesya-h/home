@@ -111,3 +111,5 @@
 /Ydisk
 /.gtk-bookmarks
 /.icedtea
+/.vagrant.d
+/.vnc
