@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'ripper'
+require 'pp'
+pp Ripper.sexp(ARGV[0],'-')
