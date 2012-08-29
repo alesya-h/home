@@ -1,0 +1,5 @@
+#!/bin/bash
+FILE=`mktemp`
+echo $@ > $FILE
+rip $FILE
+rm $FILE

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec clisp -q -q -x '(read t)'
