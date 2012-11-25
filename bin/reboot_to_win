@@ -1,0 +1,3 @@
+WIN_ID=`sudo efibootmgr|grep Windows|awk '{print $1}'| sed 's/Boot//g;s/*//'`
+sudo efibootmgr --bootnext $WIN_ID
+sudo systemctl reboot
