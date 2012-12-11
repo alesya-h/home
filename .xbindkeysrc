@@ -1,6 +1,3 @@
-"sudo pm-suspend"
-    m:0x0 + c:150
-    XF86Sleep
 "xscreensaver-command -lock"
     m:0x40 + c:127
     Mod4 + Pause
@@ -54,16 +51,3 @@
 "mpc random"
     m:0x4 + c:172
     Control + XF86AudioPlay
-"sudo poweroff"
-    m:0x1 + c:150
-    Shift + XF86Sleep
-"sudo reboot"
-    m:0x4 + c:150
-    Control + XF86Sleep
-
-"play -q ~/Dropbox/smb/smb_1-up.wav"
-    m:0x0 + c:148
-    XF86Calculator
-"play -q ~/Dropbox/smb/smb_coin.wav"
-    m:0x0 + c:163
-    XF86Mail
