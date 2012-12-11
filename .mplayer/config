@@ -2,3 +2,4 @@
 
 ao=alsa
 ass=true
+nojoystick=1
