@@ -13,3 +13,6 @@
 [submodule "p/my/bash-voice-notes"]
 	path = p/my/bash-voice-notes
 	url = git@github.com:alesguzik/bash-voice-notes.git
+[submodule "p/my/vkpd"]
+	path = p/my/vkpd
+	url = git@github.com:alesguzik/vkpd.git
