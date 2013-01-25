@@ -113,3 +113,7 @@
 /.icedtea
 /.vagrant.d
 /.vnc
+/.audacity-data
+/.elinks
+/.k_history
+/.gdb_history
