@@ -30,4 +30,7 @@ alias ..8='cd ../../../../../../../..'
 alias ..9='cd ../../../../../../../../..'
 alias gg='git grep'
 
+alias pmount='udisks --mount'
+alias pumount='udisks --unmount'
+
 eval "$(rbenv init -)"
