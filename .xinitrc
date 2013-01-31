@@ -29,10 +29,7 @@ fi
 source ~/login_general.sh
 source ~/shell_general.sh
 
-# while true; do
-#     chwp
-#     sleep 10m #1m
-# done &
+chwp
 
 xscreensaver -no-splash &
 # conky &
