@@ -3,7 +3,6 @@
 [ -n "$TMUX" ] && export PATH="$HOME/.rbenv/bin:$PATH:$HOME/p/my/scripts:$HOME/p/my/fork/ruby-build/bin:$HOME/bin:$HOME/.local/bin"
 
 alias pacman='sudo pacman'
-alias ec='emacsclient -n'
 alias be='bundle exec'
 
 alias ls='ls --color=auto'
