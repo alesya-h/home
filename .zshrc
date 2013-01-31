@@ -40,7 +40,7 @@ zstyle ':vcs_info:*' check-for-changes true
 # zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' stagedstr "+"
 zstyle ':vcs_info:*' unstagedstr "!"
-zstyle ':vcs_info:*' formats '%s:%b%F{red}%c%u'
+zstyle ':vcs_info:*' formats '%s:%b%F{blue}%c%u'
 setopt PROMPT_SUBST
 
 precmd () { 
@@ -79,7 +79,7 @@ case $(whoami) in
     export USERCOLOR="green"
 esac
 
-export PS1="%F{$HOSTCOLOR}%T %B%F{cyan}%~%F{green}[%F{yellow}\${vcs_info_msg_0_}%F{green}] %F{$USERCOLOR}%(!.®.o)%b%f "
+export PS1="%F{$HOSTCOLOR}%T %B%F{cyan}%~%F{cyan}[%F{white}\${vcs_info_msg_0_}%F{cyan}] %F{$USERCOLOR}%(!.®.o)%b%f "
 export RPS1="%B%F{white} \$BAT %F{$USERCOLOR}%n%f@%F{$HOSTCOLOR}%m%f%b"
 
 source $HOME/login_general.sh

@@ -39,3 +39,65 @@
   )
 
 ;(setf *init-hook* '(my-init-hook))
+;;; ### Internal variables definitions                    ### ;;;
+;;; ### You can edit this part when clfswm is not running ### ;;;
+;;; ### And you can remove this part to revert to the     ### ;;;
+;;; ### original configuration variables values.          ### ;;;
+(in-package :clfswm)
+
+(setf
+  ;; Gimp Layout Group:
+
+  ;; Notify Window Group:
+
+  ;; Expose Mode Group:
+
+  ;; Circulate Mode Group:
+
+  ;; Info Mode Group:
+
+  ;; Query String Group:
+
+  ;; Identify Key Group:
+
+  ;; Second Mode Group:
+  *SM-BORDER-COLOR* "Cyan"
+
+  ;; Frame Colors Group:
+
+  ;; Root Group:
+
+  ;; Corner Group:
+
+  ;; Menu Group:
+
+  ;; Placement Group:
+
+  ;; Hook Group:
+  *QUERY-KEY-PRESS-HOOK* (quote (CLFSWM::QUERY-MODE-COMPLETE-SUGGEST-RESET))
+  *BINDING-HOOK* (quote (CLFSWM::SET-DEFAULT-CIRCULATE-KEYS CLFSWM::INIT-*QUERY-KEYS*
+                                           CLFSWM::SET-DEFAULT-QUERY-KEYS
+                                           CLFSWM::INIT-*INFO-KEYS*
+                                           CLFSWM::INIT-*INFO-MOUSE*
+                                           CLFSWM::SET-DEFAULT-INFO-KEYS
+                                           CLFSWM::SET-DEFAULT-INFO-MOUSE
+                                           CLFSWM::INIT-*MAIN-KEYS*
+                                           CLFSWM::INIT-*MAIN-MOUSE*
+                                           CLFSWM::SET-DEFAULT-MAIN-KEYS
+                                           CLFSWM::SET-DEFAULT-MAIN-MOUSE
+                                           CLFSWM::INIT-*SECOND-KEYS*
+                                           CLFSWM::INIT-*SECOND-MOUSE*
+                                           CLFSWM::SET-DEFAULT-SECOND-KEYS
+                                           CLFSWM::SET-DEFAULT-SECOND-MOUSE))
+
+  ;; Main Mode Group:
+  *COLOR-MAYBE-SELECTED* "Cyan"
+
+  ;; Miscellaneous Group:
+  *NEVER-MANAGED-WINDOW-LIST* (quote ((CLFSWM::IS-NOTIFY-WINDOW-P CLFSWM::RAISE-WINDOW)
+        (CLFSWM::EQUAL-WM-CLASS-ROX-PINBOARD NIL)
+        (CLFSWM::EQUAL-WM-CLASS-XVKBD CLFSWM::RAISE-WINDOW)
+        (CLFSWM::EQUAL-CLFSWM-TERMINAL CLFSWM::RAISE-AND-FOCUS-WINDOW)))
+
+)
+;;; ### End of internal variables definitions ### ;;;
