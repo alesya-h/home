@@ -1,9 +1,9 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.19 for me on Wed Aug  8 17:51:11 2012.
+# Written by xscreensaver-demo 5.20 for me on Fri Jan 25 14:34:32 2013.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
-cycle:		0:03:00
+cycle:		0:02:00
 lock:		True
 lockTimeout:	0:00:00
 passwdTimeout:	0:00:30
@@ -31,8 +31,8 @@ dpmsSuspend:	2:00:00
 dpmsOff:	4:00:00
 grabDesktopImages:  True
 grabVideoFrames:    False
-chooseRandomImages: False
-imageDirectory:	/home/me/Pictures/wallpapers/calendar
+chooseRandomImages: True
+imageDirectory:	/home/me/Pictures
 
 mode:		random
 selected:	187
