@@ -120,3 +120,11 @@
 /.chef
 /.factor-vm_history
 /.supermegadoc
+/.qt
+/.cpan
+/.erlang.cookie
+/.erlang_history
+/.gnuplot_history
+/.scala_history
+/.sbt
+/.xpra
