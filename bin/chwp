@@ -1,1 +1,3 @@
-habak -mS ~/Pictures/wallpapers/current/
+#!/bin/bash
+# --bg-fill is the mode you want. --bg-max is one with black margins.
+find ~/Pictures/wallpapers/current|sort --random-sort|head -2|xargs feh --bg-fill
