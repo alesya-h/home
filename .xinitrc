@@ -44,6 +44,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 xcompmgr&
 xbindkeys
 # xterm
-#clfswm-loop
-herbstluftwm
+clfswm-loop
+#herbstluftwm
 # startxfce4
