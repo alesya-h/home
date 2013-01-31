@@ -16,7 +16,7 @@
 [branch "master"]
 	rebase = true
 [alias]
-  co = checkout
+	co = checkout
 	st = status
 	s = status
 	me = log --author='Ales Guzik' --format=format:'%ci %s'
