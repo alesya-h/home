@@ -49,6 +49,7 @@ XTerm*borderColor: YellowGreen
 XTerm*loginShell: false
 XTerm*multiClickTime: 250
 XTerm*saveLines: 9999
+XTerm*fastScroll: true
 XTerm*scrollBar: false
 XTerm*scrollKey: true
 XTerm*metaSendsEscape: true
