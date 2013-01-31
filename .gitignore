@@ -117,3 +117,6 @@
 /.elinks
 /.k_history
 /.gdb_history
+/.chef
+/.factor-vm_history
+/.supermegadoc
