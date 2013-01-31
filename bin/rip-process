@@ -1,12 +1,21 @@
 #!/usr/bin/env ruby
 require 'ripper'
+def non_ambiguous node
+  case node
+  when :if
+    :rb_if
+  else
+    node
+  end
+end
 
 def lisp_print_symbol(x,first=false)
   if first
-    raise "#{x} is case-sensitive" unless x.downcase == x
-    puts "|#{x.to_s.upcase.gsub('|','\|')}|"
+    x = non_ambiguous(x).to_s
+    (x.upcase! if (x == x.downcase)) || (x.downcase! if x == x.upcase)
+    puts "|#{x.gsub('|','\|')}|"
   else
-    puts ":|#{x.to_s.gsub('|','\|')}|"
+    puts "|#{x.to_s.gsub('|','\|')}|"  # prepend first bar with colon to get keyword symbol
   end
 end
 

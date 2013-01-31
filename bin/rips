@@ -1,5 +1,6 @@
 #!/bin/bash
 FILE=`mktemp`
-echo $@ > $FILE
+echo "$@" > $FILE
+cat $FILE
 rip $FILE
 rm $FILE
