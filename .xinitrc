@@ -18,9 +18,9 @@ TOTAL_SCREENS=`xrandr|grep ' connected'|wc -l`
 if [ $TOTAL_SCREENS -gt 1 ]; then
   LAPTOP_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep LVDS)"
   VGA_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep VGA)"
-  xrandr --output "$LAPTOP_SCREEN" --right-of "$VGA_SCREEN"
 	xrandr --output "$LAPTOP_SCREEN" --auto
 	xrandr --output "$VGA_SCREEN" --auto
+  xrandr --output "$LAPTOP_SCREEN" --right-of "$VGA_SCREEN"
   dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
   dispwin -d 2 -I /usr/share/color/icc/Argyll/sRGB.icm
 fi
