@@ -19,17 +19,20 @@ if [ $TOTAL_SCREENS -gt 1 ]; then
   export LAPTOP_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep LVDS)"
   export VGA_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep VGA)"
   xrandr --output "$LAPTOP_SCREEN" --auto
-  xrandr --output "$VGA_SCREEN" --auto # --mode 800x600
+  xrandr --output "$VGA_SCREEN" --auto
+  # xrandr --output "$VGA_SCREEN" --mode 800x600
   xrandr --output "$VGA_SCREEN" --right-of "$LAPTOP_SCREEN"
   dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
   dispwin -d 2 -I /usr/share/color/icc/Argyll/sRGB.icm
 fi
 
-# xcalib -s 0 $HOME/TPLCD95.icm
 source ~/login_general.sh
 source ~/shell_general.sh
 
-chwp
+# chwp
+pushd ~/Pictures/wallpapers/current
+feh --bg-max lain2bgpl0.jpg lain_by_lga_d-d54qugf.jpg
+popd
 
 xscreensaver -no-splash &
 # conky &
