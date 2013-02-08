@@ -10,6 +10,7 @@ Emacs.Font: DejaVu Sans Mono-12
 
 XTerm*VT100.colorMode: on
 XTerm*termName: xterm-256color
+XTerm*utf8: 2
 
 XTerm*background: black
 XTerm*foreground: white
