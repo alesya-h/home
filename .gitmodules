@@ -16,3 +16,6 @@
 [submodule "p/my/vkpd"]
 	path = p/my/vkpd
 	url = git@github.com:alesguzik/vkpd.git
+[submodule "p/my/fork/git-extras"]
+	path = p/my/fork/git-extras
+	url = https://github.com/visionmedia/git-extras.git
