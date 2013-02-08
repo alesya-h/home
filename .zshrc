@@ -67,7 +67,6 @@ export RPS1="%B%F{white} \$BAT %F{$USERCOLOR}%n%f@%F{$HOSTCOLOR}%m%f%b"
 
 
 ### ENVIRONMENT AND STARTUP ###
-if [ -o login ]; then
-  source $HOME/login_general.sh
-fi
-source $HOME/shell_general.sh
+# .zprofile -> at login
+# .zshenv   -> every shell
+###############################

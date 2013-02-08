@@ -1,9 +1,9 @@
 # this file is not supposed to be loaded more than once
-if [ -n "$LOGIN_GENERAL_LOADED" ]; then
+if [ -n "$ZPROFILE_LOADED" ]; then
   playnote # for debug reasons
   return
 fi
-export LOGIN_GENERAL_LOADED=true
+export ZPROFILE_LOADED=true
 
 export EDITOR="vim"
 export BROWSER="firefox"
