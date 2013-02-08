@@ -19,3 +19,6 @@
 [submodule "p/my/fork/git-extras"]
 	path = p/my/fork/git-extras
 	url = https://github.com/visionmedia/git-extras.git
+[submodule "p/my/fork/z"]
+	path = p/my/fork/z
+	url = https://github.com/rupa/z.git
