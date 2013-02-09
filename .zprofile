@@ -10,5 +10,12 @@ export BROWSER="firefox"
 export CLICOLOR=1
 export AUDIODRIVER="alsa"
 export MYSERV="178.79.141.250"
+export GREP_OPTIONS='--color=auto'
 
-export PATH="$HOME/.rbenv/bin:$PATH:$HOME/p/my/fork/ruby-build/bin:$HOME/p/my/fork/git-extras/bin:$HOME/bin:$HOME/.local/bin"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/p/my/fork/ruby-build/bin:$PATH"
+export PATH="$HOME/p/my/fork/git-extras/bin:$PATH"
+
+export MANPATH="$HOME/p/my/fork/git-extras/man:$MANPATH"
