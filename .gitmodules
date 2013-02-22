@@ -22,3 +22,6 @@
 [submodule "p/my/fork/z"]
 	path = p/my/fork/z
 	url = https://github.com/rupa/z.git
+[submodule "p/my/screenlog"]
+	path = p/my/screenlog
+	url = git@github.com:alesguzik/screenlog.git
