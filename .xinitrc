@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh --login
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/*; do
@@ -26,9 +26,6 @@ if [ $TOTAL_SCREENS -gt 1 ]; then
   dispwin -d 2 -I /usr/share/color/icc/Argyll/sRGB.icm
 fi
 
-source ~/login_general.sh
-source ~/shell_general.sh
-
 # chwp
 pushd ~/Pictures/wallpapers/current
 feh --bg-max lain2bgpl0.jpg lain_by_lga_d-d54qugf.jpg
@@ -43,7 +40,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers
 xcompmgr&
 xbindkeys
-# xterm
-clfswm-loop
-#herbstluftwm
+#xterm
+exec clfswm-loop
 # startxfce4
