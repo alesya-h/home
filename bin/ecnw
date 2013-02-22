@@ -1,2 +1,2 @@
 #!/bin/sh
-exec emacsclient -c -nw $@
+exec emacsclient -c -nw "$@"

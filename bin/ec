@@ -1,1 +1,2 @@
-exec emacsclient -n $@
+#!/bin/sh
+exec emacsclient -n "$@"

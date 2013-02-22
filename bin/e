@@ -4,4 +4,4 @@ if [ -f ./.env ]; then
   source ./.env
   echo " done."
 fi
-exec $@
+exec "$@"

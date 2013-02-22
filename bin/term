@@ -1,0 +1,7 @@
+PATH="$PATH:/usr/lib/xscreensaver"
+case "$1" in
+  "1" ) apple2 -text -fast -program zsh ;;
+  "2" ) phosphor -scale 2 -delay 1000 -program zsh ;;
+  * ) echo "Usage: term [n]
+  where n is 1 for apple2 and 2 for phosphor"
+esac

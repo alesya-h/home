@@ -1,2 +1,2 @@
 #!/bin/sh
-rip-process $@ | rip-format
+rip-process "$@" | rip-format

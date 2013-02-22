@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ctags -e --languages=ruby -R $@
+exec ctags -e --languages=ruby -R "$@"

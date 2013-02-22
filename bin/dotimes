@@ -3,5 +3,5 @@ TIMES=$1
 shift
 for ((i=0; i<$TIMES; i++))
 do
-  $@
+  "$@"
 done
