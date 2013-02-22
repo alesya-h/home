@@ -16,6 +16,7 @@
 [branch "master"]
 	rebase = true
 [alias]
+	new = !cd "${GIT_PREFIX-.}" && git init && git commit --allow-empty -m root-commit
 	co = checkout
 	st = status
 	s = status
