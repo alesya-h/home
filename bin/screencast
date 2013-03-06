@@ -1,0 +1,2 @@
+RECDIR="$HOME/video/screencasts"
+ffmpeg -f alsa -ac 2 -i default -f x11grab -s 1920x1080 -i :0.0 -acodec flac -vcodec libx264 -preset ultrafast -crf 0 "$RECDIR/$(date '+%Y-%m-%d_%H-%M-%S_%s').mkv"
