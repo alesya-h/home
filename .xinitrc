@@ -39,6 +39,7 @@ else
   add_resolution LVDS1 1280 720
 fi
 
+screenlog start
 
 # chwp
 pushd ~/Pictures/wallpapers/current
