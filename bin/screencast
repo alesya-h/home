@@ -1,2 +1,7 @@
-RECDIR="$HOME/video/screencasts"
-ffmpeg -f alsa -ac 2 -i default -f x11grab -s 1920x1080 -i :0.0 -acodec flac -vcodec libx264 -preset ultrafast -crf 0 "$RECDIR/$(date '+%Y-%m-%d_%H-%M-%S_%s').mkv"
+RECDIR="$HOME/screencasts"
+RESOLUTION="$(xrandr -q|head -1|awk '{print $8 "x" $10}'|tr -d ',')"
+ffmpeg -f alsa -i default -f x11grab -s "$RESOLUTION" -r 15 -i :0.0 -c:a flac -c:v libx264 -preset ultrafast -crf 0 "$RECDIR/$(date '+%Y-%m-%d_%H-%M-%S_%s').mkv"
+
+# INFO=$(xwininfo -frame)
+# WIN_GEO=$(echo $INFO | grep -oEe 'geometry [0-9]+x[0-9]+' | grep -oEe '[0-9]+x[0-9]+')
+# WIN_XY=$(echo $INFO | grep -oEe 'Corners:\s+\+[0-9]+\+[0-9]+' | grep -oEe '[0-9]+\+[0-9]+' | sed -e 's/+/,/' )
