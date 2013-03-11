@@ -117,3 +117,4 @@ alias pumount='udisks --unmount'
 
 eval "$(rbenv init -)"
 source "$HOME/p/my/fork/z/z.sh"
+cat "$HOME/Documents/todo.org"
