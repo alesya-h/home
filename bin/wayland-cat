@@ -1,1 +1,0 @@
-sudo socat - UNIX-CONNECT:/run/user/0/wayland-0
