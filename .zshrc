@@ -87,7 +87,6 @@ alias du1='du -d 1 -h|sort -h'
 alias du2='du -d 2 -h|sort -h'
 alias du3='du -d 3 -h|sort -h'
 
-alias f='find | grep'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
