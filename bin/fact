@@ -1,2 +1,2 @@
 #!/bin/bash
-rlwrap factor-vm -run=listener "$@"
+rlwrap factor -run=listener "$@"
