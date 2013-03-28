@@ -110,7 +110,7 @@ alias gst='git status'
 alias glg='git lg'
 alias gg='git grep'
 alias ggui='git gui'
-alias gunstage='git reset --'
+alias gunstage='git reset HEAD'
 
 alias pmount='udisks --mount'
 alias pumount='udisks --unmount'
