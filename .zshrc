@@ -73,6 +73,8 @@ export RPS1="%B%F{white} \$BAT %F{$USERCOLOR}%n%f@%F{$HOSTCOLOR}%m%f%b"
 
 alias pacman='sudo pacman'
 alias be='bundle exec'
+alias lores='xrandr --size 1280x720'
+alias hires='xrandr --size 1920x1080'
 
 alias ls='ls --color=auto'
 alias l='ls -la'
