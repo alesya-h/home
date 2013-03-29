@@ -7,8 +7,8 @@
 [submodule ".rbenv"]
 	path = .rbenv
 	url = git://github.com/sstephenson/rbenv.git
-[submodule "p/my/fork/ruby-build"]
-	path = p/my/fork/ruby-build
+[submodule "p/fork/ruby-build"]
+	path = p/fork/ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
 [submodule "p/my/bash-voice-notes"]
 	path = p/my/bash-voice-notes
@@ -16,11 +16,11 @@
 [submodule "p/my/vkpd"]
 	path = p/my/vkpd
 	url = git@github.com:alesguzik/vkpd.git
-[submodule "p/my/fork/git-extras"]
-	path = p/my/fork/git-extras
+[submodule "p/fork/git-extras"]
+	path = p/fork/git-extras
 	url = https://github.com/visionmedia/git-extras.git
-[submodule "p/my/fork/z"]
-	path = p/my/fork/z
+[submodule "p/fork/z"]
+	path = p/fork/z
 	url = https://github.com/rupa/z.git
 [submodule "p/my/screenlog"]
 	path = p/my/screenlog
