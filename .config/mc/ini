@@ -77,7 +77,7 @@ editor_backup_extension=~
 mcview_eof=
 ignore_ftp_chattr_errors=true
 keymap=
-skin=nicedark
+skin=xoria256
 
 filepos_max_saved_entries=1024
 
