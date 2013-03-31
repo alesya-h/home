@@ -9,7 +9,6 @@
 /.histfile
 /.Xauthority
 /.dbus
-/.mc
 /.srecode
 /.gconfd
 /.cache
@@ -40,8 +39,6 @@
 /Documents/
 /Downloads/
 /.ido.last
-/.mc/history
-/.mc/panels.ini
 /.macromedia
 /quicklisp
 /.fonts
