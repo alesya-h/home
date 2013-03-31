@@ -1,0 +1,12 @@
+#!/bin/sh
+sudo iw dev wlan0 set power_save on 2> /dev/null
+echo '1500' | sudo tee '/proc/sys/vm/dirty_writeback_centisecs' > /dev/null
+echo 'auto' | sudo tee '/sys/bus/pci/devices/0000:00:1f.3/power/control' > /dev/null
+echo 'auto' | sudo tee '/sys/bus/pci/devices/0000:00:1f.2/power/control' > /dev/null
+echo 'auto' | sudo tee '/sys/bus/pci/devices/0000:00:1f.0/power/control' > /dev/null
+echo 'auto' | sudo tee '/sys/bus/pci/devices/0000:00:1d.0/power/control' > /dev/null
+echo 'auto' | sudo tee '/sys/bus/pci/devices/0000:00:1c.4/power/control' > /dev/null
+echo 'auto' | sudo tee '/sys/bus/pci/devices/0000:00:1c.0/power/control' > /dev/null
+echo 'auto' | sudo tee '/sys/bus/pci/devices/0000:00:1c.1/power/control' > /dev/null
+echo 'auto' | sudo tee '/sys/bus/pci/devices/0000:00:1a.0/power/control' > /dev/null
+echo 'auto' | sudo tee '/sys/bus/pci/devices/0000:00:02.0/power/control' > /dev/null
