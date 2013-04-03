@@ -1,3 +1,8 @@
+#!/bin/sh
 RECDIR="$HOME/screencasts"
 RESOLUTION="$(xrandr -q|head -1|awk '{print $8 "x" $10}'|tr -d ',')"
-ffmpeg -f alsa -i default -f x11grab -s "$RESOLUTION" -r 15 -i :0.0 -c:a flac -c:v libx264 -preset ultrafast -pix_fmt yuv420p -crf 0 "$RECDIR/$(date '+%Y-%m-%d_%H-%M-%S_%s').mp4"
+AUDIO='-f alsa -i default -c:a libvorbis'
+if [ ! "$1" ]; then
+  AUDIO="-an"
+fi
+ffmpeg -f x11grab -s "$RESOLUTION" -r 15 -i :0.0 $AUDIO -c:v libx264 -preset ultrafast -pix_fmt yuv420p -crf 0 "$RECDIR/$(date '+%Y-%m-%d_%H-%M-%S_%s').mp4"
