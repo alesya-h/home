@@ -13,30 +13,11 @@ setxkbmap -layout us,ru -variant dvorak, -option grp:menu_toggle,grp_led:caps,te
 xset r rate 200 50
 xmodmap ~/.Xmodmap
 
-add_resolution() {
-  OUTPUT=$1
-  W=$2
-  H=$3
-  MODELINE=$(cvt "$W" "$H" | tail -1 | sed -E 's/^([^ ]+ +){2}//')
-  MODENAME="${W}x${H}"
-  eval "xrandr --newmode $MODENAME $MODELINE"
-  echo ------------------------
-  xrandr --addmode "$OUTPUT" "$MODENAME"
-}
-
+add_resolution LVDS1 1280 720
 dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
 TOTAL_SCREENS=`xrandr|grep ' connected'|wc -l`
 if [ $TOTAL_SCREENS -gt 1 ]; then
-  export LAPTOP_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep LVDS)"
-  export VGA_SCREEN="$(xrandr|grep connected|awk -e '{print $1}'|grep VGA)"
-  xrandr --output "$LAPTOP_SCREEN" --auto
-  xrandr --output "$VGA_SCREEN" --auto
-  # xrandr --output "$VGA_SCREEN" --mode 800x600
-  xrandr --output "$VGA_SCREEN" --right-of "$LAPTOP_SCREEN"
-  dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
-  dispwin -d 2 -I /usr/share/color/icc/Argyll/sRGB.icm
-else
-  add_resolution LVDS1 1280 720
+    display-dual
 fi
 
 screenlog start -d 120

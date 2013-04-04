@@ -1,0 +1,6 @@
+#!/bin/sh
+xrandr --output VGA1 --auto
+xrandr --output LVDS1 --auto
+RESOLUTION=$(xrandr|awk '/VGA1/{getline;print $1}')
+echo $RESOLUTION
+xrandr --output LVDS1 --mode $RESOLUTION --same-as VGA1

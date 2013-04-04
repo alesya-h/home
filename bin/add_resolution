@@ -1,0 +1,7 @@
+OUTPUT=$1
+W=$2
+H=$3
+MODELINE=$(cvt "$W" "$H" | tail -1 | sed -E 's/^([^ ]+ +){2}//')
+MODENAME="${W}x${H}"
+eval "xrandr --newmode $MODENAME $MODELINE"
+xrandr --addmode "$OUTPUT" "$MODENAME"

@@ -1,0 +1,2 @@
+xrandr|grep connected| grep -v LVDS1|cut -d ' ' -f1|xargs -I '{}' xrandr --output '{}' --off
+xrandr --output LVDS1 --auto
