@@ -70,6 +70,8 @@ export RPS1="%B%F{white} \$BAT %F{$USERCOLOR}%n%f@%F{$HOSTCOLOR}%m%f%b"
 # .zprofile -> at login
 ###############################
 
+disable r
+alias r='rails'
 
 alias pacman='sudo pacman'
 alias be='bundle exec'
@@ -85,6 +87,7 @@ alias vmi='vim'
 alias v='vim'
 alias p='ps xf'
 alias pa='ps axf'
+alias s='screenlog'
 
 alias du1='du -d 1 -h|sort -h'
 alias du2='du -d 2 -h|sort -h'
@@ -98,18 +101,33 @@ alias ..6='cd ../../../../../..'
 alias ..7='cd ../../../../../../..'
 alias ..8='cd ../../../../../../../..'
 alias ..9='cd ../../../../../../../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'
+alias .........='cd ../../../../../../../..'
+alias ..........='cd ../../../../../../../../..'
 
 alias ga='git add'
 alias ga.='git add .'
+alias grm='git rm'
 alias gc='git commit'
 alias gco='git checkout'
 alias gdiff='git diff'
 alias gstag='git diff --staged'
 alias gstash='git stash'
 alias gpull='git pull'
+alias gri='git rebase --interactive'
+alias grc='git rebase --continue'
+alias grs='git rebase --skip'
+alias gra='git rebase --abort'
 alias gclone='git clone'
 alias gpush='git push'
 alias gst='git status'
+alias gst.='git status .'
 alias glg='git lg'
 alias gg='git grep'
 alias ggui='git gui'
@@ -120,4 +138,4 @@ alias pumount='udisks --unmount'
 
 eval "$(rbenv init -)"
 source "$HOME/p/fork/z/z.sh"
-cat "$HOME/Documents/todo.org"
+# cat "$HOME/Documents/todo.org"

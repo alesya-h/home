@@ -1,2 +1,2 @@
 #!/bin/bash
-git log --date=short --pretty=format:'%cd' --abbrev-commit | uniq
+git log --date=short --pretty=format:'%cd' --abbrev-commit | uniq | tac
