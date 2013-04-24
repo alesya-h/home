@@ -28,4 +28,4 @@ export CAPP_BUILD="/home/me/CappBuild"
 export MANPATH="$HOME/p/fork/git-extras/man:$MANPATH"
 export MANPATH="$NPM_PACKAGES/share/man:$MANPATH"
 
-(powertop-tune;fixtime) &>/dev/null
+powertop-tune&>/dev/null
