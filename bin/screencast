@@ -6,3 +6,4 @@ if [ ! "$1" ]; then
   AUDIO="-an"
 fi
 ffmpeg -f x11grab -s "$RESOLUTION" -r 15 -i :0.0 $AUDIO -c:v libx264 -preset ultrafast -pix_fmt yuv420p -crf 0 "$RECDIR/$(date '+%Y-%m-%d_%H-%M-%S_%s').mp4"
+# ffmpeg -f x11grab -s "$RESOLUTION" -r 15 -i :0.0 $AUDIO -c:v libx264 -vf "scale=800:480" -preset ultrafast -pix_fmt yuv420p -crf 0 -f mpegts - | ffmpeg -f mpegts -i - -c copy -f flv rtmp://765624.fme.bambuser.com/b-fme/778e1cd9a39182157b963790312daa50ea762f3a
