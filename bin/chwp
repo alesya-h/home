@@ -1,8 +1,24 @@
 #!/bin/bash
 # --bg-fill is the mode you want. --bg-max is one with black margins.
-if [ -z "$1" ]; then
-  MODE="--bg-fill"
-else
-  MODE="--bg-max"
+pushd ~/Pictures/wallpapers >/dev/null
+MODE="--bg-fill"
+#if [ "$1" == '--max' ]; then
+#  MODE="--bg-max"
+#  shift
+#fi
+if [ -n "$1" ]; then
+    if [ -d "$1" -a -L current ]; then
+        DIR="$1"
+        echo setting theme to "$DIR"
+        rm current
+        ln -s "$DIR" current
+    else
+        echo Available themes are:
+        find . -type d|sed 's/^.\///'|grep -v -E '^\.$'|sed 's/^/  /'
+    fi
 fi
-find ~/Pictures/wallpapers/current|sort --random-sort|head -2|xargs --delimiter=\\n feh "$MODE"
+find -L ./current -type f | \
+    sort --random-sort | \
+    head -2 | \
+    xargs --delimiter=\\n feh "$MODE"
+popd >/dev/null
