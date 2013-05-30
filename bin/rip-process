@@ -51,5 +51,5 @@ def lisp_print(x,first=false)
   end
 end
 
-lisp_print Ripper.sexp(ARGF,ARGV[0])
+lisp_print Ripper.sexp(ARGF.read.to_s,ARGV[0])
 puts
