@@ -5,6 +5,8 @@ if [ -n "$ZPROFILE_LOADED" ]; then
 fi
 export ZPROFILE_LOADED=true
 
+export NO_AT_BRIDGE=1
+
 export EDITOR="vim"
 export BROWSER="firefox"
 export CLICOLOR=1
