@@ -22,10 +22,10 @@ fi
 
 screenlog start -d 120
 
-# chwp
-pushd ~/Pictures/wallpapers/current
-feh --bg-max lain2bgpl0.jpg lain_by_lga_d-d54qugf.jpg
-popd
+chwp
+#pushd ~/Pictures/wallpapers/current
+#feh --bg-max lain2bgpl0.jpg lain_by_lga_d-d54qugf.jpg
+#popd
 
 xscreensaver -no-splash &
 # conky &
@@ -34,8 +34,8 @@ $HOME/.dropbox-dist/dropboxd &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers
-xcompmgr&
+compton -c -r 20 -o 0.5 &
 xbindkeys
 #xterm
 exec clfswm-loop
-# startxfce4
+#openbox
