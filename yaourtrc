@@ -1,0 +1,4 @@
+DEVELBUILDDIR="/home/me/p/fork/abs/local/yaourtbuild"
+DEVEL=1
+AURSEARCH=1
+AURUPGRADE=1
