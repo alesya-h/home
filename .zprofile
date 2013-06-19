@@ -11,7 +11,6 @@ export EDITOR="vim"
 export BROWSER="firefox"
 export CLICOLOR=1
 export AUDIODRIVER="alsa"
-export MYSERV="178.79.141.250"
 export GREP_OPTIONS='--color=auto'
 
 export NPM_PACKAGES="$HOME/.npm-packages"
