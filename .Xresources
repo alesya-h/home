@@ -3,7 +3,8 @@ Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
-Xft.dpi: 90
+! Xft.dpi: 147
+Xft.dpi: 120
 Xft.rgba: rgb
 
 Emacs.Font: DejaVu Sans Mono-12
@@ -12,7 +13,9 @@ XTerm*VT100.colorMode: on
 XTerm*termName: xterm-256color
 XTerm*utf8: 2
 
-XTerm*background: black
+! lightsalmon4
+! burlywood
+XTerm*background: #221100
 XTerm*foreground: white
 XTerm*geometry: 110x35
 
