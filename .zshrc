@@ -134,8 +134,8 @@ alias gg='git grep'
 alias ggui='git gui'
 alias gunstage='git reset HEAD'
 
-alias pmount='udisks --mount'
-alias pumount='udisks --unmount'
+alias pmount='udisksctl mount -b'
+alias pumount='udisksctl unmount -b'
 
 eval "$(rbenv init -)"
 source "$HOME/p/fork/z/z.sh"
