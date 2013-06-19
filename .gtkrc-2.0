@@ -1,18 +1,9 @@
 # Auto-written by gtk2_prefs. Do not edit.
 
-gtk-theme-name = "Clearlooks"
+gtk-can-change-accels = 1
+gtk-theme-name = "Adwaita"
 style "user-font"
 {
 	font_name="Sans 12"
 }
 widget_class "*" style "user-font"
-
-#gtk-key-theme-name = "Emacs"
-
-style "default-style"
-{
-  GtkWindow::resize-grip-height = 0
-  GtkWindow::resize-grip-width = 0
-}
-
-class "GtkWidget" style "default-style"
