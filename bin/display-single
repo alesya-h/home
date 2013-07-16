@@ -1,2 +1,3 @@
-xrandr|grep connected| grep -v LVDS1|cut -d ' ' -f1|xargs -I '{}' xrandr --output '{}' --off
-xrandr --output LVDS1 --auto
+source "$HOME/.local/etc/displays.conf"
+xrandr|grep connected| grep -v "$MAIN"|cut -d ' ' -f1|xargs -I '{}' xrandr --output '{}' --off
+xrandr --output "$MAIN" --auto

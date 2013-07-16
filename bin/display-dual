@@ -1,4 +1,5 @@
 #!/bin/sh
-xrandr --output LVDS1 --auto
-xrandr --output VGA1 --auto
-xrandr --output VGA1 --right-of LVDS1
+source "$HOME/.local/etc/displays.conf"
+xrandr --output "$LEFT" --auto
+xrandr --output "$RIGHT" --auto
+xrandr --output "$RIGHT" --right-of "$LEFT"
