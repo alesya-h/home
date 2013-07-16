@@ -3,21 +3,39 @@ Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
-! Xft.dpi: 147
-Xft.dpi: 120
 Xft.rgba: rgb
 
-Emacs.Font: DejaVu Sans Mono-12
+Emacs.Font: DejaVu Sans Mono-10
+
+xpdf.initialZoom: page
+
+XTerm*faceName: DejaVu Sans Mono
+XTerm*faceSize: 10
+! lightsalmon4
+! burlywood
+XTerm*geometry: 110x35
+
+XTerm*background: #221100
+XTerm*foreground: white
 
 XTerm*VT100.colorMode: on
 XTerm*termName: xterm-256color
 XTerm*utf8: 2
-
-! lightsalmon4
-! burlywood
-XTerm*background: #221100
-XTerm*foreground: white
-XTerm*geometry: 110x35
+XTerm*VT100.eightBitInput:  true
+XTerm*VT100.eightBitOutput:  true
+XTerm*VT100.titeInhibit:  false
+XTerm*VT100.underLine:  on
+XTerm*highlightSelection:  true
+XTerm*internalBorder: 1
+XTerm*borderColor: YellowGreen
+! violet
+XTerm*loginShell: false
+XTerm*multiClickTime: 250
+XTerm*saveLines: 9999
+XTerm*fastScroll: true
+XTerm*scrollBar: false
+XTerm*scrollKey: true
+XTerm*metaSendsEscape: true
 
 XTerm*VT100.color0: black
 XTerm*VT100.color1: red1
@@ -38,26 +56,6 @@ XTerm*VT100.color15: white
 XTerm*VT100.colorBDMode: off
 XTerm*VT100.cursorColor: LightBlue
 XTerm*VT100.dynamicColors:  on
-
-! settings
-
-XTerm*VT100.eightBitInput:  true
-XTerm*VT100.eightBitOutput:  true
-XTerm*VT100.titeInhibit:  false
-XTerm*VT100.underLine:  on
-XTerm*faceName: DejaVu Sans Mono
-XTerm*faceSize: 12
-XTerm*highlightSelection:  true
-XTerm*internalBorder: 1
-XTerm*borderColor: YellowGreen
-! violet
-XTerm*loginShell: false
-XTerm*multiClickTime: 250
-XTerm*saveLines: 9999
-XTerm*fastScroll: true
-XTerm*scrollBar: false
-XTerm*scrollKey: true
-XTerm*metaSendsEscape: true
 
 ! #include ".xrdb.d/solarized.xrdb" !! https://github.com/altercation/ethanschoonover.com/blob/master/projects/solarized/xresources-colors-solarized/Xresources
 ! #include ".xrdb.d/zenburn.xrdb"
