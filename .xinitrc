@@ -14,13 +14,13 @@ xset r rate 200 50
 xmodmap ~/.Xmodmap
 
 add_resolution LVDS1 1280 720
-dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
+which dispwin 2>&1 >/dev/null && dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm || true
 TOTAL_SCREENS=`xrandr|grep ' connected'|wc -l`
 if [ $TOTAL_SCREENS -gt 1 ]; then
     display-dual
 fi
 
-screenlog start -d 120
+screenlog start -d 120 -q
 
 chwp
 #pushd ~/Pictures/wallpapers/current
@@ -28,9 +28,7 @@ chwp
 #popd
 
 xscreensaver -no-splash &
-# conky &
 $HOME/.dropbox-dist/dropboxd &
-# [[ -z "$(ps -C emacs --no-headers)" ]] && emacs --daemon &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers
