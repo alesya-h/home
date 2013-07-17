@@ -45,7 +45,7 @@ zstyle ':vcs_info:*' formats '%s:%b%F{blue}%c%u'
 setopt PROMPT_SUBST
 function precmd {
     vcs_info
-    [[ -e `which acpi` ]] && export BAT=`acpi|awk '{sub("Charging,","^",$3);sub("Full,","=",$3);sub("Unknown,","~",$3);sub("Discharging,","v",$3);sub(",","",$4);sub("%","%%",$4);print $3$4}'`
+    [[ -e `which acpi` ]] && export BAT=$(acpi|awk '{sub("Charging,","^",$3);sub("Full,","=",$3);sub("Unknown,","~",$3);sub("Discharging,","v",$3);sub(",","",$4);sub("%","%%",$4);print $3$4}')
 }
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
@@ -55,6 +55,7 @@ function prompt_char {
 case $(hostname) in
   "laptop.aguzik.net" ) export HOSTCOLOR="white" ;;
   "aguzik.net" ) export HOSTCOLOR="blue" ;;
+  "work.aguzik.net" ) export HOSTCOLOR="green" ;;
   * ) export HOSTCOLOR="red" ;;
 esac
 case $(whoami) in
@@ -85,6 +86,7 @@ alias sys='sudo systemctl'
 alias gti='git'
 alias vmi='vim'
 alias v='vim'
+alias suvim='sudo vim'
 alias p='ps xf'
 alias pa='ps axf'
 alias s='screenlog'
