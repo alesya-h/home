@@ -1,0 +1,4 @@
+#!/bin/sh
+sudo systemctl stop ntpd.service
+sudo ntpdate time.apple.com
+sudo systemctl start ntpd.service
