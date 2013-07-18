@@ -5,12 +5,12 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-Emacs.Font: DejaVu Sans Mono-10
+Emacs.Font: DejaVu Sans Mono-12
 
 xpdf.initialZoom: page
 
 XTerm*faceName: DejaVu Sans Mono
-XTerm*faceSize: 10
+XTerm*faceSize: 12
 ! lightsalmon4
 ! burlywood
 XTerm*geometry: 110x35
