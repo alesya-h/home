@@ -22,3 +22,6 @@
 [submodule "p/my/screenlog"]
 	path = p/my/screenlog
 	url = git@github.com:alesguzik/screenlog.git
+[submodule "p/my/aguzik.net"]
+	path = p/my/aguzik.net
+	url = git@github.com:alesguzik/alesguzik.github.com.git
