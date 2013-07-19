@@ -8,6 +8,7 @@ export ZPROFILE_LOADED=true
 export NO_AT_BRIDGE=1
 
 export EDITOR="vim"
+export VISUAL="ec"
 export BROWSER="firefox"
 export CLICOLOR=1
 export AUDIODRIVER="alsa"
