@@ -11,8 +11,6 @@
 	spellingdictionary = none
 [core]
 	excludesfile = ~/.gitignore_global
-[branch]
-	autosetuprebase = always
 [branch "master"]
 	rebase = true
 [alias]
