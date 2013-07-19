@@ -35,5 +35,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 compton -c -r 20 -o 0.5 &
 xbindkeys
 #xterm
+
+HOST_ONLY="$HOME/.xinitrc.$(hostname -s)"
+[ -e "${HOST_ONLY}" ] && . "${HOST_ONLY}"
+
 exec clfswm-loop
 #openbox

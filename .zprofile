@@ -30,3 +30,6 @@ export CAPP_BUILD="/home/me/CappBuild"
 
 export MANPATH="$HOME/p/fork/git-extras/man:$MANPATH"
 export MANPATH="$NPM_PACKAGES/share/man:$MANPATH"
+
+HOST_ONLY="$HOME/.zprofile.$(hostname -s)"
+[ -e "${HOST_ONLY}" ] && . "${HOST_ONLY}"

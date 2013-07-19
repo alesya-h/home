@@ -3,7 +3,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd nobeep extendedglob no_bad_pattern no_nomatch notify print_exit_value
 
-
 ### COMPLETIONS ###
 zstyle :compinstall filename '/home/user/.zshrc'
 autoload -Uz compinit
@@ -144,3 +143,6 @@ alias pumount='udisksctl unmount -b'
 eval "$(rbenv init -)"
 source "$HOME/p/fork/z/z.sh"
 # cat "$HOME/Documents/todo.org"
+
+HOST_ONLY="$HOME/.zshrc.$(hostname -s)"
+[ -e "${HOST_ONLY}" ] && . "${HOST_ONLY}"
