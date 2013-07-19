@@ -53,10 +53,11 @@ function prompt_char {
     echo '○'
 }
 case $(hostname) in
-  "laptop.aguzik.net" ) export HOSTCOLOR="white" ;;
-  "aguzik.net" ) export HOSTCOLOR="blue" ;;
-  "work.aguzik.net" ) export HOSTCOLOR="green" ;;
-  * ) export HOSTCOLOR="red" ;;
+  "laptop.aguzik.net" )  export HOSTCOLOR="white" ;;
+  "oak.aguzik.net" )     export HOSTCOLOR="blue"  ;;
+  "firefly.aguzik.net" ) export HOSTCOLOR="blue"  ;;
+  "work.aguzik.net" )    export HOSTCOLOR="green" ;;
+  * )                    export HOSTCOLOR="red"   ;;
 esac
 case $(whoami) in
   "me" ) export USERCOLOR="white" ;;
