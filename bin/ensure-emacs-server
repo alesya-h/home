@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ ! -e "/tmp/emacs$(id -u)/server" ];then
+    emacs --daemon > /dev/null
+fi

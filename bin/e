@@ -1,2 +1,3 @@
 #!/bin/sh
+ensure-emacs-server
 exec emacsclient -c -t "$@"
