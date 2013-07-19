@@ -1,0 +1,13 @@
+#!/bin/bash
+CODE=`mktemp`
+deltemp(){
+    rm "$CODE"
+    exit
+}
+cat > "$CODE"
+trap deltemp int 
+while true; do
+    inotifywait -e modify -r "$@"
+    cat $CODE|bash
+done
+
