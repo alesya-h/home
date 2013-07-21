@@ -18,6 +18,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
+source "$HOME/.rbenv/completions/rbenv.zsh"
 
 
 ###  KEYS SETUP  ###
@@ -140,7 +141,6 @@ alias gunstage='git reset HEAD'
 alias pmount='udisksctl mount -b'
 alias pumount='udisksctl unmount -b'
 
-eval "$(rbenv init -)"
 source "$HOME/p/fork/z/z.sh"
 # cat "$HOME/Documents/todo.org"
 
