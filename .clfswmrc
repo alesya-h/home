@@ -1,7 +1,9 @@
 ; -*- mode: lisp -*-
 (in-package :clfswm)
 
-(define-shell ("e") b-start-emacs "start emacs" "ec")
+(defun add-second-keys ()
+  (define-shell ("e" :shift) b-start-emacs-client "start emacs client" "ec"))
+(add-hook *binding-hook* 'add-second-keys)
 
 (setf
   *SM-BORDER-COLOR* "Cyan"
