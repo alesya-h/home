@@ -14,5 +14,5 @@ else
 	REMOTE_PORT="$2"
 fi
 
-ssh -Nv -R "${REMOTE_PORT}:localhost:${LOCAL_PORT}" me@aguzik.net
+ssh -Nv -R "${REMOTE_PORT}:localhost:${LOCAL_PORT}" me@oak.aguzik.net
 # add -f to fork to background
