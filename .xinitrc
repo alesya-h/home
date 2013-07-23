@@ -34,6 +34,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D # for GUI java programs under lightweight window managers
 compton -c -r 20 -o 0.5 &
 xbindkeys
+dunst&
 #xterm
 
 HOST_ONLY="$HOME/.xinitrc.$(hostname -s)"
