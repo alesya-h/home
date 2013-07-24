@@ -44,4 +44,4 @@
 
 [screenlog]
     appname = screenlog
-    timeout = 4
+    timeout = 3
