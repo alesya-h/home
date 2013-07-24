@@ -42,3 +42,6 @@
     foreground = "#000000"
     timeout = 0
 
+[screenlog]
+    appname = screenlog
+    timeout = 4
