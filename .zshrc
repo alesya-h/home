@@ -73,7 +73,7 @@ export RPS1="%B%F{white} \$BAT %F{$USERCOLOR}%n%f@%F{$HOSTCOLOR}%m%f%b"
 ###############################
 
 disable r
-alias r='rails'
+alias r='zeus'
 
 alias be='bundle exec'
 alias lores='xrandr --size 1280x720'
