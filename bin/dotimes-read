@@ -1,0 +1,17 @@
+#!/bin/bash
+TIMES="$1"
+shift
+
+on_quit(){
+    echo on exit
+    rm "$FILE"
+    exit 0
+}
+
+FILE="$(mktemp)"
+trap on_quit SIGINT
+cat > "$FILE"
+for((i=0; i<"$TIMES"; i++)); do
+    bash "$FILE"
+done
+on_quit
