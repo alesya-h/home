@@ -141,8 +141,7 @@
 /.steam
 /.steampath
 /.steampid
-/p/fork/abs
-/p/fork/factor
+/p/fork/*
 /.w3m
 /screenlog
 /.tddium
