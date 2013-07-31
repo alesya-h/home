@@ -45,3 +45,8 @@
 [screenlog]
     appname = screenlog
     timeout = 3
+
+[layout]
+    appname = layout
+    background = "#FFDB94"
+    timeout = 0
