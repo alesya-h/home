@@ -49,4 +49,3 @@
 [layout]
     appname = layout
     background = "#FFDB94"
-    timeout = 0
