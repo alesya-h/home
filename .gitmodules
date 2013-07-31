@@ -25,3 +25,6 @@
 [submodule "p/my/aguzik.net"]
 	path = p/my/aguzik.net
 	url = git@github.com:alesguzik/alesguzik.github.com.git
+[submodule "p/my/layout"]
+	path = p/my/layout
+	url = git@github.com:alesguzik/layout.git
