@@ -1,5 +1,5 @@
 #!/bin/sh
-source "$HOME/.local/etc/displays.conf"
+source "$HOME/.config/displays.conf"
 xrandr --output "$RIGHT" --auto
 xrandr --output "$LEFT" --auto
 RESOLUTION=$(xrandr|awk "/$MAIN/{getline;print \$1}")

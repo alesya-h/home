@@ -1,5 +1,5 @@
 #!/bin/sh
-source "$HOME/.local/etc/displays.conf"
+source "$HOME/.config/displays.conf"
 xrandr --output "$LEFT" --auto
 xrandr --output "$RIGHT" --auto
 xrandr --output "$RIGHT" --right-of "$LEFT"
