@@ -6,6 +6,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   done
   unset f
 fi &
+HOST_ONLY="$HOME/.xinitrc.$(hostname -s)"
 
 # sxiv for images
 xrdb -merge .Xresources
@@ -37,8 +38,9 @@ xbindkeys
 dunst&
 #xterm
 
-HOST_ONLY="$HOME/.xinitrc.$(hostname -s)"
+clfswm-loop&
+WM_PID=$!
+
 [ -e "${HOST_ONLY}" ] && . "${HOST_ONLY}"
 
-exec clfswm-loop
-#openbox
+exec wait $WM_PID
