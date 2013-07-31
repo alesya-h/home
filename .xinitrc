@@ -9,7 +9,7 @@ fi &
 
 # sxiv for images
 xrdb -merge .Xresources
-setxkbmap -layout us,ru -variant dvorak, -option grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp
+setxkbmap -layout us,ru -variant dvorak, -option grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp,caps:hyper
 xset r rate 200 50
 xmodmap ~/.Xmodmap
 
