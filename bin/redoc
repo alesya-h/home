@@ -1,0 +1,3 @@
+#!/bin/sh
+cd "$HOME/.emacs.d/plugins/supermegadoc"
+make BUILT_CDB_FILES='ri.cdb devhelp.cdb man.cdb'
