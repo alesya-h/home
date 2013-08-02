@@ -28,3 +28,6 @@
 [submodule "p/my/layout"]
 	path = p/my/layout
 	url = git@github.com:alesguzik/layout.git
+[submodule "p/my/factor-work"]
+	path = p/my/factor-work
+	url = git@github.com:alesguzik/factor-work.git
