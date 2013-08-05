@@ -2,10 +2,13 @@
 (in-package :clfswm)
 
 (defun add-second-keys ()
-  (define-shell ("e" :shift) b-start-emacs-client "start emacs client" "ec"))
+  (define-shell ("e") b-start-emacs-client "start emacs client" "ec")
+  (define-shell ("t") b-start-urxvt "start terminal" "cd $HOME && exec urxvt"))
 (add-hook *binding-hook* 'add-second-keys)
 
 (setf
   *SM-BORDER-COLOR* "Cyan"
   *COLOR-MAYBE-SELECTED* "Cyan"
+  *clfswm-terminal-cmd* (format nil "urxvt -name ~A" *clfswm-terminal-name*)
+
 )

@@ -1,13 +1,22 @@
-Xft.autohint: 0
+Xft.autohint: false
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
+Xft.hinting: true
+Xft.antialias: true
 Xft.rgba: rgb
 
 Emacs.Font: DejaVu Sans Mono-12
 
 xpdf.initialZoom: page
+
+URxvt*depth: 32
+URxvt*background: [70]#221100
+URxvt*foreground: white
+URxvt*scrollBar: false
+URxvt*font: xft:DejaVu Sans Mono:size=12
+URxvt*loginShell: false
+URxvt*geometry: 110x35
+
 
 XTerm*faceName: DejaVu Sans Mono
 XTerm*faceSize: 12
@@ -37,25 +46,25 @@ XTerm*scrollBar: false
 XTerm*scrollKey: true
 XTerm*metaSendsEscape: true
 
-XTerm*VT100.color0: black
-XTerm*VT100.color1: red1
-XTerm*VT100.color2: chartreuse4
-XTerm*VT100.color3: gold
-XTerm*VT100.color4: RoyalBlue4
-XTerm*VT100.color5: VioletRed4
-XTerm*VT100.color6: aquamarine3
-XTerm*VT100.color7: gray90
-XTerm*VT100.color8: gray30
-XTerm*VT100.color9: red1
-XTerm*VT100.color10: chartreuse2
-XTerm*VT100.color11: yellow
-XTerm*VT100.color12: RoyalBlue1
-XTerm*VT100.color13: VioletRed1
-XTerm*VT100.color14: aquamarine1
-XTerm*VT100.color15: white
-XTerm*VT100.colorBDMode: off
-XTerm*VT100.cursorColor: LightBlue
-XTerm*VT100.dynamicColors:  on
+*color0: black
+*color1: red1
+*color2: chartreuse4
+*color3: gold
+*color4: RoyalBlue4
+*color5: VioletRed4
+*color6: aquamarine3
+*color7: gray90
+*color8: gray30
+*color9: red1
+*color10: chartreuse2
+*color11: yellow
+*color12: RoyalBlue1
+*color13: VioletRed1
+*color14: aquamarine1
+*color15: white
+*colorBDMode: off
+*cursorColor: LightBlue
+*dynamicColors:  on
 
 ! #include ".xrdb.d/solarized.xrdb" !! https://github.com/altercation/ethanschoonover.com/blob/master/projects/solarized/xresources-colors-solarized/Xresources
 ! #include ".xrdb.d/zenburn.xrdb"
