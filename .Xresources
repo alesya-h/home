@@ -16,6 +16,7 @@ URxvt*scrollBar: false
 URxvt*font: xft:DejaVu Sans Mono:size=12
 URxvt*loginShell: false
 URxvt*geometry: 110x35
+URxvt*saveLines: 9999
 
 
 XTerm*faceName: DejaVu Sans Mono
