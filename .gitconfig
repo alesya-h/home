@@ -27,3 +27,5 @@
 	ui = auto
 [push]
 	default = current
+[merge]
+	defaultToUpstream = true
