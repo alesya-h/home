@@ -21,7 +21,7 @@ if [ $TOTAL_SCREENS -gt 1 ]; then
     display-dual
 fi
 
-screenlog start -d 120 -q
+screenlog start -d 120
 
 chwp
 #pushd ~/Pictures/wallpapers/current
