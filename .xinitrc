@@ -36,11 +36,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 compton -c -r 20 -o 0.5 &
 xbindkeys
 dunst&
-#xterm
 
-clfswm&
-WM_PID=$!
-
-[ -e "${HOST_ONLY}" ] && . "${HOST_ONLY}"
-
-exec wait $WM_PID
+if [ -e "${HOST_ONLY}" ]; then
+    source "${HOST_ONLY}"
+fi &
+exec clfswm
