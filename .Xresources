@@ -1,6 +1,7 @@
 Xft.autohint: false
 Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
+Xft.hintstyle:  hintslight
+!Xft.hintstyle:  hintfull
 Xft.hinting: true
 Xft.antialias: true
 Xft.rgba: rgb
@@ -17,7 +18,6 @@ URxvt*font: xft:DejaVu Sans Mono:size=12
 URxvt*loginShell: false
 URxvt*geometry: 110x35
 URxvt*saveLines: 9999
-
 
 XTerm*faceName: DejaVu Sans Mono
 XTerm*faceSize: 12
@@ -47,25 +47,23 @@ XTerm*scrollBar: false
 XTerm*scrollKey: true
 XTerm*metaSendsEscape: true
 
-*color0: black
-*color1: red1
-*color2: chartreuse4
-*color3: gold
-*color4: RoyalBlue4
-*color5: VioletRed4
-*color6: aquamarine3
-*color7: gray90
-*color8: gray30
-*color9: red1
-*color10: chartreuse2
-*color11: yellow
-*color12: RoyalBlue1
-*color13: VioletRed1
-*color14: aquamarine1
-*color15: white
-*colorBDMode: off
-*cursorColor: LightBlue
-*dynamicColors:  on
-
-! #include ".xrdb.d/solarized.xrdb" !! https://github.com/altercation/ethanschoonover.com/blob/master/projects/solarized/xresources-colors-solarized/Xresources
-! #include ".xrdb.d/zenburn.xrdb"
+*.color0: black
+*.color1: red1
+*.color2: chartreuse4
+*.color3: gold
+*.color4: RoyalBlue4
+*.color5: VioletRed4
+*.color6: aquamarine3
+*.color7: gray90
+*.color8: gray30
+*.color9: red1
+*.color10: chartreuse2
+*.color11: yellow
+*.color12: RoyalBlue1
+*.color13: VioletRed1
+*.color14: aquamarine1
+*.color15: white
+*.colorBDMode: off
+*.colorULMode: off
+*.cursorColor: LightBlue
+*.dynamicColors:  on
