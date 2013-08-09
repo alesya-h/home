@@ -38,7 +38,7 @@ xbindkeys
 dunst&
 #xterm
 
-clfswm-loop&
+clfswm&
 WM_PID=$!
 
 [ -e "${HOST_ONLY}" ] && . "${HOST_ONLY}"
