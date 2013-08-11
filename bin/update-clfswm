@@ -3,8 +3,8 @@
 pushd ~/quicklisp/local-projects/clfswm
 git pull
 cd ~
-# SBCL_HOME='' sbcl --eval "(require 'clfswm)" --eval '(sb-ext:save-lisp-and-die "clfswm.core" :executable t)'
-clisp -x "(ql:quickload 'clfswm)" -x '(ext:saveinitmem "clfswm.core" :executable t :quiet t :start-package :clfswm)'
+SBCL_HOME='' sbcl --eval "(require 'clfswm)" --eval '(sb-ext:save-lisp-and-die "clfswm.core" :executable t)'
+# clisp -x "(ql:quickload 'clfswm)" -x '(ext:saveinitmem "clfswm.core" :executable t :quiet t :start-package :clfswm)'
 [ ! -d ~/.local/bin ] && mkdir -p ~/.local/bin
 mv clfswm.core ~/.local/bin/clfswm.core || true
 popd

@@ -1,3 +1,4 @@
 #!/bin/sh
 # clfswm.core --eval "(clfswm::main-unprotected)" --non-interactive
-clfswm.core -x "(clfswm:main)"
+clfswm.core --eval "(clfswm:main)" --non-interactive
+# clfswm.core -x "(clfswm:main)"
