@@ -40,4 +40,5 @@ dunst&
 if [ -e "${HOST_ONLY}" ]; then
     source "${HOST_ONLY}"
 fi &
-exec clfswm-loop
+
+exec "${1-"clfswm-loop"}"
