@@ -26,8 +26,6 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$HOME/p/fork/ruby-build/bin:$PATH"
 export PATH="$HOME/p/fork/git-extras/bin:$PATH"
 
-export PATH="$HOME/narwhal/bin:$PATH"
-
 export MANPATH="$HOME/p/fork/git-extras/man:$MANPATH"
 export MANPATH="$NPM_PACKAGES/share/man:$MANPATH"
 
