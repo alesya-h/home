@@ -67,6 +67,8 @@ esac
 export PS1="%F{$HOSTCOLOR}%T %B%F{cyan}%~%F{cyan}[%F{white}\${vcs_info_msg_0_}%F{cyan}] %F{$USERCOLOR}%(!.®.o)%b%f "
 export RPS1="%B%F{white} \$BAT %F{$USERCOLOR}%n%f@%F{$HOSTCOLOR}%m%f%b"
 
+#tabs -4
+TERM=linux setterm -regtabs 4
 
 ### ENVIRONMENT AND STARTUP ###
 # .zprofile -> at login
