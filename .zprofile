@@ -29,5 +29,8 @@ export PATH="$HOME/p/fork/git-extras/bin:$PATH"
 export MANPATH="$HOME/p/fork/git-extras/man:$MANPATH"
 export MANPATH="$NPM_PACKAGES/share/man:$MANPATH"
 
+# start ssh-agent and export its credentials
+eval `ssh-agent`
+
 HOST_ONLY="$HOME/.zprofile.$(hostname -s)"
 [ -e "${HOST_ONLY}" ] && . "${HOST_ONLY}"
