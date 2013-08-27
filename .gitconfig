@@ -22,7 +22,7 @@
 	sub = submodule update --init --recursive
 	staged = diff --staged
 	unstage = reset HEAD
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lg = log --graph --pretty=format:'%C(auto)%h%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>'
 [color]
 	ui = auto
 [push]
