@@ -92,7 +92,6 @@ alias v='vim'
 alias suvim='sudo vim'
 alias p='ps xf'
 alias pa='ps axf'
-alias s='screenlog'
 
 alias du1='du -d 1 -h|sort -h'
 alias du2='du -d 2 -h|sort -h'
