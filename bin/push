@@ -1,0 +1,6 @@
+#!/bin/bash
+curl -X POST \
+    -F "token=aLmN7d7C5Bn3tgQhiQyTD6AP3G3649" \
+    -F "user=ykvA53kfTZmElFLxnfe69HMyGNK61r" \
+    -F "message=$*" \
+    'https://api.pushover.net/1/messages.json'
