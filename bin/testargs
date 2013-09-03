@@ -1,2 +1,3 @@
 #!/bin/sh
+# args utility comes from 'ucommon' package
 args --lines "$@"
