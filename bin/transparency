@@ -1,0 +1,10 @@
+#!/bin/bash
+NAME=compton
+COMMAND="$NAME -c -r 20 -o 0.5 --backend glx"
+pkill $NAME
+if [ "$1" == "-i" ]; then
+    shift
+    COMMAND="$COMMAND --invert-color-include !(name~=\"rxvt|emacs\")"
+fi
+
+exec $COMMAND
