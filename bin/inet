@@ -1,0 +1,6 @@
+#!/bin/bash
+(
+netctl start ethernet-dhcp
+sleep $((5*60))
+netctl stop ethernet-dhcp
+)&
