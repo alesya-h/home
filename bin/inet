@@ -1,6 +1,14 @@
 #!/bin/bash
+if [ "$DISPLAY" ]; then
+    export SUDO_ASKPASS=/usr/lib/ssh/ssh-askpass
+    SUDO='sudo -A'
+else
+    SUDO='sudo'
+fi
+cat <<EOF|$SUDO bash
 (
 netctl start ethernet-dhcp
-sleep $((5*60))
+sleep $((${1-5}*60))
 netctl stop ethernet-dhcp
 )&
+EOF
