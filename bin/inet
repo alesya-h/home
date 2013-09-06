@@ -1,14 +1,24 @@
 #!/bin/bash
-if [ "$DISPLAY" ]; then
-    export SUDO_ASKPASS=/usr/lib/ssh/ssh-askpass
-    SUDO='sudo -A'
+set -e
+export SUDO_ASKPASS=/usr/lib/ssh/ssh-askpass
+SUDO='sudo -A'
+if [ "$2" ]; then
+    TIME=$1
+    shift
+    NOTE=$*
 else
-    SUDO='sudo'
+    NOTE="$(zenity --entry --text="What work task requires you to ask for internet connection?")"
+    if [ "$1" ]; then
+        TIME=$1
+    else
+        TIME="$(zenity --entry --entry-text=5 --text="How much time do you need?")"
+    fi
 fi
+echo $TIME $NOTE >> "$HOME/inet.log"
 cat <<EOF|$SUDO bash
 (
-netctl start ethernet-dhcp
-sleep $((${1-5}*60))
-netctl stop ethernet-dhcp
-)&
+netctl start ethernet-static
+sleep $(($TIME*60))
+netctl stop ethernet-static
+)
 EOF
