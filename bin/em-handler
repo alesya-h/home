@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+# SETUP: ######################################################################
+# 1) open firefox
+# 2) goto about:config
+# 3) right click -> new -> boolean
+# 3.1) preference name: network.protocol-handler.expose.emacs
+# 3.2) value: true
+# 4) setup app which generates links to be opened in emacs:
+# 4.1) for BetterErrors in rails put following line somewhere in initializers:
+#      BetterErrors.editor = "emacs://%{file}:%{line}" if defined? BetterErrors
+# 5) setup handler by going to page with generated links,
+#    clicking any such link and pointing to em-handler as
+#    app to open this kind of links
+###############################################################################
+
+require 'uri'
+url = ARGV[0].sub %r|^emacs://|, ''
+re = %r|:(\d+)$|
+if url.match(re)
+  line = $1.to_i
+end
+file = URI.decode url.sub(re,'')
+system <<EOF
+emacsclient -e "(find-file \\"#{ file }\\")" #{ line && %Q{ "(goto-line #{line})" }}
+EOF
