@@ -1,2 +1,2 @@
 #!/bin/bash
-ruby -run -e httpd -- --port=4567 .
+ruby -Kn -run -e httpd -- --port=4567 .
