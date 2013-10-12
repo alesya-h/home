@@ -147,3 +147,4 @@
 /.bitcoin
 /.heroku
 /.mpv
+/quicklisp
