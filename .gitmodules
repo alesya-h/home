@@ -34,3 +34,6 @@
 [submodule "p/my/cv"]
 	path = p/my/cv
 	url = git@github.com:alesguzik/cv.git
+[submodule "p/fork/factor"]
+	path = p/fork/factor
+	url = https://github.com/slavapestov/factor.git
