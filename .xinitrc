@@ -14,8 +14,7 @@ setxkbmap -layout us,ru -variant dvorak, -option grp:menu_toggle,grp_led:caps,te
 xset r rate 200 50
 xmodmap ~/.Xmodmap
 
-add_resolution LVDS1 1280 720
-which dispwin 2>&1 >/dev/null && dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm || true
+# dispwin -d 1 -I /usr/share/color/icc/TPLCD95.icm
 TOTAL_SCREENS=`xrandr|grep ' connected'|wc -l`
 if [ $TOTAL_SCREENS -gt 1 ]; then
     display-dual
