@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ -z "$1" ]; then
+    echo "Usage: unramify <path>" > /dev/stderr
+    exit 1
+fi
+
+REAL_PATH="$(readlink -f "$1")"
+TMP_PATH="/tmp/ramify${REAL_PATH}"
+umount "${REAL_PATH}"
+rm -rf "${TMP_PATH}"

@@ -1,0 +1,11 @@
+#!/bin/sh
+if [ -z "$1" ]; then
+    echo "Usage: ramify <path>" > /dev/stderr
+    exit 1
+fi
+
+REAL_PATH="$(readlink -f "$1")"
+TMP_PATH="/tmp/ramify${REAL_PATH}"
+mkdir -p "${TMP_PATH}"
+rsync -a "${REAL_PATH}" "${TMP_PATH}"
+mount --bind "${TMP_PATH}" "${REAL_PATH}"
