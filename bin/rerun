@@ -1,0 +1,2 @@
+#!/bin/sh
+rspec "$(tddium describe "$1" --names --type=rspec)"
