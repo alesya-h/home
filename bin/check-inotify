@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+for foo in /proc/*/fd/*; do
+    readlink -f $foo
+done |
+grep anon_inode:inotify |
+sort |
+sed 's|fd/anon_inode:inotify|cmdline; echo|;s|/proc|cat /proc|' | bash
