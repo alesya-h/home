@@ -7,5 +7,5 @@ fi
 REAL_PATH="$(readlink -f "$1")"
 TMP_PATH="/tmp/ramify${REAL_PATH}"
 mkdir -p "${TMP_PATH}"
-rsync -a "${REAL_PATH}" "${TMP_PATH}"
+rsync -a "${REAL_PATH}/" "${TMP_PATH}"
 mount --bind "${TMP_PATH}" "${REAL_PATH}"
