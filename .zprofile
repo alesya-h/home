@@ -9,6 +9,7 @@ export NO_AT_BRIDGE=1
 
 export EDITOR="vim"
 export VISUAL="ec"
+export GIT_EDITOR="vim"
 export BETTER_ERRORS_URL="emacs://%{file}:%{line}"
 export BROWSER="firefox"
 export CLICOLOR=1
