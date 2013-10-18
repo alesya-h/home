@@ -1,6 +1,6 @@
 #!/bin/bash
 NAME=compton
-COMMAND="$NAME -c -r 20 -o 0.5 --backend glx"
+COMMAND="$NAME -c -r 20 -o 0 --backend glx"
 pkill $NAME
 if [ "$1" == "-i" ]; then
     shift
