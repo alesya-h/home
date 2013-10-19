@@ -11,7 +11,7 @@ Emacs.Font: DejaVu Sans Mono-12
 xpdf.initialZoom: page
 
 URxvt*depth: 32
-URxvt*background: [70]#221100
+URxvt*background: [80]#221100
 URxvt*foreground: white
 URxvt*scrollBar: false
 URxvt*font: xft:DejaVu Sans Mono:size=12
