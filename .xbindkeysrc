@@ -55,3 +55,10 @@
 "mpc random"
     m:0x4 + c:172
     Control + XF86AudioPlay
+
+"xbacklight -dec 5"
+    m:0x0 + c:232
+    XF86MonBrightnessDown
+"xbacklight -inc 5"
+    m:0x0 + c:233
+    XF86MonBrightnessUp
