@@ -14,11 +14,13 @@ export BETTER_ERRORS_URL="emacs://%{file}:%{line}"
 export BROWSER="firefox"
 export CLICOLOR=1
 export AUDIODRIVER="alsa"
+export FLASH_ALSA_DEVICE="plug:dmix"
 export GREP_OPTIONS='--color=auto'
 export ABSROOT=/home/me/p/fork/abs
 
 export NPM_PACKAGES="$HOME/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export CHROME_BIN=chromium
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
