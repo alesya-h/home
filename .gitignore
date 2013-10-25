@@ -148,3 +148,11 @@
 /.heroku
 /.mpv
 /quicklisp
+/.wireshark
+/.fuel_history.eld
+/tmp
+/Books
+/History
+/Papers
+/Video
+/Work
