@@ -20,6 +20,9 @@ if [ $TOTAL_SCREENS -gt 1 ]; then
     display-dual
 fi
 
+# Minsk coordinates used
+xflux -l 53.900184 -g 27.566586 -r 1
+
 # screenlog start -d 240 -i 300 -q
 
 chwp
