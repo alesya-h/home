@@ -114,6 +114,7 @@ alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
 alias ..........='cd ../../../../../../../../..'
 
+alias dmesg='dmesg -H -w -l info'
 alias ga='git add -A'
 alias ga.='git add -A .'
 alias grm='git rm'
