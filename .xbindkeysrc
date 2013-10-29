@@ -49,6 +49,9 @@
 "mpc toggle"
     m:0x0 + c:172
     XF86AudioPlay
+"mpc toggle"
+    m:0x40 + c:116
+    Mod4 + Down
 "mpc single"
     m:0x4 + c:174
     Control + XF86AudioStop
