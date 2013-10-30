@@ -157,3 +157,7 @@
 /Video
 /Work
 /.coffee_history
+/.esd_auth
+/.kde4/*
+/.gpg-agent-info
+/.xsession-errors

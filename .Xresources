@@ -1,51 +1,21 @@
-Xft.autohint: false
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintslight
-!Xft.hintstyle:  hintfull
-Xft.hinting: true
-Xft.antialias: true
-Xft.rgba: rgb
+! Xft.autohint: false
+! Xft.lcdfilter:  lcddefault
+! Xft.hintstyle:  hintslight
+! !Xft.hintstyle:  hintfull
+! Xft.hinting: true
+! Xft.antialias: true
+! Xft.rgba: rgb
 
-Emacs.Font: DejaVu Sans Mono-12
-
-xpdf.initialZoom: page
+Emacs.Font: DejaVu Sans Mono-9
 
 URxvt*depth: 32
 URxvt*background: [80]#221100
 URxvt*foreground: white
 URxvt*scrollBar: false
-URxvt*font: xft:DejaVu Sans Mono:size=12
+URxvt*font: xft:DejaVu Sans Mono:size=9
 URxvt*loginShell: false
 URxvt*geometry: 110x35
 URxvt*saveLines: 9999
-
-XTerm*faceName: DejaVu Sans Mono
-XTerm*faceSize: 12
-! lightsalmon4
-! burlywood
-XTerm*geometry: 110x35
-
-XTerm*background: #221100
-XTerm*foreground: white
-
-XTerm*VT100.colorMode: on
-XTerm*termName: xterm-256color
-XTerm*utf8: 2
-XTerm*VT100.eightBitInput:  true
-XTerm*VT100.eightBitOutput:  true
-XTerm*VT100.titeInhibit:  false
-XTerm*VT100.underLine:  on
-XTerm*highlightSelection:  true
-XTerm*internalBorder: 1
-XTerm*borderColor: YellowGreen
-! violet
-XTerm*loginShell: false
-XTerm*multiClickTime: 250
-XTerm*saveLines: 9999
-XTerm*fastScroll: true
-XTerm*scrollBar: false
-XTerm*scrollKey: true
-XTerm*metaSendsEscape: true
 
 *.color0: black
 *.color1: red1
