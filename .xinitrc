@@ -43,4 +43,4 @@ if [ -e "${HOST_ONLY}" ]; then
     source "${HOST_ONLY}"
 fi &
 
-exec "${1-"clfswm-loop"}"
+exec "${1-"awesome"}"
