@@ -161,3 +161,5 @@
 /.kde4/*
 /.gpg-agent-info
 /.xsession-errors
+/.iced_history
+/.octave_hist
