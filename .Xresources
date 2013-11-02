@@ -1,10 +1,10 @@
 ! Xft.autohint: false
 ! Xft.lcdfilter:  lcddefault
-! Xft.hintstyle:  hintslight
-! !Xft.hintstyle:  hintfull
-! Xft.hinting: true
-! Xft.antialias: true
-! Xft.rgba: rgb
+Xft.hintstyle:  hintslight
+! Xft.hintstyle:  hintfull
+Xft.hinting: false
+Xft.antialias: true
+Xft.rgba: rgb
 
 Emacs.Font: DejaVu Sans Mono-9
 
