@@ -17,9 +17,9 @@
     m:0x40 + c:156
     Mod4 + XF86Launch1
 
-"layout"
-    m:0x0 + c:148
-    XF86Calculator
+"scrot -e 'mv $f ~/History/Screenshots/'"
+    m:0x0 + c:107
+    Print
 
 "amixer set Master toggle"
     m:0x0 + c:121
