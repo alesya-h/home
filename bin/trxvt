@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-exec urxvt -bg '[0]#000000'
+exec urxvt -bg "[${1-50}]#000000"
