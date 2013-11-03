@@ -15,7 +15,7 @@ xset r rate 200 50
 xmodmap ~/.Xmodmap
 
 # Minsk coordinates used
-xflux -l 53.900184 -g 27.566586 -r 1
+# xflux -l 53.900184 -g 27.566586 -r 1
 
 chwp
 
