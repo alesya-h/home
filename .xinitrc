@@ -17,8 +17,6 @@ xmodmap ~/.Xmodmap
 # Minsk coordinates used
 # xflux -l 53.900184 -g 27.566586 -r 1
 
-chwp
-
 xscreensaver -no-splash &
 $HOME/.dropbox-dist/dropboxd &
 
@@ -30,5 +28,7 @@ dunst&
 if [ -e "${HOST_ONLY}" ]; then
     source "${HOST_ONLY}"
 fi &
+
+chwp
 
 exec "${1-"awesome"}"
