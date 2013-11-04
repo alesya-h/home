@@ -37,3 +37,6 @@
 [submodule "p/fork/factor"]
 	path = p/fork/factor
 	url = https://github.com/slavapestov/factor.git
+[submodule "p/my/conf"]
+	path = p/my/conf
+	url = git@github.com:alesguzik/conf.git
