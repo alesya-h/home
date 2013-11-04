@@ -1,1 +1,4 @@
+display-dual
+xrandr --fbmm 1018x286
+screenlog start -d 240 -i 600
 ensure-emacs-server
