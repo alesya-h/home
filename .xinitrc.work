@@ -1,4 +1,4 @@
 display-dual
-xrandr --fbmm 1018x286
+fixdpi.rb 1.4
 screenlog start -d 240 -i 600
 ensure-emacs-server

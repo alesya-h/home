@@ -1,1 +1,0 @@
-/home/me/bin/fix-dpi
