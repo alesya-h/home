@@ -1,4 +1,4 @@
 display-dual
-fixdpi.rb 1.4
+fixdpi 1.4
 screenlog start -d 240 -i 600
 ensure-emacs-server
