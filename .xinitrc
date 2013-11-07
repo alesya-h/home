@@ -27,7 +27,7 @@ dunst&
 
 if [ -e "${HOST_ONLY}" ]; then
     source "${HOST_ONLY}"
-fi &
+fi
 
 chwp
 
