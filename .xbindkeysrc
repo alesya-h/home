@@ -11,8 +11,8 @@
     m:0x0 + c:199
     XF86TouchpadToggle
 "anote key-rec"
-    m:0x0 + c:156
-    XF86Launch1
+    m:0x0 + c:146
+    Help
 "anote key-play"
     m:0x40 + c:156
     Mod4 + XF86Launch1
