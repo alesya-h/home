@@ -1,4 +1,4 @@
 display-dual
 fixdpi 1.5
 screenlog start -d 240
-ensure-emacs-server
+ensure-emacs-server&
