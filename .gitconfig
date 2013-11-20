@@ -1,12 +1,6 @@
 [user]
 	name = Ales Guzik
 	email = me@aguzik.net
-[giggle]
-	main-window-maximized = false
-	main-window-geometry = 958x1059+0+19
-	file-view-vpane-position = 555
-	main-window-view = HistoryView
-	history-view-vpane-position = 541
 [gui]
 	spellingdictionary = none
 [core]
@@ -26,7 +20,7 @@
 [color]
 	ui = auto
 [push]
-	default = current
+	default = simple
 [merge]
 	defaultToUpstream = true
 [magit]
