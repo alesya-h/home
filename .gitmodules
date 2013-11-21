@@ -40,3 +40,6 @@
 [submodule "p/my/conf"]
 	path = p/my/conf
 	url = git@github.com:alesguzik/conf.git
+[submodule "p/my/back_to_work"]
+	path = p/my/back_to_work
+	url = git@github.com:alesguzik/back_to_work.git
