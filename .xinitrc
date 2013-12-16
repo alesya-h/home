@@ -31,4 +31,4 @@ fi
 
 chwp
 
-exec "${1-"awesome"}"
+"${1-"awesome"}"
