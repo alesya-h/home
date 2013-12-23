@@ -1,2 +1,2 @@
 #!/bin/bash
-ruby -Kn -run -e httpd -- --port=4567 .
+ruby -Kn -run -e httpd -- --bind-address=0.0.0.0 --port=4567 .
