@@ -46,3 +46,6 @@
 [submodule "p/my/work_rewards"]
 	path = p/my/work_rewards
 	url = git@github.com:alesguzik/work_rewards.git
+[submodule "p/fork/git-imerge"]
+	path = p/fork/git-imerge
+	url = https://github.com/mhagger/git-imerge.git
