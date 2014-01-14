@@ -31,6 +31,19 @@
     m:0x0 + c:123
     XF86AudioRaiseVolume
 
+"mpc toggle"
+    m:0x40 + c:117
+    Mod4 + Next
+"mpc prev"
+    m:0x40 + c:110
+    Mod4 + Home
+"mpc next"
+    m:0x40 + c:115
+    Mod4 + End
+"mpc random"
+    m:0x40 + c:112
+    Mod4 + Prior
+
 "mpc prev"
     m:0x0 + c:173
     XF86AudioPrev
