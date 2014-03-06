@@ -116,6 +116,7 @@ alias ..........='cd ../../../../../../../../..'
 
 alias dmesg='dmesg -H -w -l info'
 alias lnc='nc localhost'
+alias cp='cp --reflink=auto'
 alias ga='git add -A'
 alias ga.='git add -A .'
 alias grm='git rm'
