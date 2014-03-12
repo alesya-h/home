@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+function die {
+  echo $1
+  exit 255
+}
+
+function askpass {
+  stty -echo
+  local pass
+  read pass
+  echo "$pass"
+  stty echo
+}
+
+REPO_NAME="$1"
+[ -n "$REPO_NAME" ] || die "Repo name is required"
+
+echo -n "Password: "
+PASS="$(askpass)"
+
+echo "user = alesguzik:${PASS}" | tee /dev/stderr | curl -K - -v https://api.bitbucket.org/1.0/repositories/ --data "name=${REPO_NAME}" --data is_private=true --data scm=git
