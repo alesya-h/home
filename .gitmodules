@@ -34,9 +34,6 @@
 [submodule "p/my/cv"]
 	path = p/my/cv
 	url = git@github.com:alesguzik/cv.git
-[submodule "p/fork/factor"]
-	path = p/fork/factor
-	url = https://github.com/slavapestov/factor.git
 [submodule "p/my/conf"]
 	path = p/my/conf
 	url = git@github.com:alesguzik/conf.git
@@ -46,6 +43,3 @@
 [submodule "p/my/work_rewards"]
 	path = p/my/work_rewards
 	url = git@github.com:alesguzik/work_rewards.git
-[submodule "p/fork/git-imerge"]
-	path = p/fork/git-imerge
-	url = https://github.com/mhagger/git-imerge.git
