@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 dims = %x(xrandr|grep connected|grep -v disconnected).split("\n").map do |x|
-  x.match(/(\d+)mm x (\d+)mm/);
-  { w: $1.to_i, h: $2.to_i }
+  w, h = x.match(/(\d+)mm x (\d+)mm/).to_a[1..-1].map(&:to_i)
+  { w: w, h: h }
 end
 total_dims = dims.reduce do |result, new|
   {
