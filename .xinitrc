@@ -13,7 +13,9 @@ xrdb -merge .Xresources
 setxkbmap -layout us,ru -variant dvorak, -option grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp,caps:hyper
 xset r rate 200 50
 xmodmap ~/.Xmodmap
-
+if xinput |grep Trackball
+  trackball
+fi
 # Minsk coordinates used
 # xflux -l 53.900184 -g 27.566586 -r 1
 
@@ -21,6 +23,7 @@ xscreensaver -no-splash &
 $HOME/.dropbox-dist/dropboxd &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 transparency &
 xbindkeys
 dunst&
@@ -32,3 +35,4 @@ fi
 chwp
 
 "${1-"awesome"}"
+openbox
