@@ -17,6 +17,8 @@
 	staged = diff --staged
 	unstage = reset HEAD
 	lg = log --graph --pretty=format:'%C(auto)%h%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>'
+	exec = "!exec "
+	root = !pwd
 [color]
 	ui = auto
 [push]
