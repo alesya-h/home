@@ -10,7 +10,6 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
-local cyclefocus = require('cyclefocus')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
