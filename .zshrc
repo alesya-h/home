@@ -75,15 +75,15 @@ TERM=linux setterm -regtabs 4
 ###############################
 
 disable r
-alias r='zeus'
+alias r='$(git exec pwd)/bin/rails'
 
 alias be='bundle exec'
 alias lores='xrandr --size 1280x720'
 alias hires='xrandr --size 1920x1080'
 
 alias ls='ls --color=auto'
-alias l='ls -l'
-alias la='ls -la'
+alias l='ls -lh'
+alias la='ls -lah'
 alias sys='sudo systemctl'
 alias gti='git'
 alias vmi='vim'
@@ -117,6 +117,7 @@ alias ..........='cd ../../../../../../../../..'
 alias dmesg='dmesg -H -w -l info'
 alias lnc='nc localhost'
 alias cp='cp --reflink=auto'
+alias pi='ping 8.8.8.8'
 alias ga='git add -A'
 alias ga.='git add -A .'
 alias grm='git rm'
