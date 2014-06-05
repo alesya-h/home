@@ -1,0 +1,8 @@
+#!/bin/bash
+NAME="BUFFALO INC. BUFFALO BGC-FC801 USB Gamepad"
+ids=$(xinput list | grep "$NAME" | grep -o -e "id=.." | xargs | sed "s/id=//g")
+for id in $ids; do
+   echo "Disabling Mouse/Key events for ID $id"
+   xinput set-prop $id "Generate Mouse Events" 0
+   xinput set-prop $id "Generate Key Events" 0
+done
