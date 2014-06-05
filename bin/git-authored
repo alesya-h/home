@@ -1,0 +1,11 @@
+#!/bin/bash
+IFS="
+"
+AUTHORS=$(git log --format='%aN' | sort -u)
+MAX_LEN=$(echo "$AUTHORS" | awk '{print length($0);}'|sort -rn|head -n1)
+for AUTHOR in $AUTHORS; do
+  printf "%${MAX_LEN}s: " "$AUTHOR"
+  git log --author="$AUTHOR" --pretty=tformat: --numstat |
+    gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 }
+      END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' -
+done
