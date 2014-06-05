@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+dims = %x(xrandr|grep connected|grep -v disconnected).split("\n").first
+w, h = dims.match(/(\d+)mm x (\d+)mm/).to_a[1..-1].map(&:to_i)
+system "xrandr --fbmm #{w}x#{h}"
