@@ -1,0 +1,2 @@
+#!/bin/sh
+git ls-files | xargs git my-effort | sort -k 3

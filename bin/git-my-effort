@@ -1,0 +1,17 @@
+#!/bin/zsh
+WHO="$(git config user.name)"
+
+function my_lines { git blame --line-porcelain "$1"|grep "author ${WHO}"|wc -l; }
+function all_lines { cat "$1" | wc -l; }
+function effort {
+  if [ 0 != "$(cat "$1"|wc -l)" ]; then
+    echo "$(my_lines "$1") / $(all_lines "$1")" | bc -l
+  else
+    echo empty
+  fi
+}
+for file in "$@"; do
+  if [ -f "$file" ]; then
+    printf "%50s : %.3f\n" "$file" "$(effort "$file")"
+  fi
+done
