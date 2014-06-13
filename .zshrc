@@ -77,6 +77,7 @@ TERM=linux setterm -regtabs 4
 disable r
 alias r='$(git exec pwd)/bin/rails'
 alias rr='$(git exec pwd)/bin/rake'
+alias rs='$(git exec pwd)/bin/rspec'
 
 alias be='bundle exec'
 alias lores='xrandr --size 1280x720'
