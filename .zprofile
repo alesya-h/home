@@ -13,7 +13,7 @@ export GIT_EDITOR="vim"
 export BETTER_ERRORS_URL="emacs://%{file}:%{line}"
 export BROWSER="firefox"
 export CLICOLOR=1
-export AUDIODRIVER="alsa"
+export AUDIODRIVER="pulseaudio"
 export FLASH_ALSA_DEVICE="plug:dmix"
 export GREP_OPTIONS='--color=auto'
 export ABSROOT=/home/me/p/fork/abs
