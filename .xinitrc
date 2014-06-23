@@ -19,11 +19,12 @@ fi
 # Minsk coordinates used
 # xflux -l 53.900184 -g 27.566586 -r 1
 
+mpd
 xscreensaver -no-splash &
 $HOME/.dropbox-dist/dropboxd &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+# export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 transparency &
 xbindkeys
 dunst&

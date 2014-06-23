@@ -1,5 +1,5 @@
 # Write your default config options here!
 
-ao=alsa
+ao=pulse
 ass=true
 nojoystick=1
