@@ -15,7 +15,7 @@
 	sub = submodule update --init --recursive
 	staged = diff --staged
 	unstage = reset HEAD
-	lg = log --graph --pretty=format:'%C(auto)%h%d%Creset %s %C(green)(%ai) %C(bold blue)<%an>'
+	lg = log --graph --pretty=format:'%C(auto)%h%d%Creset %C(green)(%ci%x08%x08%x08%x08%x08%x08%x08%x08%x08)%Creset %s %C(bold blue)<%an>'
 	exec = "!exec "
 	root = !pwd
 [color]
