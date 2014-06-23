@@ -9,7 +9,8 @@ Xft.rgba: rgb
 Emacs.Font: DejaVu Sans Mono-9
 
 URxvt*depth: 32
-URxvt*background: [90]#221100
+! URxvt*background: [90]#221100
+URxvt*background: [100]#222222
 URxvt*foreground: white
 URxvt*scrollBar: false
 URxvt*font: xft:DejaVu Sans Mono:size=9
