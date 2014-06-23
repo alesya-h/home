@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "about to create repo with root commit in $(pwd)"
+git init && git commit --allow-empty -m root-commit

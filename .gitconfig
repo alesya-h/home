@@ -8,7 +8,6 @@
 [branch "master"]
 	rebase = true
 [alias]
-	new = !git init && git commit --allow-empty -m root-commit
 	co = checkout
 	st = status
 	s = status
@@ -16,7 +15,7 @@
 	sub = submodule update --init --recursive
 	staged = diff --staged
 	unstage = reset HEAD
-	lg = log --graph --pretty=format:'%C(auto)%h%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>'
+	lg = log --graph --pretty=format:'%C(auto)%h%d%Creset %s %C(green)(%ai) %C(bold blue)<%an>'
 	exec = "!exec "
 	root = !pwd
 [color]
