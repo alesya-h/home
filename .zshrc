@@ -93,6 +93,7 @@ alias v='vim'
 alias suvim='sudo vim'
 alias p='ps -o pid,pcpu,cmd xf'
 alias pa='ps -o user,pid,pcpu,cmd axf'
+alias w='wicd-curses'
 
 alias du1='du -d 1 -h|sort -h'
 alias du2='du -d 2 -h|sort -h'
