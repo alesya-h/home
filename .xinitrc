@@ -24,6 +24,7 @@ xscreensaver -no-splash &
 $HOME/.dropbox-dist/dropboxd &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
+wmname Sawfish
 # export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 transparency &
 xbindkeys
