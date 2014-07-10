@@ -78,3 +78,10 @@
 "xbacklight -inc 5"
     m:0x0 + c:233
     XF86MonBrightnessUp
+
+"compton-trans -c +10"
+    m:0x20 + c:111
+    Mod3 + Up
+"compton-trans -c -10"
+    m:0x20 + c:116
+    Mod3 + Down
