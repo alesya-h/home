@@ -121,6 +121,10 @@ alias dmesg='dmesg -H -w -l info'
 alias lnc='nc localhost'
 alias cp='cp --reflink=auto'
 alias pi='ping 8.8.8.8'
+alias mc='LANG=en_US.UTF-8 mc'
+alias pmount='udisksctl mount -b'
+alias pumount='udisksctl unmount -b'
+
 alias ga='git add -A'
 alias ga.='git add -A .'
 alias grm='git rm'
@@ -160,9 +164,6 @@ alias gl='git log'
 alias gg='git grep'
 alias ggui='git gui'
 alias gunstage='git reset HEAD'
-
-alias pmount='udisksctl mount -b'
-alias pumount='udisksctl unmount -b'
 
 source "$HOME/p/fork/z/z.sh"
 # cat "$HOME/Documents/todo.org"
