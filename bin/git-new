@@ -1,3 +1,6 @@
 #!/bin/sh
-echo "about to create repo with root commit in $(pwd)"
-git init && git commit --allow-empty -m root-commit
+if [ -e .git ]; then
+  echo "$(pwd) already has git repository" && exit 1
+else
+  git init && git commit --allow-empty -m root-commit
+fi
