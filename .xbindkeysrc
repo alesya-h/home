@@ -21,6 +21,10 @@
     m:0x0 + c:107
     Print
 
+# "imgur-screenshot.sh"
+#     m:0x40 + c:107
+#     Mod4 + Print
+
 "pactl -- set-sink-mute 1 toggle"
     m:0x0 + c:121
     XF86AudioMute
