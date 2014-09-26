@@ -40,6 +40,3 @@
 [submodule "p/my/back_to_work"]
 	path = p/my/back_to_work
 	url = git@github.com:alesguzik/back_to_work.git
-[submodule "p/my/work_rewards"]
-	path = p/my/work_rewards
-	url = git@github.com:alesguzik/work_rewards.git
