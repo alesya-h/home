@@ -1,7 +1,7 @@
 [Midnight-Commander]
 verbose=1
 pause_after_run=1
-shell_patterns=0
+shell_patterns=1
 auto_save_setup=0
 preallocate_space=0
 auto_menu=0
