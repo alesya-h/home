@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo -e "Recover wrong encoding in files names on russian\nUsage: $0 file(s)";
+  exit 1;
+fi;
+
+while [ $# -gt 0 ]; do
+  file=$1; shift;
+  echo "file ---$file---"
+  convmv -f cp1252 -t cp850 "$file" --notest --nosmart
+  convmv -f cp866 -t utf-8 "`echo "$file" | iconv -f cp1252 -t cp850`" --notest --nosmart
+done

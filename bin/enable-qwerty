@@ -1,0 +1,2 @@
+#!/bin/sh
+setxkbmap -layout us,us,ru -variant ,dvorak, -option grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp,caps:hyper

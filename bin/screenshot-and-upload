@@ -1,0 +1,5 @@
+cd ~/History/Screenshots
+FILENAME="$(date +%F_%H%M%S_%N).png"
+import -window "$(xdotool getwindowfocus -f)" "$FILENAME"
+mogrify -colors 16 "$FILENAME"
+rsync "$FILENAME" oak.aguzik.net:/var/www/default

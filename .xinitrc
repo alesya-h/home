@@ -11,13 +11,13 @@ HOST_ONLY="$HOME/.xinitrc.$(hostname -s)"
 # sxiv for images
 xrdb -merge .Xresources
 setxkbmap -layout us,ru -variant dvorak, -option grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp,caps:hyper
-xset r rate 200 50
+fastkb
 xmodmap ~/.Xmodmap
 if xinput | grep Trackball; then
   trackball
 fi
 # Minsk coordinates used
-# xflux -l 53.900184 -g 27.566586 -r 1
+xflux -l 53.900184 -g 27.566586 -r 1
 
 mpd
 xscreensaver -no-splash &
