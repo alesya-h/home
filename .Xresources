@@ -6,14 +6,14 @@ Xft.hinting: true
 Xft.antialias: true
 Xft.rgba: rgb
 
-Emacs.Font: DejaVu Sans Mono-9
+Emacs.Font: Input Mono-9
 
 URxvt*depth: 32
 ! URxvt*background: [90]#221100
 URxvt*background: [100]#222222
 URxvt*foreground: white
 URxvt*scrollBar: false
-URxvt*font: xft:DejaVu Sans Mono:size=9
+URxvt*font: xft:Input Mono:size=9
 URxvt*loginShell: false
 URxvt*geometry: 110x35
 URxvt*saveLines: 9999
