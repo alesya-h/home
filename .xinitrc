@@ -17,7 +17,7 @@ if xinput | grep Trackball; then
   trackball
 fi
 # Minsk coordinates used
-xflux -l 53.900184 -g 27.566586 -r 1
+#xflux -l 53.900184 -g 27.566586 -r 1
 
 mpd
 xscreensaver -no-splash &
