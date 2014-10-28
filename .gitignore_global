@@ -4,3 +4,4 @@ TAGS
 .#*
 *.elc
 .*.swp
+.sass-cache/
