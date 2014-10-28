@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.29 for me on Fri Sep 12 22:33:52 2014.
+# Written by xscreensaver-demo 5.30 for me on Tue Sep 30 23:50:46 2014.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -37,7 +37,7 @@ imageDirectory:	/home/me/Pictures/wallpapers/current
 mode:		random
 selected:	187
 
-textMode:	date
+textMode:	program
 textLiteral:	XScreenSaver
 textFile:	
 textProgram:	fortune
@@ -210,7 +210,7 @@ programs:								      \
 - GL: 				pinion -root				    \n\
 - GL: 				polyhedra -root				    \n\
 - GL: 				providence -root			    \n\
-				substrate -root -growth-delay 7965	      \
+-				substrate -root -growth-delay 7965	      \
 				  -max-cycles 4035 -circle-percent 33	      \
 				  -initial-cracks 5			    \n\
 -				wormhole -root				    \n\
@@ -250,10 +250,11 @@ programs:								      \
   GL: 				geodesic -root				    \n\
 				hexadrop -root				    \n\
   GL: 				kaleidocycle -root			    \n\
-  GL: 				quasicrystal -root			    \n\
+- GL: 				quasicrystal -root			    \n\
   GL: 				unknownpleasures -root			    \n\
   GL: 				projectiveplane -root			    \n\
-				tessellimage -root			    \n\
+-				tessellimage -root			    \n\
+- GL: 				winduprobot -root			    \n\
 
 
 pointerPollTime:    0:00:05
@@ -264,4 +265,5 @@ GetViewPortIsFullOfLies:False
 procInterrupts:	True
 xinputExtensionDev: False
 overlayStderr:	True
+authWarningSlack:   20
 
