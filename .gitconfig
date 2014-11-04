@@ -18,6 +18,8 @@
 	lg = log --graph --pretty=format:'%C(auto)%h%d%Creset %C(green)(%ci%x08%x08%x08%x08%x08%x08%x08%x08%x08)%Creset %s %C(bold blue)<%an>'
 	exec = "!exec "
 	root = !pwd
+	wd = diff --word-diff
+	today = log --since yesterday
 [color]
 	ui = auto
 [push]
@@ -26,3 +28,5 @@
 	defaultToUpstream = true
 [magit]
 	extension = wip-save
+[fetch]
+	prune = false
