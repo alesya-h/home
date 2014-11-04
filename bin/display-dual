@@ -3,3 +3,4 @@ source "$HOME/.config/displays.conf"
 xrandr --output "$LEFT" --auto
 xrandr --output "$RIGHT" --auto
 xrandr --output "$RIGHT" --right-of "$LEFT"
+fixdpi -d

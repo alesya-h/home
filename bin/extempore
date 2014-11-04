@@ -1,0 +1,8 @@
+#!/bin/bash
+FILE=`readlink -f "$1"`
+cd /home/me/p/fork/extempore
+if [ -n "$FILE" ]; then
+  exec ./extempore --run "$FILE"
+else
+  exec ./extempore
+fi 

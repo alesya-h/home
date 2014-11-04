@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ssh -N -D1080 niki

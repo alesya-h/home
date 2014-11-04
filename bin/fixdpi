@@ -1,17 +1,19 @@
 #!/usr/bin/env ruby
-dims = %x(xrandr|grep connected|grep -v disconnected).split("\n").map do |x|
+ws, hs = %x(xrandr|grep connected|grep -v disconnected).split("\n").map do |x|
   w, h = x.match(/(\d+)mm x (\d+)mm/).to_a[1..-1].map(&:to_i)
-  { w: w, h: h }
+  [w, h]
+end.reduce(&:zip).map{|x| Array(x).flatten}
+p ws
+p hs
+ow, oh = [ws, hs].map{ |x| x.inject(:+) / x.size }
+
+if ARGV.first == '-d'
+  ow *= ws.size
+  ARGV.shift
 end
-total_dims = dims.reduce do |result, new|
-  {
-    w: ( result[:w] + new[:w] ),
-    h: [ result[:h], new[:h]].max
-  }
-end
-divisor = (ARGV[0] || 1).to_f
-ow, oh = total_dims[:w], total_dims[:h]
-w, h = [ow, oh].map { |x| (x / divisor).to_i }
+
+scale = (ARGV.shift || 1).to_f
+w, h = [ow, oh].map { |x| (x / scale).to_i }
 
 puts "original: #{ow}x#{oh}, new: #{w}x#{h}"
 system "xrandr --fbmm #{w}x#{h}"
