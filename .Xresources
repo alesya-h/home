@@ -1,7 +1,7 @@
 ! Xft.autohint: false
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintslight
-! Xft.hintstyle:  hintfull
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+! Xft.hintstyle: hintfull
 Xft.hinting: true
 Xft.antialias: true
 Xft.rgba: rgb
@@ -17,6 +17,17 @@ URxvt*font: xft:Input Mono:size=9
 URxvt*loginShell: false
 URxvt*geometry: 110x35
 URxvt*saveLines: 9999
+
+URxvt.launcher: firefox
+URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,matcher
+!URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher
+!URxvt.url-select.launcher: firefox
+!URxvt.url-select.underline: true
+!URxvt.keysym.M-u:      perl:url-select:select_next
+!URxvt.keysym.M-Escape: perl:keyboard-select:activate
+!URxvt.keysym.M-s:      perl:keyboard-select:search
+
 
 *.color0: black
 *.color1: red1
