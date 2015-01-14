@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+replacement = ARGV.shift
+while x = STDIN.gets
+  system *ARGV.map{|arg| arg.gsub(replacement, x.chomp)}
+end

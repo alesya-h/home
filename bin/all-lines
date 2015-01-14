@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+replacement = ARGV.shift
+lines = STDIN.readlines.map(&:chomp)
+exec *ARGV.map{|arg| arg == replacement ? lines : arg }.flatten

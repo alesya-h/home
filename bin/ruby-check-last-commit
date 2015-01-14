@@ -1,0 +1,1 @@
+git diff-tree --no-commit-id --name-only -r HEAD|grep -E '\.rb$'|xargs -I '{}' ruby -c '{}'

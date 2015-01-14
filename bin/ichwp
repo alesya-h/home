@@ -1,7 +1,11 @@
 #!/usr/bin/env ruby
 %w(open-uri cgi json).each{ |x| require x }
+if ARGV.first.to_i.to_s == ARGV.first
+  screens = ARGV.shift
+else
+  screens = `xrandr --current |grep ' connected'|wc -l`.to_i
+end
 q = ARGV.join(' ')
-screens = `xrandr --current |grep connected|grep -v disconnected|wc -l`.to_i
 query = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=#{CGI.escape(q)}&imgsz=huge&rsz=#{screens}&start=#{rand 30}"
 urls = JSON.parse(open(query).read.to_s)['responseData']['results'].map{|x| x['url']}
 puts urls.join "\n"

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+(git lg "$@" ; echo)|tac|sed 's/\\/`/g; s/\//\\/g; s/`/\//g;'
