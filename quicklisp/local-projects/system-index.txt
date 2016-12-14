@@ -1,2 +1,0 @@
-clfswm/clfswm.asd
-clfswm/contrib/server/clfswm-client.asd
