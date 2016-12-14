@@ -1,8 +1,0 @@
-#!/bin/sh
-# Copyright 2008-2013 Dropbox, Inc.
-#
-# Environment script for the dropbox executable.
-PAR=$(dirname "$(readlink -f "$0")")
-OLD_LD_LIBRARY_PATH="$LD_LIBRARY_PATH"
-export OLD_LD_LIBRARY_PATH
-exec "$PAR"/dropbox "$@"
