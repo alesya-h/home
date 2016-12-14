@@ -1,0 +1,5 @@
+#!/bin/sh
+LAST_COMMIT_MESSAGE="$(git log --format="%s" HEAD~1..HEAD)"
+git commit --allow-empty -m "~unindexed~ ${LAST_COMMIT_MESSAGE}"
+git stash save "$@"
+git reset --soft HEAD~1

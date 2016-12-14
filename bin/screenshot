@@ -1,0 +1,8 @@
+#!/bin/sh
+DIR="$HOME/History/Screenshots/$(date +%Y-%m)"
+mkdir -p "$DIR"
+FILE_NAME="$DIR/$(date --rfc-3339=seconds).png"
+maim "$@" "$FILE_NAME"
+echo "$FILE_NAME"|xclip
+echo "$FILE_NAME"|xclip -selection clipboard
+echo "$FILE_NAME"

@@ -1,0 +1,5 @@
+#!/bin/sh
+xsetwacom --set 14 Button 9 'key pgup' 
+xsetwacom --set 14 Button 8 'key pgdn' 
+xsetwacom --set 14 Button 3 'key ctrl'
+xsetwacom --set 14 Button 1 'key u'

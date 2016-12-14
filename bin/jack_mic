@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+restart_jack(){
+  sleep 1
+  jack_control stop
+  sleep 1
+  jack_control start
+}
+set_jack(){
+  jack_control dps $1 hw:$2
+}
+
+dev="${2:-NTUSB}"
+case "$1" in
+  "on")
+    if aplay -l|grep $dev; then
+      set_jack device   $dev
+      set_jack playback $dev
+      set_jack capture  $dev
+      restart_jack
+    fi
+    ;;
+  "in")
+    if arecord -l|grep $dev; then
+      set_jack device   PCH
+      set_jack playback PCH
+      set_jack capture  $dev
+      restart_jack
+    fi
+    ;;
+  "off")
+    set_jack device   PCH
+    set_jack playback PCH
+    set_jack capture  PCH
+    restart_jack
+    ;;
+  "status")
+    echo "Jack:"
+    jack_control dp|grep --color=always -E hw:[^\)]+|sed 's|          ||'
+    echo "Record:"
+    arecord -l|grep card|sed 's|^|   |'
+    echo "Play:"
+    aplay -l|grep card|sed 's|^|   |'
+    ;;
+  *) echo "Usage: $0 [on|in|off|status]"
+esac

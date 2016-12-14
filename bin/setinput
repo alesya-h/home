@@ -1,0 +1,17 @@
+#!/bin/sh
+xset r rate 200 50
+xinput|grep Intuos|cut -f2|sed 's/id=//'|eachline _ xinput --map-to-output _ HDMI1
+xinput|grep eGalax|cut -f2|sed 's/id=//'|eachline _ xinput --map-to-output _ eDP1
+setkb
+
+xproptp() {
+  xinput set-prop "TPPS/2 IBM TrackPoint" "$@";
+}
+
+xproptp "Evdev Wheel Emulation" 1
+xproptp "Evdev Wheel Emulation Button" 2
+xproptp "Evdev Wheel Emulation Timeout" 200
+xproptp "Evdev Wheel Emulation Axes" 6 7 4 5
+xproptp "Device Accel Constant Deceleration" 0.75
+
+xmodmap ~/.Xmodmap

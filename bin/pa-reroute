@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ -z "$1" ]; then
+  pacmd list-sinks|grep device.description|sed -E 's/^[^"]+\"//;s/"//'|awk '{printf("%d %s\n",i++,$line)}'
+else
+  pacmd set-default-sink "$1"
+  pacmd list-sink-inputs|grep index|cut --delimiter=: -f 2|sed 's/ //g'|eachline _ pacmd move-sink-input _ "$1"
+fi

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec vlc http://help.telecom.by/_files/TelecomTV/TelecomTVpacket/TVPACKET3.m3u

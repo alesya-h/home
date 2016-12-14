@@ -1,0 +1,9 @@
+#!/bin/sh
+OPTION="grp:menu_toggle,grp_led:caps,terminate:ctrl_alt_bksp,caps:hyper"
+OPTION="$OPTION,compose:ralt"
+setxkbmap -option ''
+if setxkbmap -query|grep layout|grep ru > /dev/null; then
+  setxkbmap -layout us,ua -variant dvorak, -option "$OPTION"
+else
+  setxkbmap -layout us,ru -variant dvorak, -option "$OPTION"
+fi

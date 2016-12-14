@@ -1,0 +1,5 @@
+#!/bin/bash
+if ! wmctrl -x -a "$1"; then
+  shift
+  exec "$@"
+fi

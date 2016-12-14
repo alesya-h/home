@@ -1,0 +1,10 @@
+#!/bin/sh
+pactl unload-module module-jackdbus-detect
+pactl load-module module-jackdbus-detect channels=2
+exit 0
+
+pulseaudio --kill
+pulseaudio --start
+sleep 1
+ponymix toggle
+ponymix toggle
