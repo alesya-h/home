@@ -1,3 +1,0 @@
-source "$HOME/.config/displays.conf"
-xrandr|grep connected| grep -v "$MAIN"|cut -d ' ' -f1|xargs -I '{}' xrandr --output '{}' --off
-xrandr --output "$MAIN" --auto

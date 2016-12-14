@@ -1,11 +1,18 @@
 #!/usr/bin/env ruby
-ws, hs = %x(xrandr|grep connected|grep -v disconnected).split("\n").map do |x|
+ws, hs = %x(xrandr|grep connected|grep -v disconnected|grep 'mm x').split("\n").map do |x|
   w, h = x.match(/(\d+)mm x (\d+)mm/).to_a[1..-1].map(&:to_i)
   [w, h]
 end.reduce(&:zip).map{|x| Array(x).flatten}
 p ws
 p hs
-ow, oh = [ws, hs].map{ |x| x.inject(:+) / x.size }
+
+unless :horizontal
+  ow = ws.inject(:+)
+  oh = hs.inject(:+) / hs.size
+else
+  ow = ws.inject(:+) / hs.size
+  oh = hs.inject(:+)
+end
 
 if ARGV.first == '-d'
   ow *= ws.size

@@ -1,2 +1,2 @@
 #!/bin/sh
-exec grep "$*" --color -n -r .
+exec grep "$@" --color=auto -r .

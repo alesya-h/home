@@ -38,7 +38,9 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/home/me/.config/awesome/theme.lua")
+
+-- awesome.font = "Input Sans Mono 11"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -55,8 +57,8 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
-    awful.layout.suit.tile,
     awful.layout.suit.max,
+    awful.layout.suit.tile,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
@@ -188,7 +190,7 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
+    -- if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -252,11 +254,6 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
-    awful.key({ modkey, "Shift"   }, "Return", function () awful.util.spawn("trxvt")  end),
-    awful.key({ modkey, "Control" }, "r", awesome.restart),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit),
-
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
@@ -269,7 +266,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    -- awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
               function ()

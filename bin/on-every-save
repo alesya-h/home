@@ -7,7 +7,7 @@ deltemp(){
 cat > "$CODE"
 trap deltemp int 
 while true; do
-    inotifywait -e modify -r "$@"
+    inotifywait -e modify -q "$@"
     cat $CODE|bash
 done
 

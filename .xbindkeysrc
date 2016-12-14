@@ -1,9 +1,6 @@
-"xscreensaver-command -lock"
+"slimlock"
     m:0x40 + c:127
     Mod4 + Pause
-"xscreensaver-command -lock"
-    m:0x0 + c:160
-    XF86ScreenSaver
 "sudo backlight-off"
     m:0x0 + c:202
     NoSymbol
@@ -17,21 +14,48 @@
     m:0x40 + c:156
     Mod4 + XF86Launch1
 
-"scrot -e 'mv $f ~/History/Screenshots/'"
+"bashrun"
+    m:0x40 + c:32
+    Mod4 + r
+"run_frequent"
+    m:0x41 + c:32
+    Shift+Mod4 + r
+
+"rofi -show window"
+    m:0x44 + c:45
+    Control+Mod4 + t
+
+"screenshot"
     m:0x0 + c:107
     Print
 
-# "imgur-screenshot.sh"
-#     m:0x40 + c:107
-#     Mod4 + Print
+"screenshot -s"
+    m:0x1 + c:107
+    Shift + Print
 
-"pactl -- set-sink-mute 0 toggle"
+"screenshot-and-draw"
+    m:0x40 + c:107
+    Mod4 + Print
+
+"screenshot-and-draw -s"
+    m:0x41 + c:107
+    Shift+Mod4 + Print
+
+"repulse"
+    m:0x40 + c:73
+    Mod4 + F7
+
+"systemctl suspend"
+    m:0x40 + c:74
+    Mod4 + F8
+
+"ponymix toggle"
     m:0x0 + c:121
     XF86AudioMute
-"pactl -- set-sink-volume 0 -4%"
+"ponymix decrease 5"
     m:0x0 + c:122
     XF86AudioLowerVolume
-"pactl -- set-sink-volume 0 +4%"
+"ponymix increase 5"
     m:0x0 + c:123
     XF86AudioRaiseVolume
 
@@ -66,9 +90,6 @@
 "mpc toggle"
     m:0x0 + c:172
     XF86AudioPlay
-"mpc toggle"
-    m:0x40 + c:116
-    Mod4 + Down
 "mpc single"
     m:0x4 + c:174
     Control + XF86AudioStop
@@ -76,12 +97,28 @@
     m:0x4 + c:172
     Control + XF86AudioPlay
 
-"xbacklight -dec 5"
+"displays next-mode"
+    m:0x0 + c:235
+    XF86Display
+
+"displays prev-mode"
+    m:0x1 + c:235
+    Shift + XF86Display
+
+"xbacklight -10"
     m:0x0 + c:232
     XF86MonBrightnessDown
-"xbacklight -inc 5"
+"xbacklight +10"
     m:0x0 + c:233
     XF86MonBrightnessUp
+
+"compton-trans -c +10"
+    m:0x8 + c:111
+    Alt + Up
+
+"compton-trans -c -10"
+    m:0x8 + c:116
+    Alt + Down
 
 "compton-trans -c +10"
     m:0x20 + c:111
@@ -89,3 +126,19 @@
 "compton-trans -c -10"
     m:0x20 + c:116
     Mod3 + Down
+
+"chwp"
+    m:0x41 + c:127
+    Shift+Mod4 + Pause
+
+"urxvt"
+    m:0x40 + c:36
+    Mod4 + Return
+
+"trxvt"
+    m:0x41 + c:36
+    Shift+Mod4 + Return
+
+"setkb"
+    m:0x1 + c:135
+    Shift + ISO_Next_Group

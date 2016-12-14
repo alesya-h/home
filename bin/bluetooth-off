@@ -1,4 +1,0 @@
-#!/bin/bash
-sudo bash <<EOF
-echo disable > /proc/acpi/ibm/bluetooth
-EOF

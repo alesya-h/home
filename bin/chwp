@@ -18,7 +18,7 @@ if [ -n "$1" ]; then
     fi
 fi
 find -L ./current -type f | \
-    sort --random-sort | \
+    sort --random-sort --random-source=/dev/urandom | \
     head -2 | \
     xargs --delimiter=\\n feh "$MODE"
 popd >/dev/null

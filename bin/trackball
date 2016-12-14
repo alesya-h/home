@@ -2,7 +2,7 @@
 
 LEFT_HANDED="$1"
 
-set -e
+#set -e
 
 dev="Logitech USB Trackball"
 we="Evdev Wheel Emulation"
@@ -16,6 +16,7 @@ if [ "$LEFT_HANDED" ]; then
   xinput set-prop "$dev" "$we Button" 9
   xmodmap -e 'pointer = 3 9 1 4 5 6 7 8 2 10'
 else
-  xinput set-prop "$dev" "$we Button" 8
   xmodmap -e 'pointer = 1 9 3 4 5 6 7 2 8 10'
+  #xmodmap -e 'pointer = 2 9 3 4 5 6 7 1 8 10'
+  #xinput set-prop "$dev" "$we Button" 1
 fi

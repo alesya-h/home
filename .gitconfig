@@ -1,10 +1,13 @@
 [user]
 	name = Ales Guzik
 	email = me@aguzik.net
+	signingkey = DEF6EE17
 [gui]
 	spellingdictionary = none
+	gcwarning = false
 [core]
 	excludesfile = ~/.gitignore_global
+	quotepath = false
 [branch "master"]
 	rebase = true
 [alias]
@@ -15,11 +18,16 @@
 	sub = submodule update --init --recursive
 	staged = diff --staged
 	unstage = reset HEAD
-	lg = log --graph --pretty=format:'%C(auto)%h%d%Creset %C(green)(%ci%x08%x08%x08%x08%x08%x08%x08%x08%x08)%Creset %s %C(bold blue)<%an>'
+	lg = log --graph --pretty=format:'%C(auto)%h%d%Creset %C(green)(%ci%x08%x08%x08%x08%x08%x08%x08%x08%x08)%Creset %s %C(bold blue)<%an>%Creset\n'
 	exec = "!exec "
 	root = !pwd
-	wd = diff --word-diff
+  pr = "!hub pull-request"
+  wdiff = diff --word-diff=color
+  cdiff = diff --word-diff=color --word-diff-regex=.
 	today = log --since yesterday
+  last-range = "!git reflog|cut -d ' ' -f 1|head -n2|tac|xargs echo|sed 's/ /../'"
+  show-update = !git lg --stat $(git last-range)
+  current-branch = rev-parse --abbrev-ref HEAD
 [color]
 	ui = auto
 [push]
@@ -29,4 +37,7 @@
 [magit]
 	extension = wip-save
 [fetch]
-	prune = false
+	prune = true
+[status]
+  short = true
+  branch = true

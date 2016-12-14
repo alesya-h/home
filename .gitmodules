@@ -19,9 +19,6 @@
 [submodule "p/fork/z"]
 	path = p/fork/z
 	url = https://github.com/rupa/z.git
-[submodule "p/my/screenlog"]
-	path = p/my/screenlog
-	url = git@github.com:alesguzik/screenlog.git
 [submodule "p/my/aguzik.net"]
 	path = p/my/aguzik.net
 	url = git@github.com:alesguzik/alesguzik.github.com.git
@@ -31,12 +28,6 @@
 [submodule "p/my/factor-work"]
 	path = p/my/factor-work
 	url = git@github.com:alesguzik/factor-work.git
-[submodule "p/my/cv"]
-	path = p/my/cv
+[submodule "p/complete/cv"]
+	path = p/complete/cv
 	url = git@github.com:alesguzik/cv.git
-[submodule "p/my/conf"]
-	path = p/my/conf
-	url = git@github.com:alesguzik/conf.git
-[submodule "p/my/back_to_work"]
-	path = p/my/back_to_work
-	url = git@github.com:alesguzik/back_to_work.git

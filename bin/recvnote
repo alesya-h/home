@@ -1,1 +1,1 @@
-ffmpeg -f alsa -i default -f v4l2 -i /dev/video0 $1
+ffmpeg -f pulse -i default -f v4l2 -i /dev/video0 $1

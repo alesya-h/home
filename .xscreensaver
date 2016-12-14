@@ -1,8 +1,8 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.30 for me on Tue Sep 30 23:50:46 2014.
+# Written by xscreensaver-demo 5.34 for me on Mon Dec 21 04:03:50 2015.
 # http://www.jwz.org/xscreensaver/
 
-timeout:	0:10:00
+timeout:	1:00:00
 cycle:		0:02:00
 lock:		True
 lockTimeout:	0:00:00
@@ -29,7 +29,7 @@ dpmsQuickOff:	False
 dpmsStandby:	2:00:00
 dpmsSuspend:	2:00:00
 dpmsOff:	4:00:00
-grabDesktopImages:  True
+grabDesktopImages:  False
 grabVideoFrames:    False
 chooseRandomImages: True
 imageDirectory:	/home/me/Pictures/wallpapers/current
@@ -40,7 +40,7 @@ selected:	187
 textMode:	program
 textLiteral:	XScreenSaver
 textFile:	
-textProgram:	fortune
+textProgram:	fortune -o -c
 textURL:	http://fridge.ubuntu.com/node/feed
 
 programs:								      \
@@ -255,6 +255,12 @@ programs:								      \
   GL: 				projectiveplane -root			    \n\
 -				tessellimage -root			    \n\
 - GL: 				winduprobot -root			    \n\
+				binaryring -root			    \n\
+  GL: 				cityflow -root				    \n\
+  GL: 				geodesicgears -root			    \n\
+  GL: 				romanboy -root				    \n\
+  GL: 				splitflap -root				    \n\
+				testx11 -root				    \n\
 
 
 pointerPollTime:    0:00:05

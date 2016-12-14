@@ -1,6 +1,0 @@
-#!/bin/sh
-[ `xrandr|grep ' connected'|wc -l` -eq 2 ] || exit 1
-source "$HOME/.config/displays.conf"
-xrandr --output "$LEFT" --auto
-xrandr --output "$RIGHT" --auto
-xrandr --output "$RIGHT" --right-of "$LEFT"

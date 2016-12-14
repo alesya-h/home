@@ -77,7 +77,7 @@ editor_backup_extension=~
 mcview_eof=
 ignore_ftp_chattr_errors=true
 keymap=
-skin=modarin256
+skin=modarin256-defbg
 
 filepos_max_saved_entries=1024
 
@@ -87,6 +87,8 @@ editor_drop_selection_on_copy=1
 editor_ask_filename_before_edit=0
 editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
+
+editor_state_full_filename=0
 
 [Layout]
 message_visible=1
@@ -98,9 +100,9 @@ menubar_visible=1
 free_space=1
 horizontal_split=0
 vertical_equal=1
-left_panel_size=87
+left_panel_size=59
 horizontal_equal=1
-top_panel_size=1
+top_panel_size=16
 
 [Misc]
 timeformat_recent=%b %e %H:%M
@@ -143,6 +145,8 @@ quick_search_mode=2
 
 simple_swap=false
 
+select_flags=6
+
 [HotlistConfig]
 expanded_view_of_groups=0
 
@@ -151,3 +155,6 @@ expanded_view_of_groups=0
 Найти корректуры, отвергнутые командой patch=find . -name \\*.rej -print
 Найти оригиналы (*.orig) после команды patch=find . -name \\*.orig -print
 Найти программы с установленными SUID/SGID битами=find . \\( \\( -perm -04000 -a -perm +011 \\) -o \\( -perm -02000 -a -perm +01 \\) \\) -print
+
+[terminal:rxvt-unicode-256color]
+backtab=\\e[Z

@@ -12,7 +12,7 @@
 ## file which defines that while launching ncmpcpp.
 ##
 #
-#ncmpcpp_directory = ~/.ncmpcpp
+ncmpcpp_directory = ~/.ncmpcpp
 #
 ##
 ## Directory for storing downloaded lyrics. It
@@ -20,13 +20,13 @@
 ## (eg. ncmpc) also use that location.
 ##
 #
-#lyrics_directory = ~/.lyrics
+lyrics_directory = ~/.lyrics
 #
 ##### connection settings #####
 #
-#mpd_host = localhost
+mpd_host = localhost
 #
-#mpd_port = 6600
+mpd_port = 6600
 #
 #mpd_connection_timeout = 5
 #

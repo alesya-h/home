@@ -1,2 +1,8 @@
-fixdpi2
-exec skype&
+#xrandr --fbmm 406x228
+#if xrandr|grep HDMI|grep -v disconnected; then
+#  xrandr --output HDMI1 --primary --auto --rotate normal
+#  xrandr --output eDP1 --off
+#  fixdpi 1.3
+#else
+#  fixdpi
+#fi

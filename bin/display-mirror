@@ -1,7 +1,0 @@
-#!/bin/sh
-source "$HOME/.config/displays.conf"
-xrandr --output "$RIGHT" --auto
-xrandr --output "$LEFT" --auto
-RESOLUTION=$(xrandr|awk "/$MAIN/{getline;print \$1}")
-echo $RESOLUTION
-xrandr --output "$LEFT" --mode $RESOLUTION --same-as "$RIGHT"

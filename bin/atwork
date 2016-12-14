@@ -2,3 +2,4 @@
 display-mirror
 trackball
 fastkb
+xinput --map-to-output 12 eDP1
